@@ -1,0 +1,20 @@
+<html>
+<html>
+<head>
+<title>Class MatchLock</title>
+</head><body>
+<a href="index.html">Index</a> - <a href="AllPackages.html">All Packages</a> - <a href="AllCategories.html">All Categories</a> - <a href="AllClasses.html">All Classes</a><br><h1>Class MatchLock</h1>
+<font color="green">The correct password will open the lock. The password is actually stored in the club`s MatchLockSmith in scrambled form, using a <a href="Scrambler.html">Scrambler</a> identified by scramblerName(). The scrambled cleartext supplied as a password is compared to the scrambledPassword in the MatchLockSmith. If they match, the lock is opened. <br><br>The actual process is a bit more complicated than this. The user supplies a password in clear, which is encrypted with the current system public key and then sent to the server. There, it is first decrypted with the private key known only to the server. It is then scrambled and compared with the scrambled password stored in the MatchLockSmith of the club. This procedure both avoids sending passwords in clear over the network, and also allows the MatchLockSmith to be made readable without compromising security.<br></font></p>Package: <a href="Package_Udanax-Gold.html">Udanax-Gold</a><br>All Superclasses: <a href="Object.html">Object</a> <a href="Heaper.html">Heaper</a> <a href="Lock.html">Lock</a> <br>Protocols: <a href="Protocol_Object.html">Object</a><br>Categories: <a href="Category_Xanadu-Be-Locks.html">Xanadu-Be-Locks</a><br><hr><h2>Class Methods</h3><a name="#infostProtocol"><h4><font color="blue">infostProtocol</font> </h4></a><blockquote><font color="green"><br></font></blockquote><a name="#make:with:"><h4><font color="blue">make:</font> clubID <font color="blue">with:</font> lockSmith </h4></a><blockquote><font color="green"><br></font></blockquote><a name="#problemsPasswordDoesNotMatch"><h4><font color="blue">problemsPasswordDoesNotMatch</font> </h4></a><blockquote><font color="green"><br></font></blockquote><hr><h2>Instance Methods</h3><a name="#create:with:"><h4><font color="blue">create:</font> loginID <font color="blue">with:</font> lockSmith </h4></a><blockquote><font color="green"><br></font><br>Overrides: <a href="Lock.html#create:with:">Lock</a></blockquote><a name="#encryptedPassword:"><h4><font color="blue">encryptedPassword:</font> encrypted </h4></a><blockquote><font color="green">Send the encrypted password to the server to be checked.<br>	NOTE: (for protocol review) The password must have been encrypted using a (yet-to-be-defined) front end library function, since this sort of front end computation can't be done with Promises.<br></font></blockquote><br><br><a href="index.html">Index</a> - <a href="AllPackages.html">All Packages</a> - <a href="AllCategories.html">All Categories</a> - <a href="AllClasses.html">All Classes</a><br></body>
+</html>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

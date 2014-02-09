@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<title>Method Stack Profiler</title>
+</head>
+
+<body background="background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Method Stack Profiler</font>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD>
+<a href="Svengali.htm"><img src="MiniBlue.gif" alt="Svengali" border=0></a>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<a href="ProfilerPackage.htm">
+<img src="link_ProfilerPackage.gif" alt="Profiler Package" border=0></a>
+<TR><TD>
+<a href="Profilers.htm">
+<img src="link_Profilers.gif" alt="Profilers" border=0></a>
+<TR><TD>
+<img src="link_Blank2.gif" border=0></a>
+<TR><TD>
+<a href="mailto:svengali@dgjones.info">
+<img src="link_DavidJones.gif" alt="Contact David Jones" border=0></a>
+</TABLE>
+</TABLE>
+</TABLE>
+
+<p>The New Profiler is a type of <a href="Profilers.htm#sampling">sampling profiler</a> which records
+the details of the message stack.</p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Mechanics</font>
+</TABLE>
+
+<p>The Method Stack Profiler is run after each sampling period
+and generates an entry for each frame of the profiled processes
+stack. An entry records the method, receiving class, ip and whether
+the frame is executing a Block.</p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Browsers</font>
+</TABLE>
+
+<p>The raw collected details are visible in the <a
+href="ProfileBrowser.htm">Profile Browser</a>. A statistical
+view is provided by the <a href="MessageStatistics.htm">Message
+Statistics</a> view. A hierarchical call tree generated from a
+series of method stacks is provided by the <a
+href="MessageTallyBrowser.htm">Message Tally Browser</a>.</p>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

@@ -1,0 +1,236 @@
+<HTML>
+
+<HEAD>
+<TITLE>Astrophel - Versions</TITLE>
+</HEAD>
+
+<BODY BACKGROUND="../background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif">
+<TR  VALIGN=TOP>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Versions</font>
+</TABLE>
+
+
+<TABLE WIDTH=100%>
+<TR  VALIGN=TOP><TD>0.00<TD><UL><LI>Before time</UL>
+<TR  VALIGN=TOP><TD>0.01<TD><UL><LI>Incognito</UL>
+<TR  VALIGN=TOP><TD>0.02<TD><UL><LI>Lost to the shifting tides of the past</UL>
+<TR  VALIGN=TOP><TD COLSPAN=2>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font color=#5A63AD>
+--1993----1993----1993----1993----1993----1993----1993----1993----1993--</font></TABLE>
+<TR  VALIGN=TOP><TD>0.03 oct08<TD><UL>
+	<LI>Detect object in Galaxy window under pointer. Works in all (?) modes and 				magnifications</UL>
+<TR  VALIGN=TOP><TD>0.04 oct10<TD><UL>
+	<LI>Transformed GalaxyPane into a nice little pane. Attached to left hand side of Galaxy. 	Redirected all window_open*, and window_close* to be redirected through *WindowRequest, as 	used by WimpPoll.
+	<LI>Changed from !Messages to Messages, hmpph.
+	<LI>Added record of PollMask.
+</UL><TR  VALIGN=TOP><TD>0.05 oct11<TD><UL>
+	<LI>Started System & Star. Open System with star (simple) when click over Galaxy window.
+	<LI>Made openWindowRequest, closeWindowRequest call out to specific routines depending on 	window handle. Same with mouseClick.
+</UL><TR  VALIGN=TOP><TD>0.06 oct11<TD><UL>
+	<LI>Created window_openPane - feed it block of offsets for pane.
+	<LI>Created icon_writeName, so sorted out some icon problems.
+	<LI>StarSystem generation works ok.
+	<LI>Set new astronomical objects to 25% BlackHole, 75% StarSystem.
+</UL><TR  VALIGN=TOP><TD>0.07 oct15<TD><UL>
+	<LI>Speeded up galaxy redraw by precalculating some class redraw details.
+	<LI>Primitive showing of Introduction window before main game is set up.
+	<LI>Design of Galaxy related Intro template frame.          
+</UL><TR  VALIGN=TOP><TD>0.08 oct16<TD><UL>
+	<LI>window_openCentred works ok now.
+	<LI>Redesigned Intro window. Use slider for density. Number of objects/
+        density linked with rest of program. Updates area nicely.
+	<LI>Better integration of Intro in app startup sequence.
+	<LI>Bugfixed icon_writeName (name length). Also terminate maximum length
+        names. Use ForceRedraw to reduce flicker. Forget border redraw.
+        If R7 first validation, grow border so text icons don't flash soo much.
+</UL><TR  VALIGN=TOP><TD>0.09 oct18<TD><UL>
+	<LI>Density slider now works nice. Dragable.
+	<LI>Redid redrawRequest to better handle multiple windows.
+	<LI>Recoded galaxy_nearestObject. Super fast. Well no longer FPA
+	<LI>Sorted out problems in ancient Heap manager interface.
+	<LI>Intro window Shape section now implemented.
+	<LI>GainCaret, LoseCaret primitively supported.
+</UL><TR  VALIGN=TOP><TD>0.10 oct21<TD><UL>
+	<LI>Interface to !Help application. Works for Menu items as well.
+	<LI>Recalculate Astronomical cached information on mode change. At last!
+	<LI>3d'd a number of standard windows.
+	<LI>Slightly nicified update within Magnification window.
+	<LI>Reorganised menus a bit.
+	<LI>Nicified Magnifier Code, & cut umbelical cord to Galaxy.s
+	<LI>Save now drags icon.
+	<LI>Standard Drag support added.
+	<LI>Null support added.
+	<LI>Valiant, but ultimately pitiful attempt at drawing logo. I need help.
+</UL><TR  VALIGN=TOP><TD>0.11 oct28<TD><UL>
+	<LI>Reorganized directory structure of source files.
+	<LI>Dramatic Hard Disc reformat. Everything seems to live on happily.
+	<LI>Added standard Slider, Adjuster Interface Object support.
+	<LI>Developing standard Interface Object connection details. So can just
+        plug various IObjects together. Only be informed of any changes at the
+        end of the whole thing. Pretty cool stuff.
+	<LI>icon_writeName uses UpdateWindow noew, so NO flicker at all. Amazing.
+</UL><TR  VALIGN=TOP><TD>0.12 oct31<TD><UL>
+	<LI>Created WriteableNumber IO. Defining Interface Objects standards.
+	<LI>Reimplemented Magnifier window using IO.
+	<LI>Slight heap_getBlock for large sizes solved.
+	<LI>Galaxy redraw now has a bounds check on astronomical objects to redraw.
+        This dramatically improves redraw with 1000's of objects.
+</UL><TR  VALIGN=TOP><TD>0.13 nov02<TD><UL>
+	<LI>Uprated galaxy_nearestObject, and astronomical object creation to be
+	able to handle HUGE galaxies. Now should work up to the limit of memory
+	space.
+	<LI>Multitasking while generating galaxy.
+</UL><TR  VALIGN=TOP><TD>0.14 nov03<TD><UL>
+	<LI>Added percentage value icon to Creating window. Get a better idea of
+	its progress.
+	<LI>IO with a pList of Handlers on change, if = 0. Then no connected elems.
+	<LI>Set up Docs window, connecting !Help within it. Defined What Was, What
+        Is, and What Will text entries.
+	<LI>Had a problem with a number of windows mistakenly defined as panes.
+        Caused problem with setting highlighted window title bar, when we
+        should of had it. 
+	<LI>Split Galaxy into a number of blocks. Allowing even faster redraw, as
+        effort is now more proportional to actual stars to redraw, rather than
+        number of stars in galaxy.
+	<LI>Updated galaxy_nearestObject to work with blocked Galaxy. Now V.fast
+        update however large the galaxy is.
+</UL><TR  VALIGN=TOP><TD>0.15 nov10<TD><UL>
+	<LI>Uprated Start, Finish macros. Ensured all routines now use this.
+	<LI>Give indication of StarSystem type under pointer in GalaxyPane. Also
+        tidied up presentation of Galaxy Pane.
+	<LI>GalaxyPane contents now only updated when information actual changes.
+	<LI>Galaxy redraw now plots simply a Point (for speed) when magnified form
+        of relevant objects sprite is small enough.
+	<LI>Astronomical objects are now named.
+	<LI>Added GalaxyAnalysis window, providing information on the physical
+        structure of the Galaxy. Looks ok to boot!
+</UL><TR  VALIGN=TOP><TD>0.16 nov15<TD><UL>
+	<LI>Symbols added. Also prototype Symbols Finder window.
+	<LI>Solved problem of returning 'illegal' work area coord from pointer.
+	<LI>Slightly moved GalaxyPane window left, so it doesn't overlap.
+	<LI>Creating window now multitasks in a nicer way, along the lines of a
+        TaskWindow so it should only take a percentage of processor time. Never
+        sucking up extra time.
+</UL><TR  VALIGN=TOP><TD>0.17 nov17<TD><UL>
+	<LI>Added beginnings of SymbolsPane window.
+	<LI>Pane windows are getting there. Solved problem with WIMP forcing
+        position of windows after Opening. Still a problem with first opening.
+	<LI>Support for HotKeys.
+</UL><TR  VALIGN=TOP><TD>0.18 nov20<TD><UL>
+	<LI>Implemented search for Symbols Finder.
+	<LI>Added Notepad window.
+	<LI>Nicifed detection for reopening menu when Adjust is used for selection.
+	<LI>Object dragging primitive support.
+	<LI>Added Ctrl key reading for Adjuster icons.
+</UL><TR  VALIGN=TOP><TD>0.19 nov22<TD><UL>
+	<LI>Nicified Menu definitions.
+	<LI>Spawned IconBar from various places to form one lump of source code.
+	<LI>Corrected bug in Mode change code.
+	<LI>The whole Error business has been reworked. Now use Raise* macros
+	<LI>Object centering in Galaxy window, if you drop an object within it.
+</UL><TR  VALIGN=TOP><TD>0.20 nov26<TD><UL>
+	<LI>Reorganized Register usage so retrieved a premanently sidelined reg.
+	Yippee.
+	<LI>Ventured into the world of 256 colours. Uglyness greeted me from all
+        corners. Should be ok now.
+	<LI>Siphoned off ObjectInfo source module.
+	<LI>Attempt at silly logo... Well its better than the previous one.
+	<LI>Silly logo now reached Info window. This has blown up to medical
+        proportions. Lets hope it does not spread.
+	<LI>It almost killed me, but !Sprites22 added. Also sm!astrophel icons.
+	<LI>Added Mode20 sprites to main sprite file. So icons less raggard when
+        magnified in Galaxy window.
+</UL><TR  VALIGN=TOP><TD>0.21 nov30<TD><UL>
+	<LI>Message_PaletteChange updates internals, also redraws appropriate
+	windows.
+	<LI>Pane windows now work perfectly. At last. Phew  (Actually no... drat)
+	<LI>After a bit of battling have a specific Pinboard icon for Galaxy window.
+	<LI>Standard ScrollRequest handler.Used on Galaxy to stop scrolling flicker.
+	<LI>icon_writeName checks on CaretPosition, ensuring its within boundary.
+        Also only redraws, etc if there is a difference in the string.
+	<LI>Symbols shows selected object.
+	<LI>Added Creation Efficiency entry in Intro.
+	<LI>Galaxy Magnifier improved so last object under pointer stays in centre
+        of displayed section of Galaxy window.
+	<LI>Due to minimum size of Galaxy window, at high magnifications an illegal
+        border was left. This caused problems for galaxy_nearestObject,
+        galaxy_redraw. Ok now.
+	<LI>Due to annoyance factor, "Astronomical Object" window opens Behind
+        main Galaxy window. Rather than right in front...
+	<LI>Added grey underneath to Window_Intro shape, so get a better idea of
+        what is going on. Added Alter replacement pointer over this area. Seems
+        to fit in well with its guidelines for use. Also reduced flicker. Yes!
+	<LI>Window_Intro shape. Stopped inconvenience of clicking over the sim.
+        window title. This caused a graphic prob, and pointer jump. Not too
+        pretty.
+</UL><TR  VALIGN=TOP><TD>0.22 dec03<TD><UL>
+	<LI>Intro window saving/default/load choices implemented.
+	<LI>Changed Intro shape redraw slightly.
+	<LI>Catch up a bit with user documentation.
+	<LI>Started work on !Manual application, specifically for Astrophel.
+</UL><TR  VALIGN=TOP><TD>0.23 dec07<TD><UL>
+	<LI>Sliders now allow no y movement while dragging bar. Same as windows.
+	<LI>Intro Creation writeable ignored type values.
+	<LI>Changed up to fast Division routine listed by Graeme Williams. Pretty
+        useful as this is used a lot in Galaxy redraw...
+	<LI>Selected object within Galaxy window flashes, so its easier to spot.
+	<LI>Objects can also be dropped over the GalaxyPane.
+	<LI>Solved annonying problem of Symbols_Finder. Wrong string terminator
+        from Template definition. Aaargh
+	<LI>System of grid lines drawn on Galaxy window. Option to switch them
+        on and off. Need colour window though...
+	<LI>Added little copyright message at bottom of Intro window. Closes after
+        20 seconds.
+	<LI>Changed capatilization in window titles.
+	<LI>One of the Magnifier Ctrl- adjuster values wrong ve.
+</UL><TR  VALIGN=TOP><TD>0.24 dec09<TD><UL>
+	<LI>Allow Grid line colour to be changed.
+	<LI>Added simple Error Handler. So you can continue after an error.
+	<LI>Grid lines disappeared at high magnification. Ok now. Don't draw along
+        borders now aswell.
+	<LI>If Astrophel runs out of memory prompts user to set more, before
+        carrying on. Very flaky at moment...
+	<LI>Position & size of Copyright window relative to parent Intro window
+        calculated from actual window data, rather than constants.
+</UL><TR  VALIGN=TOP><TD COLSPAN=2>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font color=#5A63AD>
+--1994----1994----1994----1994----1994----1994----1994----1994----1994--</font></TABLE>
+<TR  VALIGN=TOP><TD>0.25 mar23<TD><UL>
+	<LI>Slight bug fix in messageReceive. Was crashing if replying message
+	received while creating galaxy.
+</UL><TR  VALIGN=TOP><TD>0.26 apr26<TD><UL>
+	<LI>Slightly updated request for extra memory, so it will quit in
+	response to system request.
+	<LI>Taking over of ErrorHandler now system friendly.
+</UL><TR  VALIGN=TOP><TD>0.27 aug12<TD><UL>
+	<LI>Makefile reworked.
+	<LI>Copyright message integrated within Intro window defn, so only one
+        window which shrinks so smoother/cheaper.
+	<LI>System window opens in a more convenient position. Reacts to object
+        dropped on Astrophel iconbar icon. Reduced in size.
+	<LI>Attempts to use current modes relevant SpritesXX file before default.
+	<LI>Intro window GalaxyShape is now a sprite rather than blank background.
+</TABLE>
+
+<P>
+<TABLE BORDER=0 WIDTH=100% BACKGROUND="../../mesh.gif">
+<TR  VALIGN=TOP>
+<TD ALIGN=LEFT>
+<a href="http://www.dgjones.info/">http://www.dgjones.info/</a>
+<TD ALIGN=RIGHT>
+<a href="mailto:david_jones@dgjones.info">david_jones@dgjones.info</a>
+</TABLE>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</HTML>

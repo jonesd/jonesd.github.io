@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<title>Profiler Package</title>
+</head>
+
+<body background="background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Profiler Package</font>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD>
+<a href="Svengali.htm"><img src="MiniBlue.gif" alt="Svengali" border=0></a>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<a href="ProfilerPackage.htm">
+<img src="link_ProfilerPackage.gif" alt="Profiler Package" border=0></a>
+<TR><TD>
+<img src="link_Blank.gif" border=0></a>
+<TR><TD>
+<img src="link_Blank2.gif" border=0></a>
+<TR><TD>
+<a href="mailto:svengali@dgjones.info">
+<img src="link_DavidJones.gif" alt="Contact David Jones" border=0></a>
+</TABLE>
+</TABLE>
+</TABLE>
+
+<p>The Profiler package is a Dolphin package containing one of
+the <a
+href="Svengali.htm">Svengali</a>
+tools. It provides a flexible environment for applying a variety of profilers to executing code and then viewing and analysing the results.</p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Installation</font>
+</TABLE>
+
+<p>You must first ensure that the base Svengali <a href="Svengali.htm#install">installation</a> has been successfully completed.
+
+<p>To load the profiler into Dolphin open the <i>Profiler.pac</i> package from
+within the Package Browser. </p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Running</font>
+</TABLE>
+
+<p>The profiler has two separate phases; <i>profiling</i> and
+<i>visualisation</i>.</p>
+
+<p>In the <a href="NewProfileDialog.htm">New Profile</a> dialog
+you enter some Smalltalk code which is going to be profiled while it is
+executed. You also specify which of the available <a
+href="Profilers.htm">profilers</a> are to be used to record different aspects of the execution.</p>
+
+<p>Your code is then executed in its own process, with any chosen profilers recording its behaviour.</p>
+
+<p>Once profiling is complete a <a href="ProfileDirector.htm">Director</a>
+will open from where you can access all the collected data. A
+range of <a href="Browsers.htm">browsers</a> are available to
+visualise the data using a variety of filters, combinations and graphical techniques.</p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Strategies for Use</font>
+</TABLE>
+
+<p>Successful use of the Profiler package is unfortunately a bit involved at the moment. It is important to be aware of what each <a href="Profilers.htm">profiler</a> records, and how profilers can interact with each other.</p>
+
+<p>When you are first investigating some code, it is worth using all the profilers on the code. You can then browse the results from the <a href="Profilers.htm#activating">Activating profilers</a> and see if anything stands out. For example creating 10,000 Rectangles when you would have imagined background levels. If you wish to investigate the results of the <a href="Profilers.htm#sampling">Sampling profilers</a>, you should re-profile the same code with only a choice of the Sampling profilers. You should have compare the differences in the Sampling profilers results from the first and second runs to see how the Activating profilers have biased the results, for example the percentage use of the new selector in the <a href="MessageStatistics.htm">Message Statistics</a> view will be less on the second run.</p>
+
+<p>If you are trying to <i>understand the behaviour</i> of the code you should be able to use the tools to accomplish some drilling down through the data, and building up a picture of the major phases of the computation and how elements fit together. You may like to investigate the <a href="ExecutionTracerPackage.htm">Execution Tracer Package</a> for observing the low level message activations. Once this and the Profiler package join in a future release a number of interesting visualisations can be applied to improve on the rather feeble range presently available.</p>
+
+<p>For <i>space optimisations</i> use the <a href="NewStatistics.htm">New Statistics</a> to highlight unexpected levels of instance creation. This can also show you who requested the object creation. This is only a single level, so it is not very obvious how different sub-sections of your code make use of instantiations. You can use <a href="ProfileBrowser.htm#compression">compression</a> feature of the Profile Browser to indicate relative levels of instance creation during the codes execution.</p>
+
+<p>Instance creation is only one half of what is important, and that is the life time of an instance. To deal in these terms we have to broach the unfortunate question of instance death. Presently this can not be detected, the poor devils rot for ever in the corner of a room, but in some fashion this should thankfully be handled in the future.</p>
+
+<p>For <i>time optimisations</i> a number of tools are available, including some supplied with <a href="DolphinProfilingSupport.htm">Dolphin</a>. One of interest is the <a href="MessageTallyBrowser.htm">Message Tally Browser</a> which allows you to investigate the message calling tree.</p>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<html>
+<head>
+<title>Class Lock</title>
+</head><body>
+<a href="index.html">Index</a> - <a href="AllPackages.html">All Packages</a> - <a href="AllCategories.html">All Categories</a> - <a href="AllClasses.html">All Classes</a><br><h1>Class Lock</h1>
+<font color="green">To login to a club, you ask the server for a <a href="Lock.html">Lock</a>. If you send the right message to the <a href="Lock.html">Lock</a>, it will return you a new KeyMaster with the authority of the club. Each subclass of <a href="Lock.html">Lock</a> defines its own protocol for opening. <br><br>For each kind of <a href="Lock.html">Lock</a>, there is a corresponding kind of LockSmith which creates it. Each ClubManager has a LockSmith sub-document, and when you ask the server for a <a href="Lock.html">Lock</a> to that club, it asks the club`s LockSmith document Wrapper to create a newLock. The LockSmith then creates the corresponding kind of <a href="Lock.html">Lock</a>. It may also use information stored in the LockSmith document, such as a password or scramblerName.<br></font></p>Package: <a href="Package_Udanax-Gold.html">Udanax-Gold</a><br>All Superclasses: <a href="Object.html">Object</a> <a href="Heaper.html">Heaper</a> <br>Immediate Subclasses: <a href="BooLock.html">BooLock</a> <a href="ChallengeLock.html">ChallengeLock</a> <a href="MatchLock.html">MatchLock</a> <a href="MultiLock.html">MultiLock</a> <a href="WallLock.html">WallLock</a> <br>Protocols: <a href="Protocol_Object.html">Object</a><br>Categories: <a href="Category_Xanadu-Be-Locks.html">Xanadu-Be-Locks</a><br><hr><h2>Instance Methods</h3><a name="#actualHashForEqual"><h4><font color="blue">actualHashForEqual</font> </h4></a><blockquote><font color="green"><br></font></blockquote><a name="#create:with:"><h4><font color="blue">create:</font> loginID <font color="blue">with:</font> lockSmith </h4></a><blockquote><font color="green"><br></font><br>Overridden by: <a href="BooLock.html#create:with:">BooLock</a> <a href="MatchLock.html#create:with:">MatchLock</a> <a href="WallLock.html#create:with:">WallLock</a> </blockquote><a name="#fetchLoginClubID"><h4><font color="blue">fetchLoginClubID</font> </h4></a><blockquote><font color="green">The <a href="ID.html">ID</a> of the club whose authority you can get by opening this lock.<br></font></blockquote><a name="#isEqual:"><h4><font color="blue">isEqual:</font> other </h4></a><blockquote><font color="green"><br></font></blockquote><a name="#lockSmith"><h4><font color="blue">lockSmith</font> </h4></a><blockquote><font color="green">Essential. The LockSmith which made this <a href="Lock.html">Lock</a>.<br></font></blockquote><a name="#loginClubID"><h4><font color="blue">loginClubID</font> </h4></a><blockquote><font color="green"><br></font></blockquote><a name="#makeKeyMaster"><h4><font color="blue">makeKeyMaster</font> </h4></a><blockquote><font color="green">The lock is opened - make the right KeyMaster<br></font></blockquote><br><br><a href="index.html">Index</a> - <a href="AllPackages.html">All Packages</a> - <a href="AllCategories.html">All Categories</a> - <a href="AllClasses.html">All Classes</a><br></body>
+</html>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

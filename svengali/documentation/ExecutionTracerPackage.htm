@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<title>Execution Tracer Package</title>
+</head>
+
+<body background="background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Execution Tracer Package</font>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD>
+<a href="Svengali.htm"><img src="MiniBlue.gif" alt="Svengali" border=0></a>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<a href="ExecutionTracerPackage.htm">
+<img src="link_ExecutionTracerPackage.gif" alt="ExecutionTracer Package" border=0></a>
+<TR><TD>
+<img src="link_Blank.gif">
+<TR><TD>
+<img src="link_Blank2.gif" border=0></a>
+<TR><TD>
+<a href="mailto:svengali@dgjones.info">
+<img src="link_DavidJones.gif" alt="Contact David Jones" border=0></a>
+</TABLE>
+</TABLE>
+</TABLE>
+
+<p>The ExecutionTracer package is a member of the <a
+href="Svengali.htm">Svengali</a> tools and records all the non-optimised
+method activations occurring while evaluating a valuable.</p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Installation</font>
+</TABLE>
+
+<p>You must first ensure that the base Svengali <a href="Svengali.htm#install">installation</a> has been successfully completed.
+
+<p>To load the profiler open the <i>Execution Tracer</i> package from
+within the Package Browser. </p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Running</font>
+</TABLE>
+
+<p>The tracer has two separate phases; <i>tracing</i> and <i>visualisation</i>.
+
+<p><a href="ExecutionTracer.htm">Tracing</a> involves recording all the non-optimised method activations occurring while evaluating some code. This is commenced by evaluating:
+
+<pre>	Svengali current traceAndBrowse: [ ... ]</pre>
+
+<p>Where ... is replaced with the code you wish to trace. A rather lengthy example being:
+
+<pre>	Svengali current traceAndBrowse: [ClassBrowserShell show]</pre>
+
+<p>Once tracing is completed an <a href="ExecutionMural.htm">Execution Mural</a> browser will open to show you the collected results.
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

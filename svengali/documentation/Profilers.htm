@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<title>Profilers</title>
+</head>
+
+<body background="background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Profilers</font>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD>
+<a href="Svengali.htm"><img src="MiniBlue.gif" alt="Svengali" border=0></a>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<a href="ProfilerPackage.htm">
+<img src="link_ProfilerPackage.gif" alt="Profiler Package" border=0></a>
+<TR><TD>
+<a href="Profilers.htm">
+<img src="link_Profilers.gif" alt="Profilers" border=0></a>
+<TR><TD>
+<img src="link_Blank2.gif" border=0></a>
+<TR><TD>
+<a href="mailto:svengali@dgjones.info">
+<img src="link_DavidJones.gif" alt="Contact David Jones" border=0></a>
+</TABLE>
+</TABLE>
+</TABLE>
+
+<p>A Profiler records aspects of the profiled process and its environment. Profilers are split into two types; <i>sampling</i> and <i>activating</i>.</p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD><a name="sampling">Sampling Profilers</a></font>
+</TABLE>
+
+<p>A Sampling Profiler is one which can only examine and record the state of the world during short intervals of time separated by roughly equivalent periods of 'sleeping'. The profilers operate in a separate process to the profiled one, and so other than temporarily suspending the profiled process while gathering data, they will not interfere with it.</p>
+
+<p>Sampling profilers have a constant low processing overhead, so profiling a real application for minutes at a time is possible. Their disadvantages are the relative lack of information, and you will not see the same results from each run of an application, though it will be statistically similar with sufficient samples.</p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD><a name="activating">Activating Profiler</a></font>
+</TABLE>
+
+<p>An Activating Profiler is one which has wound itself into the system so that when a particular action takes place, such as creating a new object, the profiler will be informed at that point.</P>
+
+<p>Activating profilers overhead is relative to the number of times it is called, so for every method entry that could be tens of thousands a second. These profilers are activated within the flow of the profiled process and so can upset the results, and especially the timings of other sampling profilers. Running the same code should produce the same set of results.</p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Processes</font>
+</TABLE>
+
+<p>The profiling system is currently set up to profile the single process forked to evaluate the code supplied in the <a href="NewProfileDialog.htm">New Profile</a> dialog. Any processes which this process may in turn fork will not be recorded by the profilers. It is expected that this limitation will be lifted in future implementations.</p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>List of Profilers</font>
+</TABLE>
+
+<p>There is currently only a small range of profilers. There are plans for a number of others, and additionally once the internals have been reworked, documentation on writing your own will be put together.</p>
+
+<TABLE BORDER WIDTH=100%>
+<TR>
+<TH BACKGROUND="mesh.gif"><font color=#5A63AD>Profiler</font>
+<TH BACKGROUND="mesh.gif"><font color=#5A63AD>Type</font>
+<TH BACKGROUND="mesh.gif"><font color=#5A63AD>Records</font>
+
+<TR>
+<TD><a href="EventProfiler.htm">Event Profiler</a>
+<TD>Activating
+<TD>All triggered events, and their registered event handlers
+
+<TR>
+<TD><a href="NewProfiler.htm">New Profiler</a>
+<TD>Activating
+<TD>Creation of new instances
+
+<TR>
+<TD><a href="WindowDispatchProfiler.htm">Window Dispatch Profiler</a>
+<TD>Activating
+<TD>Dispatching of Windows messages to Dolphin views
+
+<TR>
+<TD><a href="MethodStackProfiler.htm">Method Stack Profiler</a>
+<TD>Sampling
+<TD>Details of the message stack
+</TABLE>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

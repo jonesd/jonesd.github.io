@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+<TITLE>ProfileBrowser</TITLE>
+</HEAD>
+
+<body background="background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Profile Browser</font>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD>
+<a href="Svengali.htm"><img src="MiniBlue.gif" alt="Svengali" border=0></a>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<a href="ProfilerPackage.htm">
+<img src="link_ProfilerPackage.gif" alt="Profiler Package" border=0></a>
+<TR><TD>
+<a href="Browsers.htm">
+<img src="link_Browsers.gif" alt="Browsers" border=0></a>
+<TR><TD>
+<img src="link_Blank2.gif" border=0></a>
+<TR><TD>
+<a href="mailto:svengali@dgjones.info">
+<img src="link_DavidJones.gif" alt="Contact David Jones" border=0></a>
+</TABLE>
+</TABLE>
+</TABLE>
+
+<P>The Profile Browser provides a view onto all the raw data collected during profiling. It can be useful to reveal interactions between strands, marvel at the shear amount of computation that goes, and use the compression feature to see the different stages of the profiled code.</P>
+
+<P ALIGN="CENTER"><IMG SRC="ProfileBrowser.gif">
+
+<P>The Profile Browser can be opened from the Profile menu of the <A HREF="ProfileDirector.htm">Director</A>. Any number can be opened and they are usually reactive.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Structure</font>
+</TABLE>
+
+<P>The view is split into equally spaced columns. Each column contains all the data collected during profiling within a single iteration of sampling. The column header reports the iteration number and the status bar informs you of the iterations percentage position of all collected iterations and microsecond duration of the sample, for the iteration under the mouse.</P>
+
+<P>Each column is split by the profilers which collected the data. The grey title bars running horizontally indicate which one of the profilers the results were collected from. Each result is displayed as a line combing a profiler specific description and identifying icon. Results are ordered from the first to be collected by the profiler during that iteration. </P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Functions</font>
+</TABLE>
+
+<p>The view supports a number of features to help you navigate the mass of data. The current selection is shown, and can be changed with the cursor keys, by directly selecting another entry and by the <i>Iteration/Go to</i> command.</P>
+
+<p>A profilers results can be collapsed to a single line, or expanded back, by toggling the title bar.</P>
+
+<P ALIGN="CENTER"><a name="compression"><IMG SRC="ProfileBrowserCompressed.gif"></a>
+
+<p>The width of a single iteration can also be changed with the <i>Iteration/Column Width</i> command. At very small values, less than the width of the entries distinguishing icon, great swath of iterations become viewable at one time, the <i>compression</i> feature. </P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Opening Browsers</font>
+</TABLE>
+
+<P>Most profilers have a number of specialist <a href="Browsers.htm#strand">browsers</a> which can provide a more coherent view of their collected data than the simple iteration display of the Profile Browser. These may be chosen from the <i>Strand</i> menu, and each profiler row has its own context menu of relevant browsers.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Definitions of Strand Results</font>
+</TABLE>
+
+<P>A result describes a single entry collected by the profiler. The format of the results is described below</P>
+
+<TABLE BORDER WIDTH=100%>
+<TR>
+<TH background="mesh.gif"><font color=#5A63AD>Strand</font>
+<TH background="mesh.gif"><font color=#5A63AD>Icon</font>
+<TH background="mesh.gif"><font color=#5A63AD>Text</font>
+
+<TR>
+<TD><a href="EventProfiler.htm">Event</a>
+<TD>Class of object which triggered or receiver event.
+<TD>Name of the event, followed by either &lt;- if the event is being sent, or -&gt; if it is being received, by the following object.
+
+<TR>
+<TD><a href="MethodStackProfiler.htm">Method Stack</a>
+<TD>Method on stack
+<TD><P>[] if within a block, followed by the method name on the stack.
+
+<TR>
+<TD><a href="NewProfiler.htm">New</a>
+<TD>Class of the created object
+<TD>Indexed size if the created object's class is variable, followed by the class of the object.
+
+<TR>
+<TD><a href="WindowDispatchProfiler.htm">Window Dispatch</a>
+<TD>Class of view receiving the message
+<TD>Number, or name if entry recorded in View's MessageMap, of the message, followed by the class of the receiving view.
+
+</TABLE>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</HTML>

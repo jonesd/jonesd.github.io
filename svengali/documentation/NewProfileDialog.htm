@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<title>New Profile Dialog</title>
+</head>
+
+<body background="background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>New Profile Dialog</font>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD>
+<a href="Svengali.htm"><img src="MiniBlue.gif" alt="Svengali" border=0></a>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<a href="ProfilerPackage.htm">
+<img src="link_ProfilerPackage.gif" alt="Profiler Package" border=0></a>
+<TR><TD>
+<img src="link_Blank.gif">
+<TR><TD>
+<img src="link_Blank2.gif" border=0></a>
+<TR><TD>
+<a href="mailto:svengali@dgjones.info">
+<img src="link_DavidJones.gif" alt="Contact David Jones" border=0></a>
+</TABLE>
+</TABLE>
+</TABLE>
+
+<p>The New Profile dialog lets you specify the code whose evaluation is going to be profiled, and which aspects of its behaviour are to be recorded.</p>
+
+<p align="center"><img src="NewProfile.gif" width="520"
+height="395"></p>
+
+<p>The dialog can be opened from a number of the Profiler windows, and also by evaluating the following from the Transcript:</p>
+
+<pre>	Svengali current newProfile</pre>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Structure</font>
+</TABLE>
+
+<p>The pair of List views allows you to select which of the <a
+href="Profilers.htm">profilers</a> are to be used to collect data
+on the profiled code. You may choose any number, but choosing more than one can cause interferences in the timing recordings.</p>
+
+<p>The following row of controls provides some fine tuning over the profiling. <i>Delay</i> is the number of milliseconds between each sampling. In practice you will often find a minimum of six - to ten milliseconds under Windows. Enabling <i>Feedback</i> will write the number of samplings to the top left of the screen during profiling. It is better to run with this left off. The <i>Sample Boost</i> is a cheat to slow down the VM so that less activity rushes by between samples. There is no reason engaging this if no sampling profilers are being used, or your machine is already slow enough...</p>
+
+<p>The code to be evaluated should be typed into the middle text area. It is evaluated on pressing OK. Any compilation problems will be reported back to the status bar below, in the same way as the Dolphin browsers.</p>
+
+<p>Once you are happy with the details click OK to commence the
+profiling. During the process you will find that Dolphin is
+unresponsive, and will effectively lock-up until the process has
+completed.</p>
+
+<p>NT4.0 users may find it reassuring to have a minimised task
+manager to reassure you that something is actually happening :-)</p>
+
+<p>On completion a <a href="ProfileDirector.htm">Profile Director</a>
+will be opened, from where you can <a href="Browsers.htm">browse</a> the results of the
+profile.</p>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

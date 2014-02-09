@@ -1,0 +1,316 @@
+<HTML>
+
+<HEAD>
+<TITLE>Over Filer</TITLE>
+</HEAD>
+
+<BODY BACKGROUND="../background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Over Filer</font>
+</TABLE>
+
+<P>0.07 (30 Nov 1994)  David G Jones (Public Domain)</P>
+
+<P>This module adds a number of features to FileCore based filer icons. These integrate the icon with the desktop object drag system better, and add a better read out of the current drive state.</P>
+
+<P ALIGN=CENTER><IMG SRC="OverFiler.gif"></P>
+
+<UL>
+<LI>Allows files to be saved to icon from an application
+<LI>Copy/move files to drive by dragging from a directory display
+<LI>Icon can reflect state of drive, whether disc is in drive or not
+<LI>Displays name of disc in drive
+</UL>
+
+<P>Otherwise the icon will act entirely normally.</P>
+
+<P>Before OverFiler works it requires a little setting up, which should be a once only job.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>FileCore</font></TABLE>
+
+<P>OverFiler will presently only work with FileCore based filing systems. The ADFS, RamFS and SCSIFS all belong to this category. If you are unsure of a systems membership then from the CLI:</P>
+
+<PRE>        *Modules
+</pre>
+<P>Which will result in a huge list of modules. You should see a series of entries:</P>
+
+<PRE> 26 038D026C 01819E44  FileCore%SCSI
+    038D026C 01803EA4  FileCore%ADFS
+    038D026C 00000000  FileCore%Base
+</PRE>
+<P>This shows that on my machine OverFiler will work with the SCSI and ADFS systems ok. If you wish the OverFiler spell to touch on a non-FileCore based filing system, then well you have the source code...</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Getting Started</font></TABLE>
+<P>If you start the application you will notice that nothing happens. OverFiler needs to be informed of your systems setup before it can work its charms.</P>
+
+<P>Why can't this be done automatically? Well it can be, but this is more flexible approach and should only be a one off excercise.</P>
+
+<P>You have to inform OverFiler of each drive which you wish it to take over and which filing system it belongs to. Also you will have to inform it of the corresponding filer icon on the icon bar. There are two ways of finding out the icon number.</P>
+
+<UL>
+<LI>Use an application which reports on the current pointer context. There are thousands of these about, they make a useful first application. They usually tell you the icon number under the pointer, so collect the icon numbers for all the drives which you wish to inform OverFiler of. I can whole heartedly recommend Gambara if you are looking for such an application.
+
+<LI>Secondly, guess it. Basically the Switcher icon is given the icon number 0. Then ADFS :0 gets icon 1, followed by any other ADFS drives. Thereafter the system will move onto the other filing systems, with the icon number increasing with each drive. Well I think so.
+</UL>
+
+<P>However you come across the icon number you should find they are consistent between Desktop startups, so the icon hunt should only need to be done once. If you incorrectly calculate an icon number then you might find unexpected icon bar icons disappearing, or the newly created icon will not respond to mouse clicks. If everything goes wrong then you might just have to reboot the Desktop.</P>
+
+<P>Adding a drive is accomplished by:</P>
+
+<PRE>        *OverFiler_Add <drive> <fsname> <icon> .....
+</PRE>
+<P>The drive is a number from 0 - 7. Anything below 4 is considered a floppy drive, the rest hard drives. The FS name is "ADFS", "SCSI", "Ram" etc. The icon number you should have.</P>
+
+<P>On my system if I use:</P>
+
+<PRE>        *OverFiler_Add 0 ADFS 1
+</PRE>
+<P>The ADFS :0 drive splutters into action. If there is a disc in the drive the n the icon name is replaced with the disc's name. The icon sprite can also reflect the drive state. Otherwise the icon should react normally to mouse clicks, help messages, etc.</P>
+
+<P>So the idea is that you use a series of OverFiler_Add commands for each drive you wish to be taken over. This is basically it though there are some refinements to the OverFiler_Add command which make life more interesting. Once you have this worked out then the commands can be put in your !Boot file or will be adopted in the next generated desktop boot file.</P>
+
+
+<H3><font color=#5A63AD>OverFiler_Add</font></H3>
+<P>As previously outlined this CLI command will allow OverFiler to take control over a FileCore filer icon.</P>
+
+<H4>Syntax</H4>
+<PRE>*OverFiler_Add <drive> <FSname> <iconnumber> [-Directory] [-Poll] [-priority <priority>] [-sprite <name>] [-Click]</PRE>
+
+<H4>Required arguments</H4>
+<TABLE>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD><B>drive</B><TD>The number of the drive 0 - 7.
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD><B>FSname</B><TD>Filing system name. Examples "ADFS", "SCSI", "Ram". Case sensitive.
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD><B>iconnumber</B><TD>Associated filer icon number on icon bar.
+</TABLE>
+
+<H4>Additions arguments</H4>
+<TABLE>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD><B>priority</B><TD>The order for placement of icons on the icon bar is controlled by a priority value. OverFiler will naturally set this to either ADFS floppy/hard discs depending on the drive number. You may give a specific value though. The standard system priorities are: (PRM 3:98)
+
+<PRE>	ADFS hard discs       &70000000
+	ADFS floppy discs     &60000000
+	'App' icon            &50000000
+	RAM disc              &40000000
+	Ethernet              &30000000
+	Econet                &20000000
+	Other filing systems  &10000000
+	Printer drivers       &0F000000
+	TinyDir               &0E000000
+</PRE>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TH>sprite<TD>There are three possibilities here.
+<UL>
+<LI>If you supply a valid sprite name then the icon will always take that appearance.
+<LI>If you do not include the -sprite option then we can have some fun. The name of the sprite is built up from
+<P><PRE>< FSname >< drive >i|o</PRE>
+<P>The tail i or o characters allow different sprites for when a disc is in a drive or the drive is empty. Both sprites should be defined in the same mode and have the same dimensions.
+Supplied should be the two sprites 'adfs0o' and 'adfs0i'. The out format was taken, I think, from a complete set of icons by Ian Waugh, the in version a bodged attempt by myself to match it.</P>
+</UL>
+<P>If there is an error in any of the above two ways then the system will default to showing 'floppydisc' and 'harddisc' icons depending on the drive type. These are built into RiscOS so should always be available.</P>
+
+<P>All sprites have to be within the Wimp Sprite pool. Use *IconSprites <filename> to load a sprite file into this memory.</P>
+</TABLE>
+
+<H4>Additional switches</H4>
+<TABLE>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TH>poll<TD>This is quite a nice option for floppy based systems. Every second OverFiler will test the state of the drive. If a disc is inserted or removed then the icon will change to reflect this. The sprite might change and the text will display the disc's name. Note that there might be a slight pause when a disc is inserted while the system reads in the discs details.
+<P>There is one slight inconvenience with this. If a drive is setup to -poll but initially the drive is empty then you may hear pulsing sounds every second until a disc has been inserted. Thereafter there is no indication that the drive is being tested, even when it is empty. If some one knows a way around this then please tell.</P>
+<P>The poll system relies on a drive being able to inform RiscOS whether it is empty or not. My old A310 does this ok, but as for later models I don't know. The little TestEmpty BASIC utility within the !OverFiler directory will attempt to check if a certain drive supports Empty detection or not.</P>
+
+<TR VALIGN=TOP ALIGN=LEFT>
+<TH>click<TD>This is used for 'floppy' style drives that can not report whether the drive is empty or not. See the end of the -Poll entry above. Whenever you click on the icon the disk in the drive is examined and the icon is updated to reflect the current state.
+
+<TR VALIGN=TOP ALIGN=LEFT>
+<TH>directory<TD>When the drive is first added a directory display will be opened on the drives contents. If the -poll switch is on then each time a new disc is inserted the appropriate directory display will be opened which can be quite useful.
+</TABLE>
+
+<H3><font color=#5A63AD>OverFiler_Remove</font></H3>
+<P>This CLI command will inform OverFiler to ignore a specific drive. As a result its icon will be deleted from the icon bar. In its place the original icon associated with the filer should be re-created.</P>
+
+<H4>Syntax</H4>
+<pre>
+*OverFiler_Remove <drive> <FSname>
+</PRE>
+
+<H4>Required arguments</H4>
+<TABLE>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TH>drive<TD>The number of the drive 0 - 7.
+<TR VALIGN=TOP ALIGN=LEFT>
+<TH>FSname<TD>Filing system name. Examples "ADFS", "SCSI", "Ram". Case sensitive.
+</TABLE>
+
+<P>The drive and FSname should be the exactly the same as those used during the associated OverFiler_Add command.</P>
+
+<P>You will be informed if no matching drive could be found.</P>
+
+<P>If you have set up more than one drive with the same drive/FSname combination then the most recently added entry will be removed.</P>
+
+
+<H3><font color=#5A63AD>OverFiler_Drives</font></H3>
+<P>This CLI command will list all the drives which OverFiler currently knows about. Useful really to keep a track on what is happening, or if you or having problems removing an entry.</P>
+
+<H4>Syntax</H4>
+<pre>
+*OverFiler_Drives
+</pre>
+
+<P>An example of its result is:</P>
+<pre>
+ D FS   Icon    ......MECFRASHPD
+--------------------------------
++0 Ram  7 7     0000001000001000
+-1 ADFS 1 6     0000001010001001
+ 0 ADFS 1 1     0000001000000010
+ 4 SCSI 2 2     0000001000001100
+</Pre>
+
+<P>The components of each entry:</P>
+<UL>
+<LI>First character displays any executive actions. + means it is waiting to be added. - waiting to be removed. This delay is introduced as we have to move from a CLI instigated command back to the desktop to modify icons, etc.
+<LI>Drive number
+<LI>Filing system name
+<LI>Icon number as supplied in OverFiler_Add. Same as original filer owner.
+<LI>Current icon number as privately used.
+<LI>Block of associated flags. They correspond to current values for:
+	<TABLE>
+	<TR><TH>Directory<TD>Reflect -Directory switch
+	<TR><TH>Poll<TD>Reflect -Poll switch
+	<TR><TH>Harddisc<TD>If OverFiler feels drive is a Harddisc
+	<TR><TH>Sprite<TD>Could not find sprite so reverting to default values
+	<TR><TH>Adding<TD>Waiting to add drive from WIMP
+	<TR><TH>Removing<TD>Waiting to remove drive from WIMP
+	<TR><TH>Full process
+	<TR><TH>Corrupt disc<TD>Disc in drive is corrupt
+	<TR><TH>Empty drive<TD>Drive is currently empty same Mode
+	<TR><TH>final Remove<TD>Original icon has been recreated, now forget about drive
+	<TR><TH>Priority<TD>Reflect -Priority arguments inclusion
+	<TR><TH>spr Overload<TD>Reflect -Sprite arguments inclusion
+	<TR><TH>Click<TD>Reflect -Click switch
+	</TABLE>
+</UL>
+
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Object dragging</font></TABLE>
+<P>OverFiler icons are also better integrated within the object dragging facilities of the desktop.</P>
+
+<P>If you drag an icon from a 'Save as' dialogue box to an OverFiler icon then the file will be saved in the root directory of that drive.</P>
+
+<P>If you drag a file or a number of files from a directory viewer to an OverFiler icon then the files will be copied to the root directory of that drive. If the Shift key is pressed then the files will be moved. The options for the relevant action are taken from the current set defined within the Filer.Options menu.</P>
+
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>My set up</font></TABLE>
+<P>Ok probably not much use to you but it shows a range of the abilities:</P>
+
+<pre>*overfiler_add 0 ADFS 1 -poll -directory
+*overfiler_add 4 SCSI 2
+*overfiler_add 0 Ram  7 -sprite ramfs -priority &40000000
+</PRE>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Releases</font></TABLE>
+
+<P>Ancestors: ADFSicon & DiskLight</P>
+
+<TABLE>
+<TR VALIGN=TOP>
+<TD>0.01 (30 Sep 1994)<TD><UL>
+	<LI>First release into the big world</UL>
+<TR VALIGN=TOP>
+<TD>0.02 (02 Oct 1994)<TD><UL>
+	<LI>Analyses mode change to see if icon update is needed
+	<LI>Will not open directory on mode change if -directory...</UL>
+<TR VALIGN=TOP>
+<TD>0.03 (08 Oct 1994)<TD><UL>
+	<LI>Added !OverFiler application sprite
+	<LI>Checks to see if original Filer task closes down
+	<LI>OverFiler_Remove will recreate original filer icon
+	<LI>Compatibility with Desktop save protocol</UL>
+<TR VALIGN=TOP>
+<TD>0.04 (09 Oct 1994)<TD><UL>
+	<LI>Added -Click for floppy drives with no Empty detection
+	<LI>Attempt to recreate icons on Quit'ng
+	<LI>Will detect illegal icons supplied in OverFiler_Add
+	<LI>Suitable for placing in ROM...
+	<LI>Added simple TestEmpty utility in application directory</UL>
+<TR VALIGN=TOP>
+<TD>0.05 (15 Oct 1994)<TD><UL>
+	<LI>Improved -Click support</UL>
+<TR VALIGN=TOP>
+<TD>0.06 (17 Oct 1994)<TD><UL>
+	<LI>Now save files from Pinboard
+	<LI>Cure'd occasional filename corruption on application saves</UL>
+<TR VALIGN=TOP>
+<TD>0.07 (30 Nov 1994)<TD><UL>
+	<LI>Will not check disc if MENU pressed while using -Click
+	<LI>Updates display if disks name is changed
+	<LI>Original icons should be recreated in correct order now
+	<LI>Remove drive icon if original filer closes down</UL>
+</TABLE>
+
+<P>Thanks to Kade Hansson for idea and code</P>
+                   
+<P>The customary set of ideas for future outlandish additions:</P>
+<UL>
+<LI>Improve detection of empty drive. Currently Wimp_PollIdle with fs_MiscOp Poll. Is it possible?
+<LI>Fade icon if it has been claimed by other wimp task, ie during format.
+<LI>Detect if a filer is restarted with new Task handle, etc...
+<LI>Nice WIMP based configuration system to automate whole process and ease the whole process.
+<LI>Have a OverFiler$Choices file which is used to load from. Allow easy survival of wimp restart. Reduce module size as would not have to read a cli command.
+<LI>Better behaviour on wimp Exit and Filer tasks closing down.
+<LI>Nice integration of -Click rather than the bodge at the moment.
+<LI>Detect disk dismount, especially for -Click drives.
+<LI>Totally rewrite !Help file aiming it straight at particular machines and FileCore modules. This would aid normal user in starting up.
+</UL>
+
+<P>Saying all of that I am happy with OverFiler at the moment and so cannot promise much more work on it rather than little big fixes. If you implement these or any other features then I will include them in any future releases of OverFiler.</P>
+
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Thanks to</font></TABLE>
+
+<P>Many thanks to the following for commenting and providing ideas on this application.</P>
+
+<P>Benjamin Bommer, Kade Hansson, Sam Kington and David Seery.</P>
+
+
+<P>My thanks to the authors of the following programs used during the creation of OverFiler.</P>
+
+<TABLE>
+<TR><TD>StrongEd<TD>Guttorm Vik
+<TR><TD>WimpMon<TD>Tom Hughes
+<TR><TD>SparkFS<TD>David Pilling
+</TABLE>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Public Domain</font></TABLE>
+<P>This software is in the Public Domain so you may do whatever you like with it. The source code should be included so if you feel the urge to change anything then off you go. If you do make a change which might be useful to others then why not send a copy to me and I will include it in the next release.</P>
+
+
+<P>If you have any comments, suggestions then please get in contact. Please include the version number of the application. If you wish to get the latest version of this or another other pieces of my work then send a 800k disc and I will return it in the following post.</P>
+
+
+<P>
+<TABLE BORDER=0 WIDTH=100% BACKGROUND="../../mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<a href="http://www.dgjones.info/">http://www.dgjones.info/</a>
+<TD ALIGN=RIGHT>
+<a href="mailto:david_jones@dgjones.info">david_jones@dgjones.info</a>
+</TABLE>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</HTML>

@@ -1,0 +1,152 @@
+body {
+    background-color: #FFFFFF;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.main {
+    width: 640px; 
+    margin-left: auto; 
+    margin-right: auto;
+    padding-top: 8px;
+    border-top: thick solid black;
+}
+
+/* Title Bar */
+
+.titlebar {
+    margin-bottom: 10px;
+    border-bottom: thin dotted;
+}
+
+.titlebar-site {
+}
+
+.titlebar-site a {
+    vertical-align: top;
+    font-size: 1.333em;
+    font-variant: small-caps;
+    color: black !important;
+}
+
+.titlebar-menu {
+    margin-top: 4px;
+    float: right;
+}
+
+/* Copyright */
+.copyright {
+    clear: both;
+    margin-top: 50px;
+    padding-top: -5px;
+    border-top: thin dotted lightgray;
+}
+.copyright p {
+    text-align: center;
+    color: lightgray;
+    font-size: smaller;
+}
+
+/* List */
+
+ul.no-list-style {
+list-style-type: none;
+padding-left: 0px;
+margin-left: 0px;
+}
+
+/* Links */
+
+a {
+    text-decoration: none;
+    color: dimgray;
+}
+
+a:hover {
+    color: black;
+}
+
+.titlebar-menu a {
+    text-decoration: none;
+    color: lightgray;
+}
+
+.titlebar-menu a:hover {
+    color: dimgray;
+}
+
+/* Navigation Sections */
+ul.pagination {
+    list-style: none;
+	margin: 0;
+	padding: 0;
+    text-align: center;
+}
+
+ul.pagination li {
+    list-style: none;
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+ul.pagination li.last {
+	margin-right: 0;
+}
+.activeSection {
+    color: black;
+}
+
+.disabledSection {
+    color: lightgray;
+}
+
+/* Blurb */
+.blurb-tall-badge {
+    float: left;
+    margin: 0.6em;
+}
+
+/*
+	Slides 
+*/
+
+.caption {
+ /*   float: left;*/
+ /*margin-top: -1.33em;*/
+}
+.location {
+  /*  float: right;*/
+   margin-top: -1.1em;
+}
+
+#slides .next, #slides .prev {
+	position:relative;
+	top: -250px;
+	left: -30px;
+	z-index: 101;
+
+   vertical-align: top;
+    font-size: 2em;
+}
+
+
+#slides .next {
+	left: 625px;
+}
+
+/*
+    FotoMoto
+*/
+
+
+.FotomotoSep2 { 
+            display:block !important; 
+} 
+.FotomotoECardButton { 
+        float:left !important; 
+} 
+.FotomotoBar { 
+        float:right !important; 
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<title>Method Stack Inspector</title>
+</head>
+
+<body background="background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Method Stack Inspector</font>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD>
+<a href="Svengali.htm"><img src="MiniBlue.gif" alt="Svengali" border=0></a>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<a href="ProfilerPackage.htm">
+<img src="link_ProfilerPackage.gif" alt="Profiler Package" border=0></a>
+<TR><TD>
+<a href="Browsers.htm">
+<img src="link_Browsers.gif" alt="Browsers" border=0></a>
+<TR><TD>
+<img src="link_Blank2.gif" border=0></a>
+<TR><TD>
+<a href="mailto:svengali@dgjones.info">
+<img src="link_DavidJones.gif" alt="Contact David Jones" border=0></a>
+</TABLE>
+</TABLE>
+</TABLE>
+
+<p>The Stack Inspector browser displays the contents of the stack for one sampling iteration as collected by the <a href="MethodStackProfiler.htm">Method Stack Profiler</a>.</P>
+
+<p align="center"><img src="MethodStackStrandInspector.gif">
+
+<p>The Method Stack can be opened from the Strand menu of the <a href="ProfileDirector.htm">Profile Director</a>. Any number can be opened and they are usually reactive.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Structure</font>
+</TABLE>
+
+<p>The upper list view displays all the frames from the profiled processes stack at the point of sampling. The first entry will encode the code you typed in to be profiled from the <a href="NewProfileDialog.htm">New Profile</a> dialog. The second line displays the method it is currently calling, and so on. The format is very similar to that used by the Debugger, except the first frame in the stack is at the top of the list, rather than the bottom in the Debugger.</p>
+
+<p>Selecting an entry from the list will show the source for that method in the lower panel, with the message send executing at the point of sampling highlighted.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Navigating</font>
+</TABLE>
+
+<p>The iteration whose stack is being shown can be changed from the <i>Message</i> menu. The current iteration is shown in the title bar.</P>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

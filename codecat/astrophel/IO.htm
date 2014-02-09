@@ -1,0 +1,72 @@
+<HTML>
+
+<HEAD>
+<TITLE>IO - Interface Objects</TITLE>
+</HEAD>
+
+<BODY BACKGROUND="../background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>IO: Interface Objects</font>
+</TABLE>
+
+<P>The user interface of Acorns 'Desktop' has changed in a number of ways over the years, since the first encounter with Arthur. This has certainly proved a boom to the benefit of the user. Unfortunately the burden has been borne by developers, with a gulf opening up between the desired interface objects, such as sliders, etc and the support through the inadequate Icon element. The RiscOS_Lib has helped to rectify this to a degree, and the future support in this area will surely highten this to reasonable levels. Still I feel disembodied by the whole experience.</P>
+
+<P>One thing that hasn't changed with the progress (and demise) of the Archimedes is the necrophilous interest in the wheel. Especially from Leonardos angle. My personal stab at this target is documented below.</P>
+
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Overview</font></TABLE>
+
+<P>This is based on systems such as NeXTstep, and other examples from the burdening showcase of Object Oriented window systems. Consider each user separatable object within the interface as a specific Interface Object IO. These can be linked together, so the user actions on one can be passed onto related objects. This happens automatically, only informing the client application if anything criticial is changed. Therefore once the interface is set up, the application only has to worry only about any changes to its internal model.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>IO structure</font></TABLE>
+
+<P>The internal structure of a IO is composed from two areas of data. The header is a necessary component of each type of IO. It has to follow precisely this definition. The tail section is IO specific, and so can take any form.</P>
+
+<PRE>
+	Header		0  Flags
+			4  pList of Connections   or 0
+</PRE>
+
+<P>Flags is basically an IO specific word for storing flag details.
+List of connections is a pointer to a block. A value of 0 shows that there are no objects connected. The contents of this are:</P>
+
+<PRE>
+	Connection List	 0  Size of list
+
+			 4  pObject  \
+			 8  pHandler /
+
+			12  pObject  \
+			16  pHandler /
+
+			20  ...
+</PRE>
+
+<P>These are a number of small software constructs used to suppliment the WIMPs present support for icons, etc. They provide a set of standard objects related to the user interface; sliders, number counters, adjuster arrows, etc. Aditionally they can be connected together, automatically passing relevant values between each other, informing the host application only when an actual change has happened.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>IO form</font></TABLE>
+
+<P>An actual IO is constructed from two things. A standard WIMP icon, or set of icons and an internal declaration of the IO object.</P>
+
+<P>
+<TABLE BORDER=0 WIDTH=100% BACKGROUND="../../mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<a href="http://www.dgjones.info/">http://www.dgjones.info/</a>
+<TD ALIGN=RIGHT>
+<a href="mailto:david_jones@dgjones.info">david_jones@dgjones.info</a>
+</TABLE>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</HTML>

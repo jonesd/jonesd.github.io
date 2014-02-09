@@ -1,0 +1,226 @@
+<HTML>
+
+<HEAD>
+<TITLE>Astrophel - What Is</TITLE>
+</HEAD>
+
+<BODY BACKGROUND="../background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Astrophel: What Is</font>
+</TABLE>
+
+<P>This document reflects the current state of the project, and can be viewed as the manual to Astrophel.</P>
+
+<P>Astrophel is a desktop Space Strategy Game. It breaches a whole new area of Strategy games on the Archimedes, and elsewere. A lot of effort has gone into ensuring that Astrophel adheres to the second version of the RiscOS 3 Style Guide. Astrophel also meshes seamlessly with RiscOS 3.10 (hopefully).</P>
+
+<P>!Help is fully supported.</P>
+
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Starting</font></TABLE>
+
+<P>Starting Astrophel opens the Introduction window. This allows you to set a number of features before the game proper is started.</P>
+
+<DIV ALIGN=CENTER>
+<IMG src="Introduction.gif">
+</DIV>
+
+<P>Once you are happy with your selection clicking OK will start the game. Converesly the Quit button will quit the application.</P>
+
+<H3><font color=#5A63AD>Galaxy</font></H3>
+
+<P>The galaxy area controls the physical aspects of the Galaxy, where all the activities with Astrophel happen.</P>
+
+<P>The number of Astronomical objects within the galaxy. An object may range from a Black hole, to a Star with its ensuing collection of planets, asteroid belts, etc. Note that if you use the associated adjuster icons with the Shift key pressed down, then the value will change at a faster rate.</P>
+
+<P>Astrophel is designed to be useable will large Galaxies. The only restriction on the size is the quantity of memory available. For example the maximum size is currently set to 65536 separate astronomical objects. This will though require close to 3M of space.</P>
+
+<P>As well as the number of objects, the Galaxy density can also be set. This defines on average how close the objects are. The initial middle value sets an adequate value. Setting the Stellar Density slider to a smaller number will decrease this, leading to objects being on average further away from each other.</P>
+
+<P>The Galaxy is portayed in a standard RiscOS window once the game is started. Due to the screen mode you are using it may be more convenient to change the shape of this. For example a longer window in Mode 16, which has a number of available pxzels in the horizontal direction. The shape of this window can be set with the Window Shape section. The outline of the window is shown and you can manipulate this directly. Two standard shapes are included to the left, which on clicking one will set the window shape to that portayed.</P>
+
+<P>As with most things in life, you cannot precisely define everything. As a result the actual Galaxy that is created will generally follow the values you have set. Do not be disturbed, that is the way of *the galaxy*.</P>
+
+<H4><font color=#5A63AD>Creation efficiency</font></H4>
+
+<P>This rather obscure data item is associated with the generation of the Galaxy. This generation starts once the OK button is selected. This may take some time will a large population of objects, and so the process operates in the background. Allowing you to continue using the desktop while this continues. The creation efficiency value determines how much of the ARMs available processing power is directed towards this generation. Setting a higher value will redirect more effort into it, so completing the task faster. This will of course lead to less time being directed towards the desktop so everything will seem more "jurky" in operation.</P>
+
+<H3><font color=#5A63AD>Choices</font></H3>
+
+<P>It is possible to save the current values of all the items in the Introduction to disc. Then the next time that Astrophel is started these values will be read and the Introduction window will be updated to reflect these choices.</P>
+
+<P>The actual file which the choices information is saved to is pointed to by the system variable Astrophel$Choices. This is initially set to the Choices file within the Astrophel directory. For most users this will be entirely acceptable and can just be ignored. If the Astrophel directory is stored within a Read-Only file system, then the choices will not be saved. This may be a problem on a Network, or if distributed on CD-ROM. As a result by changing the Astrophel$Choices to a file system that can also be written to, then the Choices system, will still work.</P>
+
+<P>To do this change the !Run file to something like:</P>
+<PRE>	Set Astrophel$Choices adfs::RW_drive.$.Choices</PRE>
+
+<P>A Default set of values is stored permanently within Astrophel. Obviously once the Default values have been choosen, the values may be Save'd so subsequently when Astrophel is loaded, the Default set is used.</P>
+
+<P>If there is no Choices file, then the default set are automatically used.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Creating</font></TABLE>
+
+<P>Once you have clicked on the OK button, the Introduction window will be replaced by the Creating window. This shows you the progress Astrophel has made on creating the Galaxy. this is a very demanding job :-). For Galaxies with tens of thousands of objects within this may take a minute or so to do. The slider shows you an indication of the percentage completed.</P>
+
+<P>While the creating window is shown you can use the computer for something else. Galaxy formation is in the background.</P>
+
+<P>If you wish to give up at this stage, click Quit to quit Astrophel.</P>
+
+<P>Once complete the Creating window will automatically close and the Astrophel icon will appear on the icon bar. The game has finally started.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Icon Bar</font></TABLE>
+
+<P>Clicking with Select on the Astrophel icon will open the Galaxy window.</P>
+
+<TABLE>
+<CAPTION><B>Icon Bar Menu</B></CAPTION>
+<TR><TD>Info<TD>Standard information on the Astrophel application.
+<TR><TD>Help<TD>Displays the more extensive information on the application. More detailed information is contained in the files within the Docs subdirectory.
+<TR><TD>Galaxy Analysis<TD>Opens a window displaying information on the physical structure of the created Galaxy.
+<TR><TD>Symbols Finder<TD>Opens the Symbol Finder window. This allows you to track down a named object that is used within Astrophel.
+<TR><TD>Notepad<TD>Opens the Notepad window. This allows you to keep a refernce to a number of useful objects in one place.
+<TR><TD>Save<TD>Opens standard Save window. From here you can save the present position in the game. <i>** Not curently implemented.</I>
+<TR><TD>Quit<TD>Wave good bye to Astrophel. I hope you enjoyed your visit. If not tell me why.
+</TABLE>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Object dragging</font></TABLE>
+
+<P>Intrinsic to the use of Astrophel is the ability of dragging an object from one place, ie the Galaxy window, over to another display, ie the Notepad window. Wherever you see an iconic reference to an object you should be able to grab it, and drag it off someplace else.</P>
+
+<P>The actual process initiated by finally dropping the object within the destination is determined by the destination. For example dropping a Blackhole object on the Notepad will merely show the object in the Notepad window. Perhaps if it you had dropped it on the 'Destination' icon of the Fleet orders window, it would have set the destination of the fleet. Possibly not such a wise thing to do.</P>
+
+<P>Object dragging is extensively used as once the basic idea is learnt, it provides great flexibility which is necessary for a game of Astrophels depth.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Galaxy</font></TABLE>
+
+<P>This is an important window within Astrophel. It shows the Galaxy as we know it. Each dot of light could be the guiding hand for a billion people, or a titanic Blackhole ripping the very fabric of space itself.</P>
+
+<DIV ALIGN=CENTER>
+<IMG SRC="Galaxy.gif">
+</DIV>
+
+<P>Different types of objects have an associated icon. The little black circles being blackholes. The little yellow stars, StarSystems. Clicking Select over one of these objects may open a further information window displaying a more indepth view of the object.</P>
+
+<TABLE>
+<CAPTION><B>˜-Galaxy Menu-˜</B></CAPTION>
+<TR><TD>Magnifier<TD>Leads to a standard Magnifier window. To display a greater portion of the Galaxy increase the right hand numeral. A value of 1:12 will display a suitably large swath of the Galaxy in one view.
+</TABLE>
+
+<P>At present only one galaxy window can be open at any one time.</P>
+
+<P>If you drop an object on the window, then the window will centre around this object. Thereby appearing in the middle. If the object is near an edge though the window will only be able to get as near as possible to the object.</P>
+
+<P>The associated pane, to the left of Galaxy displays some information on the selected object. Its name, and a possible more detailed graphic representation of it.</P>
+
+<P>The currently selected object is also flashed on and off to draw your attention to it. Note that above a magnification value of 1:12 the selected object is not flashed. At this level the quantity of information depicted rules this out.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Galaxy Analysis</font></TABLE>
+
+<P>This is a purely informative window. It displays information on the physical structure of the generated Galaxy.</P>
+
+<DIV ALIGN=CENTER>
+<IMG SRC="GalaxyAnalysis.gif">
+</DIV>
+
+<P>The window is split into a number of areas relaying statistics on a certain set of objects within the game.</P>
+
+<H3><font color=#5A63AD>Star Systems</font></H3>
+
+<P>This section displays statistics on all the stars within the Galaxy. The large table splits this information up into Star type, and Size. Details on a particular, type or size, are included in the !Help support.</P>
+
+<P>Class D stars are somewhat distinct from the normal star, they are White Dwarfs which have reached the end of their lives.</P>
+
+<H3><font color=#5A63AD>Unusual Stellar Objects</font></H3>
+
+<P>This is a list of the various objects supported. Wow.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Symbols Finder</font></TABLE>
+
+<P>Lots of the objects within Astrophel are named. For example Stars, Planets, Ship designs. With such a large amount of information available it can be sometimes difficult to track down a specific reference, or object. The Finder is an attempt to help on this front.</P>
+
+<DIV ALIGN=CENTER>
+<IMG SRC="SymbolFinder.gif">
+</DIV>
+
+<P>Each named object, symbol, is shown within a scrollable list. Each entry showing the name of the object, and to the left an iconic representation of the object type.</P>
+
+<P>Double click with SELECT over an entry will open a window inspecting this entry. The particular style of inspector window is appropriate for the type of object.</P>
+
+<P ALIGN=CENTER><IMG SRC="AstronomicalObject.gif"></P>
+
+<P>If you want to keep a longer term record of the object you can drag SELECT an object over to the Notepad window. Here it will be displayed in a similar format as shown here, ie icon and name.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Notepad</font></TABLE>
+
+<P>This is a simple window poviding a neutral area to store references to any objects of interest to you. Merely drop the object over the window and the objects name and iconic representation will be shown as one entry, a note.</P>
+
+<P ALIGN=CENTER><IMG SRC="Notepad.gif"></P>
+
+<P>Any number of Notes may be stored within the Notepad, each referencing a unique object. An object may be dragged to a distant window to insert the object within it. Droping the object within the Notepads window will move the object within the note.</P>
+
+<P>A selected Note may be deleted using the Notepad menu.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Style Guide Interface</font></TABLE>
+
+<P>With the recent release of the RiscOS 3 Style Guide we will gradually see a transition into the interface defined within it. Astrophel follows these directions, not perfectly yet alas. It does add a number of extra 'twiddles though which should be useful.</P>
+
+<H3><font color=#5A63AD>Adjuster Arrows</font></H3>
+
+<P>Due to the some what large range of values used within cretain parts of Astrophel, if you press the SHIFT key while clicking over these you will notice that a change of greater magnitude, if appropriate is conferred upon the associated value icon.</P>
+
+<P>Pressing the CTRL key while clicking over these may well produce an even greater change.</P>
+
+<H3><font color=#5A63AD>Sliders</font></H3>
+
+<P>As well as affecting the value with its associated adjuster arrows, you can insert a value directly by clicking directly over the appropriate value. You may also drag SELECT to change the value by following the pointers position. Similar in use to dragging window sliders.</P>
+
+<P>A slider which can not be directly affected by user input is shaded a lighter grey.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Thats All</font></TABLE>
+
+<P>If you have any comments on Astrophel don't hesitate to get in contact. Comments, advice, ideas, kicks in the teeth, bugs, donations, graphical assistance, etc.</P>
+
+<P>If you run into a bug within Astrophel please send me details. Error message from Astrophel, version of Astrophel. Which version of RiscOS. Filing System, etc. Of course if you can fix the bug, then even better.</P>
+
+<P>If you include a disc I will send you the latest version of Astrophel.</P>
+
+
+<P>Many thanks to:</P>
+
+<TABLE>
+<TR><TD>Jonathan Croats, Jon Fish, Loso, Pandrogas.
+<TR><TR>
+<TD>Mark Greenwood<TD>BlackHole sprite from BlackHole2 application<TR>
+<TD>Jon Ribbens<TD>Idea of folded corner Window_Save sprite. + other ideas from
+		the excellant WimpExtension<TR>
+<TD>Graeme Williams<TD>Fast integer division routine<TR>
+<TR>
+<TD>Tom Hughes<TD>WimpMon - useful to decipher Pinboards babble :-)<TR>
+<TD>Guttorm Vik<TD>StrongEd<TR>
+<TD>Acorn<TD>Everything except the bugs...<TR>
+<TD?Launchpad<TD>For being there<TR>
+<TD>Dick Alstein<TD>The wonderful TemplEd<TR>
+<TD>David Pilling<TD>SparkFS
+</TABLE>
+
+<P>
+<TABLE BORDER=0 WIDTH=100% BACKGROUND="../../mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<a href="http://www.dgjones.info/">http://www.dgjones.info/</a>
+<TD ALIGN=RIGHT>
+<a href="mailto:david_jones@dgjones.info">david_jones@dgjones.info</a>
+</TABLE>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</HTML>

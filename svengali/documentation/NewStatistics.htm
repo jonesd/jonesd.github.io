@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<title>New Statistics</title>
+</head>
+
+
+<body background="background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>New Statistics</font>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD>
+<a href="Svengali.htm"><img src="MiniBlue.gif" alt="Svengali" border=0></a>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<a href="ProfilerPackage.htm">
+<img src="link_ProfilerPackage.gif" alt="Profiler Package" border=0></a>
+<TR><TD>
+<a href="Browsers.htm">
+<img src="link_Browsers.gif" alt="Browsers" border=0></a>
+<TR><TD>
+<img src="link_Blank2.gif" border=0></a>
+<TR><TD>
+<a href="mailto:svengali@dgjones.info">
+<img src="link_DavidJones.gif" alt="Contact David Jones" border=0></a>
+</TABLE>
+</TABLE>
+</TABLE>
+
+<p>The New Statistics view displays some simple statistics
+generated from the <a href="NewProfiler.htm">New Profiler</a> within the synchronised range at the time of opening the view.
+
+<p>The New Statistics can be opened from the Strand menu of the <a href="ProfileDirector.htm">Director</a>. Any number can be opened and they are not reactive.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Structure</font>
+</TABLE>
+
+<p>The statistics view presents a number of different views onto the same set of data collected by the <a href="NewProfiler.htm">profiler</a>. Each pane groups the individual created objects in different combinations.</P>
+
+<p>The <i>Instances</i> column in each pane relates to the cumulative total of instances of that item were created. The <i>Indexed</i> column in each pane relates to the cumulative total of the number of indexed variables in the items that were created. The <i>Bytes</i> column in each pane relates to the cumulative total of bytes required by each created item.</P>
+
+<p>The status bar displays the totals for each item, from the Instances, Indexed and Bytes columns.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Classes Pane</font>
+</TABLE>
+
+<p><img
+src="NewStatisticsClasses.gif"
+alt="Class | Instances | Indexed | Bytes">
+
+<p>The Classes pane groups all created objects by their <i>Class</i>.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Originators Pane</font>
+</TABLE>
+
+<p><img
+src="NewStatisticsOriginators.gif"
+alt="Originators Selector | Originators Class | Class | Instances | Indexed | Bytes">
+
+<p>The Originators pane groups all created objects by the method which requested the new object, its <i>Originator Selector</i> and <i>Originator Class</i>, together with the <i>Class</i> of the object.</P>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

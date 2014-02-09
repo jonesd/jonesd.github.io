@@ -1,0 +1,17 @@
+AuthName "Protect
+"
+
+AuthType Basic
+
+AuthUserFile /u/www/home/user1/n/night/protect/.htpasswd
+
+AuthGroupFile /dev/null
+
+
+
+<Limit GET POST PUT>
+
+require user night
+
+</Limit>
+

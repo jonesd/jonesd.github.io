@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<title>Window Dispatch Statistics</title>
+</head>
+
+<body background="background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Window Dispatch Statistics</font>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD>
+<a href="Svengali.htm"><img src="MiniBlue.gif" alt="Svengali" border=0></a>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<a href="ProfilerPackage.htm">
+<img src="link_ProfilerPackage.gif" alt="Profiler Package" border=0></a>
+<TR><TD>
+<a href="Browsers.htm">
+<img src="link_Browsers.gif" alt="Browsers" border=0></a>
+<TR><TD>
+<img src="link_Blank2.gif" border=0></a>
+<TR><TD>
+<a href="mailto:svengali@dgjones.info">
+<img src="link_DavidJones.gif" alt="Contact David Jones" border=0></a>
+</TABLE>
+</TABLE>
+</TABLE>
+
+<p>The Window Dispatch Statistics view displays some simple statistics generated from the <a href="WindowDispatchProfiler.htm">Window Dispatch Profiler</a> within the synchronised range at the time of opening the view.</P>
+
+<p>The Window Dispatch Statistics can be opened from the Strand menu of the <a href="ProfileDirector.htm">Director</a>. Any number can be opened and they are not reactive.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Structure</font>
+</TABLE>
+
+<p>The statistics view presents a number of different views onto the same set of data collected by the <a href="WindowDispatchProfiler.htm">profiler</a>. Each pane groups the individual dispatches in different combinations.</P>
+
+<p>The <i>Hits</i> column in each pane relates to the cumulative total of types of messages being received by an item.</P>
+
+<p>The status bar displays the totals for each item from the Hits column.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Messages Pane</font>
+</TABLE>
+
+<p><img
+src="WindowDispatchStatisticsMessages.gif"
+alt="Messages | Hits">
+
+<p>The Messages pane groups all dispatches by the <i>Message</i> type which was received.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Classes Pane</font>
+</TABLE>
+
+<p><img
+src="WindowDispatchStatisticsClasses.gif"
+alt="Class | Message | Hits">
+
+<p>The Classes pane groups all dispatches by the <i>Class</i> of the receiver View and by its <i>Message</i> type.</P>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

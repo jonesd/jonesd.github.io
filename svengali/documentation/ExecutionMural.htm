@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<title>Execution Mural</title>
+</head>
+
+<body background="background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Execution Mural</font>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD>
+<a href="Svengali.htm"><img src="MiniBlue.gif" alt="Svengali" border=0></a>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<a href="ExecutionTracerPackage.htm">
+<img src="link_ExecutionTracerPackage.gif" alt="ExecutionTracer Package" border=0></a>
+<TR><TD>
+<img src="link_Blank.gif">
+<TR><TD>
+<img src="link_Blank2.gif" border=0></a>
+<TR><TD>
+<a href="mailto:svengali@dgjones.info">
+<img src="link_DavidJones.gif" alt="Contact David Jones" border=0></a>
+</TABLE>
+</TABLE>
+</TABLE>
+
+<p>The Execution Mural view displays the results collected during <a href="Executiontracer.htm">tracing</a>.
+
+<p>This is a limited implementation of the application described in the following paper:</p>
+
+<p><cite>Visualizing Message Patterns in Object-Oriented Program
+Executions<br>
+Dan F. Jerding, John T. Stasko, and Thomas Ball<br>
+Graphics, Visualization, and Usability Centre<br>
+Georgia Institute of Technology<br>
+Atlanta, GA 30332-0280<br>
+Technical Report GIT-GVU-96-15<br>
+<a href="http://www.cc.gatech.edu/gvu/softviz/">http://www.cc.gatech.edu/gvu/softviz/</a> </cite></p>
+
+<P ALIGN="CENTER"><IMG SRC="ExecutionMural.gif"></p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Structure</font>
+</TABLE>
+
+<p>The top view shows the individual activations of a traced
+evaluation. Time is present on the x-axis, with each unit
+corresponding to a recorded activation. Along the y-axis all of
+the classes of the receivers of an activation are listed, ordered
+such that a subclass will always be further down the view than
+its superclass. For each activation a vertical line is drawn from
+the class of the sender, to the class of the receiver of the
+activation. The sender is marked by a green point. The connecting
+line is coloured depending on the <i>plane</i> which the activation has been associated with. The associated is defined by the <a href="ExecutionHighlights.htm">Highlights</a> dialog, available from the <i>View/Highlights</i> menu item, and is based on the selector of the activated method. By default a method is associated with the empty plane and shown in white.</p>
+
+<p>The currently selected activation is shown with a dotted
+orange column. The selection may be changed with the cursor keys,
+with return opening a browser onto the method of the activation.</p>
+
+<p>The status view situated in the middle of the shell shows
+details of the selected activation. The first two items are the
+class of the sender followed by the class of the receiving
+object. The third item is the method of the activation.</p>
+
+<p>The lower view presents all of the activations in a similar
+form to the top view but compressed to fit within the visible
+extent of the pane. It can be used for navigation, by selecting
+the area shown in the top pane. It is also useful for
+highlighting the repeating patterns of activations as well as the
+separate computation sub-stages of the whole trace.</p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Functions</font>
+</TABLE>
+
+<p>One useful feature is the <a href="ExecutionStatistics.htm">Execution Statistics</a> view available from the <i>View/Statistics</i> menu item. This lists the total number of method activations grouped by class, method and selector. It can be useful for specifying plane <a href="ExecutionHighlights.htm">highlights</a>.</p>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

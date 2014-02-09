@@ -1,0 +1,1653 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Machiavelli 2ed Adaption Manual</title>
+</head>
+
+<body
+bgcolor="#FFFFFF">
+
+<table border="0">
+    <tr>
+        <td width="160"><img
+        src="splash.jpg"
+        width="134" height="178"></td>
+        <td valign="top"><h2>Machiavelli 2ed Adaptation - Manual</h2>
+        <p>Copyright © <a
+        href="mailto:machiavelli@dgjones.info">David Jones</a>
+        1999</p>
+        <p>This Manual documents the implemented features.</p>
+        </td>
+    </tr>
+</table>
+
+<p><em>&quot;Machiavelli recreates the balance-of-power struggle
+in Renaissance Italy from 1454 to 1529. Machiavelli can be played
+by two to eight players (five to six is ideal). Each player
+controls a major state of Italy or a neighbouring country and
+uses diplomatic and military force to conquer territory and
+fulfill the game's victory conditions. If you are power mad,
+treacherous by nature and can lie with a straight face, then
+Machiavelli is the game for you!&quot; </em></p>
+
+<p>This document describes the UI for the computer adaption, and
+quick descriptions of the mechanics of the game. This information is supplied
+merely as an overview to my adaptation. If you wish to play the game, go and buy yourself
+a copy of the Avalon Hill boardgame, or petition Hasbro for a commercial adaptation of this fine game.</p>
+		  <p><i>
+		  This adaption has been a	private development,	and is not associated in any way	with Avalon	Hill or Hasbro	Interactive.<br>
+		  Machiavelli and	Diplomacy are trademarks of Avalon Hill.</i></p>
+		  
+
+<hr>
+
+<img src="conflict.jpg" width="672" height="487">
+
+<hr>
+
+<h2><a name="Table of Contents">Table of Contents</a></h2>
+<div align="left">
+
+<table border="0" width="100%">
+    <tr>
+        <td valign="top"><a href="#Getting the Latest Version"><strong>Getting
+        the Latest Version</strong></a><br>
+        <a href="#Entrance Screen"><strong>Entrance Screen</strong></a><br>
+        <a href="#Tutorial"><strong>Tutorial</strong></a><br>
+        <a href="#Map Board"><strong>Map board</strong></a><p><strong>Sequence
+        of Play</strong></p>
+        <blockquote>
+            <p><a href="#Turn Start Phase">Turn Start Phase</a><br>
+            <a href="#1. Famine Marker Phase">1. Famine Marker
+            Phase</a><br>
+            <a
+            href="#2. Income &amp; Military Unit Adjustment Phase">2.
+            Income &amp; Military Unit Adjustment Phase</a><br>
+            <a href="#3. Plague Phase">3. Plague Phase</a><br>
+            <a href="#4. Diplomacy Phase">4. Diplomacy Phase</a><br>
+            <a href="#5. Ducat Borrowing Phase">5. Ducat
+            Borrowing Phase</a><br>
+            <a href="#6. Order Writing Phase">6. Order Writing
+            Phase</a><br>
+            <a href="#7. Ducat Expenditure Phase">7. Ducat
+            Expenditure Phase</a><br>
+            <a href="#8. Assassination Phase">8. Assassination
+            Phase</a><br>
+            <a href="#9. Movement and Conflict Phase">9. Movement
+            and Conflict Phase</a><br>
+            <a href="#10. Strategic Movement Phase">10. Strategic
+            Movement Phase</a><br>
+            <a href="#11. Famine Effects Phase">11. Famine
+            Effects Phase</a><br>
+            <a href="#End of Turn Phase">End of Turn Phase</a></p>
+        </blockquote>
+        </td>
+        <td valign="top"><strong>UI Panels</strong><blockquote>
+            <p><a href="#Power Properties">Power Properties<br>
+            </a><a href="#Transfer to Power">Transfer to Power<br>
+            </a><a href="#Help">Help<br>
+            </a><a href="#User Interface Options">User Interface
+            Options<br>
+            </a><a href="#Start a New Game">Start a New Game<br>
+            </a><a href="#Save Game">Save Game<br>
+            </a><a href="#Open Game">Open Game<br>
+            </a><a href="#Scenario Information">Scenario
+            Information<br>
+            </a><a href="#Chat">Chat<br>
+            </a><a href="#Quit Scenario">Quit Scenario</a></p>
+        </blockquote>
+        </td>
+    </tr>
+</table>
+</div>
+
+<hr>
+
+<h2><a name="System Requirements">System Requirements</a></h2>
+
+<p>Machiavelli requires DirectX 5.2 or later to be installed on
+your computer. The latest version can be downloaded directly from
+<a href="http://www.microsoft.com/directx/download.asp">Microsoft</a>.</p>
+<div align="left">
+
+<table border="1">
+    <tr>
+        <td>Operating System</td>
+        <td>Windows 95/98/NT 4sp3/NT 5</td>
+    </tr>
+    <tr>
+        <td>DirectX</td>
+        <td>5.2 or later</td>
+    </tr>
+    <tr>
+        <td>CPU</td>
+        <td>133MHz</td>
+    </tr>
+    <tr>
+        <td>Memory</td>
+        <td>16Mb</td>
+    </tr>
+    <tr>
+        <td>Disk space</td>
+        <td>10Mb</td>
+    </tr>
+    <tr>
+        <td>Graphics Board</td>
+        <td>640x480 (or higher) @ 16bit High-Color</td>
+    </tr>
+</table>
+</div>
+
+<hr>
+
+<h2><a name="Entrance Screen">Entrance Screen</a></h2>
+
+<p>The Entrance screen is presented on starting the Machiavelli
+applications and provides a central point for accessing the games
+functionality.</p>
+
+<img src="entrance.jpg" width="270" height="227">
+
+<p>Check one of the radio buttons and click the OK button to
+continue. </p>
+
+<p><a href="#Start a New Game"><strong>Start a New Game</strong></a>
+allows both Hotseat, where two or more players share access to
+the same computer, and joining or starting a new Network game,
+where each player exclusively controls a computer. </p>
+
+<p><a href="#Open Game"><strong>Load Saved Game</strong></a>
+allows a previously saved game to be continued.</p>
+
+<p><a href="#Tutorial"><strong>Tutorial</strong></a> is a 5
+minute interactive guide through the basics of ordering your
+units, chatting with other players, and important user interface
+panels. It follows the <em>Example of Play</em> included in the
+original board game. </p>
+
+<p><strong>Scenario Builder</strong> allows you to modify
+existing scenarios, and create your own new ones.<br>
+<font color="#FF0000">*** Not Yet Implemented *** </font>though data is
+currently read from human readable map and scenario specification files
+so it is easy to modify or even add your own entries.</p>
+
+<p><a href="#Help"><strong>Help</strong></a> opens up a panel
+containing this document and the program About Box detailing
+the version and certificate information. </p>
+
+<p><strong>Exit</strong> will close the Machiavelli application,
+returning you to the Windows desktop.</p>
+
+<hr>
+
+<h2><a name="Tutorial">Tutorial</a></h2>
+
+<p>The tutorial directs you through the first three turns
+controlling the Venice power in a reduced game. It will show you
+how to navigate from one phase to the next, enter orders for your
+military units and highlight important panels you will be using
+to play Machiavelli.</p>
+
+<p>The tutorial is started from the <a href="#Entrance Screen">Entrance
+Screen</a>.</p>
+
+<img src="tutorial.jpg" width="488" height="91">
+
+<p>The tutorial is composed of a series of steps, containing a
+description of the step highlighted in orange at the upper center
+of the game. To move onto the next phase, either click the OK
+within the descriptions orange rectangle or completing the action
+described.</p>
+
+<p>The tutorial should take 5 minutes to run through.</p>
+
+<hr>
+
+<h2><a name="Map Board">Map Board</a></h2>
+
+<p>Once you have started a new game or joined an existing game
+you will be presented with the map board. </p>
+
+<p>Covering the entire screen is a section of the scenarios map
+board. The board is split up into areas. Land areas are called
+provinces. Some provinces also contain cities, shown by a single
+solid black circle. Cities may be fortified, in which case the
+city is surrounded by a black halo. </p>
+
+<img src="conflict.jpg" width="672" height="487">
+
+<p>Three types of military units may be present on the mapboard.
+Army units may only occur in provinces. Garrisons can only occur
+in fortified cities. Fleets can be present in either sea areas or
+provinces bordering a sea area. </p>
+
+<p>The map board can be scrolled by either moving the mouse
+pointer to the edge of the screen, the cursor keys, or right
+button dragging. </p>
+
+<p>Along the top edge of the screen you will see the name of the
+scenario on the left, and on the right the current phase and turn
+number.</p>
+
+<h3><a name="Current Power information">Current Power information</a></h3>
+
+<p>Along the left hand edge of the screen you will see the
+controls and readouts associated with the current power. </p>
+
+<p>The power is identified by its coat of arms towards the top
+left of the screen, with its name and current treasury total in
+ducats, and controlled cities total shown to its right. As well
+as a coat of arms, a colour is also associated with the power,
+and used to distinguish information associated with the power.
+This colour is shown in the border of the coat of arms, and used
+by the text to the right of the coat of arms. </p>
+
+<p>Immediately below the coat of arms power related information
+specific to the current phase will be shown as you progress
+through the game. </p>
+
+<p>Immediately above the coat of arms you will find an icon that
+once clicked will open a <a href="#Power Properties">Power
+Properties</a> panel for the current power. This describes the
+current characteristics and totals for the power, with details of
+its controlled areas, and outstanding loans on following tabs. </p>
+
+<p>Games using the Advanced Rules will also contain a transfer
+icon, which opens the <a href="#Transfer to Power">Transfer Power</a>
+panel allowing you to donate ducats from your treasury, and
+assassination units to another power. </p>
+
+<p>Above these controls you will find the Finish button. When you
+have finished entering your actions for the current phase,
+clicking the Finish button will inform the system that you are
+ready to move onto the next phase of the turn. Once all the
+players have Finished, the game will move onto the next phase. </p>
+
+<p>Feedback on which powers have already finished is shown in a
+thin column to the left of the Finish button. A rectangle filled
+with the powers associated colour will be drawn for each finished
+power. The tool tip, shown by holding the mouse pointer still
+over the control for a second, also displays this information. </p>
+
+<h3><a name="Changing Current Power">Changing Current Power</a></h3>
+
+<p>In a Hotseat game you can change the current power by clicking
+on the coat of arms, then choosing the new power once the screen
+blanks out. </p>
+
+<p>While all the powers coats of arms are unfurled, the current
+power will be lit up brighter than the others. </p>
+
+<p>Accelerator Key: P<br>
+Then Left and Right cursor keys can be used to change the power,
+with Return to select it. </p>
+
+<h3><a name="Game Information">Game Information</a></h3>
+
+<p>Along right edge of the screen you will see game information.
+The controls and text shown along the right edge is shown exactly
+the same for all players of the game, whereas the controls and
+text along the left hand edge of the screen in specific to your
+power. </p>
+
+<p>The bulk of the space is set aside for information particular
+to the current phase. </p>
+
+<p>At the top of the column you will find a number of icons which
+open panels on various behaviour of the game. </p>
+
+<p>The Help icon opens the <a href="#Help">Help</a> panel
+containing the program About box, Manual and Rules of Play. </p>
+
+<p>The <a href="#Start a New Game">New Game</a> allows you to
+start a new game. </p>
+
+<p>The <a href="#User Interface Options">UI Options</a> icon
+opens a panel that allows you to change various UI options that
+include screen resolution, use of sound, etc. Each machine in a
+network game may independently set their own UI options. </p>
+
+<p><a href="#Open Game">Open</a> and <a href="#Save Game">Save</a>
+game icons. </p>
+
+<p><a href="#Scenario Information">Scenario Information</a> which
+lists the current scenario criteria, and power standings, past
+power actions and a graph of power relative totals. </p>
+
+<p>The <a href="#Chat">Chat</a> panel allows textual
+communication between powers. </p>
+
+<p>The <a href="#Quit Scenario">Quit Scenario</a> icon allows you
+to abort the current game and return to the <a
+href="#Entrance Screen">Entrance Screen</a>. </p>
+
+<p>In the Hotseat game an additional Next button will be added.
+This performs the equivalent of each player clicking the Finish
+button for their power. It is a purely a speedup for those times
+when most/all players do not want to enter any actions during a
+phase. </p>
+
+<h3><a name="Listed items">Listed items</a></h3>
+
+<p>Frequently during the course of the game lists of units,
+orders and provinces will be displayed along the left and right
+edges of the screen. </p>
+
+<p>To refocus the map on the location of the counter or area
+associated with listed item, click on the goto icon associated
+with the listed item. Additionally if you hold the mouse pointer
+still over the goto icon it will pop up some descriptive
+information of the item.</p>
+
+<hr>
+
+<h2><a name="On Starting a Game">On Starting a Game</a></h2>
+
+<p>On starting a new game, or joining one, you will initially be
+presented by a welcome panel in the center of the screen which
+lists the playing powers with the name of their players. </p>
+
+<p>In the case of a network game, you may have to wait until all
+the players join. You will be given feedback as players join. </p>
+
+<p>Once you are ready to start click the Finish button at the top
+left of the screen. As soon as all the powers have done likewise
+you will move onto the first phase, and the game proper will
+start.</p>
+
+<p>The game progresses from one turn to next, until one power
+meets the victory conditions specified when the game was being
+created. Each turn is composed of a number of phases, each
+documented in the following section.</p>
+
+<p>The current turn and phase are shown on the white bar at the
+top of the screen.</p>
+
+<hr>
+
+<h2><a name="Turn Start Phase"><strong>Turn Start Phase</strong></a></h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="Victory Panel"><strong>Victory Panel</strong></a></h3>
+
+<p>If a power has won by meeting the <a href="#Victory Condition">Victory
+Condition</a> as defined when the game was created, then that
+player is declared victorious. </p>
+
+<p>A panel declaring the victor and listing the relative
+standings of all the powers is shown. </p>
+
+<p>Players can either continue playing or start a new game. </p>
+
+<img src="victory.jpg" width="400" height="300">
+
+<h3><a name="Start of Turn Panel">Start of Turn Panel</a></h3>
+
+<p>The Start of Turn panel displays a summary for each of the
+powers; controlled cities, treasury, total debt, total army
+units, total fleet units and total garrisons. </p>
+
+<p>Power summaries are ordered by their success, and the details
+for the current power are highlighted.</p>
+
+<img src="startofturn.jpg" width="400" height="300">
+
+<hr>
+
+<h2><a name="1. Famine Marker Phase">1. Famine Marker Phase</a></h2>
+
+<p>The Famine Marker Phase only occurs during the Spring turn,
+and if you checked the <a href="#Natural Disasters">Natural
+Disaster</a> when creating the game. </p>
+
+<p>A number of provinces are randomly chosen, and in each a
+Famine Marker counter is placed. </p>
+
+<p>All the effected provinces are displayed along the right edge
+of the screen, split by the power which controls them, if any. </p>
+
+<p>Provinces controlled by the current power that are effected
+are listed along the left edge of the screen. </p>
+
+<p>Then in turn from the top of the board you will see Famine
+Marker counters added to each of the effected provinces. </p>
+
+<p>The effects of Famine are only experienced at the end of the
+turn, so it may be possible to move your military units to a safe
+province. </p>
+
+<p>If no provinces were effected by famine the phase will
+automatically advance to the next after a short pause. </p>
+
+<hr>
+
+<h2><a name="2. Income &amp; Military Unit Adjustment Phase">2.
+Income &amp; Military Unit Adjustment Phase</a></h2>
+
+<p>The Income &amp; Military Unit Adjustment Phase only occurs
+during the Spring turn, except for the first turn. </p>
+
+<h3><a name="Income panel">Income panel</a></h3>
+
+<p>If you checked the <a href="#Advanced Rules">Advanced Rules</a>
+option when creating the game, you will be presented with a panel
+listing the income in ducats. </p>
+
+<p>The total income is split into income from provinces you
+control or have a military unit in, sea areas containing one of
+your Fleets, cities you control or have an unbesieged Garrison
+in, and variable income from your state, conquered states and
+some cities you control. The amount of variable income received
+is based on a die roll. All powers variable income is calculated
+from the same die roll. </p>
+
+<p>You receive 1 ducat for each named province, except for those
+with the actual income listed alongside. </p>
+
+<p>Click OK in the panel once you are finished examining the
+information. </p>
+
+<img src="income.jpg" width="400" height="300">
+
+<h3><a name="Military Unit Adjustments">Military Unit Adjustments</a></h3>
+
+<p>Each power secretly decides which military units on the map
+board to keep, which to discard, and if any new units are to be
+created. </p>
+
+<p>Once all powers have clicked finished, the result of the all
+powers adjustments will be unveiled. </p>
+
+<p>The current powers existing military units are listed along
+the left edge of the screen. </p>
+
+<p>Clicking over one of your existing units on the map board will
+remove it, while clicking over an empty home province or city in
+your home area will create a new military unit there. </p>
+
+<p>Units to keep are shown on the map as normal. Units to disband
+have a red cross overlaying the counter on the map. Units to
+create have a red box around their map counter. </p>
+
+<h3><a name="Basic Military Unit Adjustments">Basic Military Unit
+Adjustments</a></h3>
+
+<p>If you are playing with the basic rules, <a
+href="#Advanced Rules">Advanced Rules</a> was not checked when
+you created the game, then the number of units you can create or
+delete is determined by the number of cities you control. </p>
+
+<p>If you have more cities than military units then you can
+create up to the difference in new units. You are not allowed to
+remove any units. </p>
+
+<p>If you have less cities than military units, then you have to
+remove enough military units until the two totals match. You are
+not allowed to create any new units. </p>
+
+<h3><a name="Advanced Military Unit Adjustments">Advanced
+Military Unit Adjustments</a></h3>
+
+<p>If you checked the <a href="#Advanced Rules">Advanced Rules</a>
+when creating the game, the number of military units you are
+allowed on the board is determined by you current treasury. </p>
+
+<p>Each unit has an upkeep cost, which you must pay to stop the
+unit from being removed from the board. You can create as many
+new units as you can afford, though you are still limited to
+creating them in home areas with cities. </p>
+
+<p>All normal units cost 3 ducats a year, whether they are new or
+this is upkeep for an existing unit. </p>
+
+<p>You will not be allowed to Finish this phase if your units
+will force your treasury into a negative value. </p>
+
+<p>If you checked the <a href="#Special Units">Special Units</a>
+when creating the game, you will be allowed to flag one of your
+military units as being a <a
+href="rulesofplay.htm#14 Special Units">better type of unit</a>
+than the normal Condottieri. </p>
+
+<ul>
+    <li>Condottieri - normal type of military unit in the game<br>
+        <strong>cost</strong> 3d a year<br>
+        <strong>strength</strong> 1<br>
+        <strong>bribed</strong> at normal cost<br>
+        </li>
+    <li>Citizen Militia - force composed of patriotic citizens<br>
+        <strong>cost</strong> 6d a year<br>
+        <strong>strength</strong> 1<br>
+        <strong>bribed</strong> at twice the normal cost</li>
+    <li>Elite Mercenaries - More effective mercenary units<br>
+        <strong>cost</strong> 6d a year<br>
+        <strong>strength</strong> 2<br>
+        <strong>bribed</strong> at normal cost</li>
+    <li>Elite Professionals - long-term professional citizen
+        soldiers<br>
+        <strong>cost</strong> 9d a year<br>
+        <strong>strength</strong> 2<br>
+        <strong>bribed</strong> at twice the normal cost </li>
+</ul>
+
+<p>Powers can be restricted in which special types of units they
+can employ. The <a href="#Power Properties">Power Properties</a>
+panel lists which types are available. </p>
+
+<p>The type of each unit is indicated along the left edge of the
+screen next to the units goto icon. You can change the type for
+new units by clicking over its indicator. A tool tip gives
+information on the types characteristics. </p>
+
+<p>You can only set the type of a unit when you are creating it,
+and only if there are no existing special unit types, or you are
+disbanding the existing special unit. </p>
+
+<h3><a name="Placement">Placement</a></h3>
+
+<p>Once all powers have finish adjusting their units by clicking
+the Finish button then all the powers adjustments will be
+revealed. </p>
+
+<p>All the effected military units are displayed along the right
+edge of the screen, split by the power which added/removed them. </p>
+
+<p>Military units of the current power are listed along the left
+edge of the screen, split by whether they were added or removed
+from the map board. </p>
+
+<p>Then in turn from the top of the board you will see their
+counters being added or removed from the board. </p>
+
+<hr>
+
+<h2><a name="3. Plague Phase">3. Plague Phase</a></h2>
+
+<p>The Plague Phase only occurs during the Summer turn, and if
+you checked the <a href="#Natural Disasters">Natural Disaster</a>
+when creating the game. </p>
+
+<p>A number of provinces are randomly chosen, and any military
+units in the effected provinces are removed from the map board. </p>
+
+<p>All the effected military units are displayed along the right
+edge of the screen, split by the power which controlled them. </p>
+
+<p>Military units of the current power effected are listed along
+the left edge of the screen. </p>
+
+<p>Then in turn from the top of the board you will see their
+counters removed from the board. </p>
+
+<p>If no provinces were effected by plague the phase will
+automatically advance to the next after a short pause. </p>
+
+<hr>
+
+<h2><a name="4. Diplomacy Phase">4. Diplomacy Phase</a></h2>
+
+<p>Diplomacy is the core of Machiavelli, and it is during the
+Diplomacy phase that players can split up and devise schemes and
+plots with some of the other players in the game. </p>
+
+<h3><a name="Excommunication">Excommunication</a></h3>
+
+<p>If the <a href="#Excommunication">Excommunication</a> optional
+rule was checked during the game creation, the player controlling
+the Papacy power has the option to excommunicate one of the other
+players for the duration of this Diplomacy phase. An
+excommunicated power may not communicate with any other power. If
+a power communicates with an excommunicated power, they too
+become excommunicated for the duration of the Diplomacy phase. </p>
+
+<p>The Papacy power should click the power he would like
+excommunicated, then click the Excommunicate button.If the Papacy
+power does not wish any power to be excommunicate this turn, then
+click the Pass button. </p>
+
+<img src="excommunicate.jpg" width="400" height="300">
+
+<p>All the other powers will be informed of the choice, and
+should Finish, before the Diplomacy phase proper starts. </p>
+
+<img src="excommunicated.jpg" width="400" height="300">
+
+<h3><a name="Chatting">Chatting</a></h3>
+
+<p>During the Diplomacy phase you will find that the <a
+href="#Chat">Chat</a> panel allows you to select a subset of the
+total powers so that you can indulge in private discussions.
+Excommunicated powers are indicated by overlaying an
+excommunicated marker, and you will be warned before
+communicating with an excommunicated power. </p>
+
+<p>You may find it useful to open more than one Chat panel during
+this phase to carry on discussions with more than one group of
+players at one time. </p>
+
+<p>The Diplomacy phase is time limited, and will force the game
+onto the next phase even if some players haven't Finished once
+the duration is reached. </p>
+
+<p>The duration is set from the &quot;Game Options&quot; page of
+the <a href="#Start a New Game">New Game</a> wizard. You may set
+the first Diplomacy phase to be longer in duration than
+subsequent phases, as the bulk of alliances are set during the
+first turn.</p>
+
+<hr>
+
+<h2><a name="5. Ducat Borrowing Phase">5. Ducat Borrowing Phase</a></h2>
+
+<p>If the <a href="#Money Lenders">Money Lenders</a> optional
+rule was set during game creation then you will be able to borrow
+ducats from one of the fantastically wealthy and powerful
+international bankers and financiers which arose during the
+period. </p>
+
+<p>A power may borrow up to a total of 25 ducats in a series of
+one or two year loans. Failure to repay leads to the same effects
+as a successful assassination, the power will be refused credit
+from then on, but all the existing outstanding loans need not be
+paid. </p>
+
+<h3><a name="Repayment">Repayment</a></h3>
+
+<p>First a power must repay any existing loans that are due that
+turn. </p>
+
+<p>Click either the <em>Repay</em> to pay the loan with interest
+back in full, or <em>Refuse</em> if you refuse to pay the loan,
+at which point you will suffer the consequences. </p>
+
+<p>If you have insufficient funds to immediately repay the due
+loans, then <em>Refuse</em> will be your only option. At this
+stage it is not possible to gain a new loan to cover the demands
+of the existing loans. </p>
+
+<p>Future outstanding loans for the power are listed in the lower
+half of the panel. For each outstanding loan the original amount,
+due date and amount including interest that must be repayed. </p>
+
+<p>If you have no loans to repay, but other powers do, you will
+have to wait for them to make their choice before being able to
+continue. The coats of arms of those powers you are still waiting
+for are listed, any if any power defaults on a loan their coat of
+arms will be shown in the next row. </p>
+
+<img src="loansdue.jpg" width="400" height="300">
+
+<h3><a name="Defaulting Effects">Defaulting Effects</a></h3>
+
+<p>If a power refuse to repay a loan, the power suffers the same
+effects as if assassinated. </p>
+
+<p>The disbanded units and rebellions for all defaulting powers
+are listed along the right edge of the screen, split by power. </p>
+
+<p>Disbanded units and rebellions effecting the current power are
+listed along the left edge of the screen. </p>
+
+<p>Each effect in turn will then be indicated on the map board. </p>
+
+<h3><a name="New Loans">New Loans</a></h3>
+
+<p>Every turn you are able to set up both a one year or two year
+loan. The two year loan has a higher interest rate. Only a total
+of 25 ducats may be borrowed at any one point. </p>
+
+<p>To create a new loan click on the up/down arrows to change the
+amount borrowed. The amount paid into the powers treasury is
+shown first, followed by the due date and then the complete
+amount that must be repaid to the money lenders which includes
+interest. </p>
+
+<p>There are two sets of controls, the top for a loan that must
+be repaid one year hence, the lower for a loan that must be
+repaid two years hence. </p>
+
+<p>A power may create no new loans, a new one year loan, a new
+two year loan, or both a one year and two year loan, </p>
+
+<p>Current outstanding loans for the power are listed in the
+lower half of the panel. For each outstanding loan the original
+amount, due date and amount including interest that must be
+repayed.</p>
+
+<img src="ducatborrowing.jpg" width="400" height="300">
+
+<hr>
+
+<h2><a name="6. Order Writing Phase">6. Order Writing Phase</a></h2>
+
+<p>During the Order Writing Phase you may give a single order for
+each of your units. There are six to choose from. You make these
+orders in ignorance of the orders the other powers are giving to
+their own units. </p>
+
+<p>Once you finish this phase, you will see all the other powers
+orders in the Movement and Conflict Phase, and whether your own
+orders have been successful. </p>
+
+<h3><a name="Screen Layout">Screen Layout</a></h3>
+
+<p>All of the powers military units are shown along the left
+edge. By default they are set to the <a href="#Hold Order">Hold</a>
+order. </p>
+
+<p>Positioned to the left of each order is the goto icon.
+Clicking on this will scroll the map board to show the units
+counter, and highlight its position with a ripple animation.
+Additionally if you hold the mouse pointer still over the goto
+icon, a textual description of the units order is displayed. </p>
+
+<h3><a name="Setting an Order for a Unit">Setting an Order for a
+Unit</a></h3>
+
+<p>To enter a new order for a unit, click with the left mouse
+button over the units counter on the map board, drag the counter
+to its destination area or city and let go. As you are dragging
+the counter you will see an arrow extending from the counters
+start position. </p>
+
+<p>Note that the map board will scroll if you mouse pointer is at
+an edge while you are dragging a unit. </p>
+
+<p>Only provinces which for which there is a valid order for the
+unit will stay visible, all others will be dulled. Ending the drag
+over such a dulled province will cancel the order.</p>
+
+<img src="orderrestrictions.jpg" width="236" height="203">
+
+<p>If there is only one valid order you will see that the order
+description on the left hand edge of the screen changes to
+reflect the new order. </p>
+
+<p>If you move the mouse pointer over the counter on the map
+board and hold it still, you will see that a textual description
+of the order is shown. This is useful if you cant read the
+abbreviated orders. </p>
+
+<p>Sometimes there are more than one valid orders for a unit to
+an area. In this case when you drop the counter after dragging
+it, the screen will be put in shadows except for the area around
+the drop position. Positioned in a circle around the drop point
+the choice of legal orders will be shown. The order abbreviation
+is shown, coloured by the power of the involved unit. Clicking
+over one of the order abbreviations will select that as the new
+order for the unit. </p>
+
+
+<img src="orderchoice.jpg" width="186" height="212">
+
+<p><a href="rulesofplay.htm#1. Advance/Attack (-)"
+name="Advance Order"><strong>Advance Order</strong></a></p>
+
+<p>Order a Fleet or Army to move to an adjacent area. If there is
+a unit already in the destination area, or another unit is
+attempting to move into the unit, then you unit with superior
+support will be one that succeeds. </p>
+
+<p>An Army can move further than an immediately adjacent area if
+it can be <a href="#Convoy Order">Convoyed</a> by one or more
+Fleets. Both the current province of the army, and the
+destination, must be coastal provinces. Each intervening sea area
+must have a Fleet which Convoys the Army. If you are missing 1 or
+more convoys then a red ?? will be overlayed on the Advance
+orders description. </p>
+
+<p>To enter an Advance order, drag the units counter to the
+destination area. </p>
+
+<p><a href="rulesofplay.htm#2. Besiege (B)" name="Besiege Order"><strong>Besiege
+Order</strong></a></p>
+
+<p>Orders a Fleet or Army to besiege an enemy held fortified city
+in the area which the unit is currently located. The same unit
+must besiege for two consecutive turns to be successful. The
+garrisons support is immaterial, as they starve at the same rate.
+</p>
+
+<p>To enter a Besiege order, drag the units counter to the city
+in the same province as the unit. </p>
+
+<p><a href="rulesofplay.htm#3. Hold (H)" name="Hold Order"><strong>Hold
+Order</strong></a></p>
+
+<p>Orders a Fleet, Army or Garrison to remain in place. This is
+the default order if the unit is given no other order, or its
+order becomes invalid. </p>
+
+<p>To enter a Hold order, drag the units counter over itself. </p>
+
+<p><a href="rulesofplay.htm#4. Support (S)" name="Support Order"><strong>Support
+Order</strong></a></p>
+
+<p>Orders a Fleet, Army or Garrison to support some other unit
+carrying out its orders. The Supporting order must have been able
+to move to the destination of the supported unit to be valid. The
+unit does not move from its location. </p>
+
+<p>To enter a Support order, drag the units counter to the area
+or city which the unit you wish to support is advancing to, or
+for other orders, is stationed in. </p>
+
+<p><a href="rulesofplay.htm#5. Convoy (C)" name="Convoy Order"><strong>Convoy
+Order</strong></a></p>
+
+<p>Orders a Fleet to convoy an Army with an Advance order through
+the sea area it occupies. Once a Convoy order has been
+successfully entered you will see that the arrow from the armies
+present province to its destination province will be directed
+through the Fleets sea. </p>
+
+<p>To enter a Convoy order, drag the units counter to the
+province which is the armies destination of its advance order. </p>
+
+<p><a href="rulesofplay.htm#6. Conversion (=)" name="Conversion"><strong>Conversion
+Order</strong></a></p>
+
+<p>Orders a Fleet, Army or Garrison unit to change to a unit of a
+different type. Conversions can only take place in a province
+with a fortified city. An Army can convert into a Garrison, and a
+Garrison can convert into an Army or Fleet if the city is a port.
+To convert from a Fleet to an Army takes two turns, as you have
+to convert into a Garrison first. </p>
+
+<p>To enter a Conversion order, drag the units counter to the
+provinces city if its a Fleet or Army, for Garrisons drag the
+units counter from the city to its surrounding provinces. </p>
+
+<h3><a name="Orders for other powers">Orders for other powers</a></h3>
+
+<p>It is sometimes necessary to enter supposed orders for units
+belonging to other powers. Examples of when this would be useful
+are if you will be convoying or supporting a unit belonging to
+another power, or you expect to take control of the unit
+following a successful <a href="#(K) Buy Enemy Unit Expenditure">Buy
+Enemy Unit</a> expenditure. </p>
+
+<p>The unit will not follow the supposed orders you have entered.
+If the power does order the unit to perform an order matching
+your supposed order for it, then your own unit orders which rely
+on it occurring will not happen. If the power gives a different
+order for the unit to perform, then your own unit orders which
+relied on the supposed order will fail, and default to <a
+href="#Hold Order">Hold</a>s. All of this can only be found out
+during the <a href="#9. Movement and Conflict Phase">Movement and
+Conflict Phase</a> when orders from all the powers have been put
+together. </p>
+
+<p>Making a supposed order for another powers unit is just the
+same as setting an order for one of your own units. Drag the
+units counter with the left mouse button to a destination,
+possibly choose an order if there are multiple legal orders. </p>
+
+<p>You will see the description of the order under the <em>Other
+power orders</em> section along the left side of the screen. </p>
+
+<h3><a name="Expenditures">Expenditures</a></h3>
+
+<p>If the <a href="#Advanced Rules">Advanced Rules</a> was
+checked during game creation then you will also be able to enter
+Expenditures. </p>
+
+<p>Any number of expenditures may be chosen, though each has a
+cost. Expenditures are carried out during the <a
+href="#7. Ducat Expenditure Phase">Ducat Expenditure Phase</a>,
+with the exception of assassination attempts which are carried
+out during the <a href="#8. Assassination Phase">Assassination
+Phase</a>. </p>
+
+<p>Expenditures are resolved in the order which they are written,
+so it can be important to order then in the most effective way. </p>
+
+<p>Expenditures are shown along the left edge of the screen under
+the <em>Expenditures</em> heading. </p>
+
+<p>Associated with each expenditure you will see a number of
+controls. The first will delete it. The next two move the
+expenditure up or down in the list, so it is earlier or later in
+the order in which expenditures are carried out. The final two
+change the amount of ducats that are spent on the expenditure.
+Bribes may be negated through <a
+href="#(F) Counter-Bribe Expenditure">counter bribes</a>, so it
+may be wise to spend more the minimum cost to ignore the effects
+of any counter bribes. </p>
+
+<p>Expenditures are entered in a similar fashion to orders, and
+you will often see both orders and expenditures listed as legal
+choices after dropping a counter when wishing to define a order. </p>
+
+<p>For all except the assassination attempt, click either on the
+relative province or unit that is to be effected. For
+assassination attempts, click on the assassination unit for the
+power listed below your power coat of arms on the left edge of
+the screen. </p>
+
+<p><a href="rulesofplay.htm" name="(A) Famine Relief Expenditure"><strong>(A)
+Famine Relief Expenditure</strong></a><strong> 3d</strong></p>
+
+<p>Remove a Famine Marker from a province. </p>
+
+<p>To enter expenditure, click over province with Famine Marker. </p>
+
+<p><a href="rulesofplay.htm#(B) Pacify Rebellion:"
+name="(B) Pacify Rebellion Expenditure"><strong>(B) Pacify
+Rebellion Expenditure </strong></a><strong>12d</strong></p>
+
+<p>Remove a Rebellion Marker from a province. </p>
+
+<p>To enter expenditure, click over province with Rebellion
+Marker. </p>
+
+<p><a href="rulesofplay.htm#(C) Conquered Province to Rebel:"
+name="(C) Conquered Province To Rebel Expenditure"><strong>(C)
+Conquered Province To Rebel Expenditure</strong></a><strong> 9d</strong></p>
+
+<p>Start a rebellion in an enemy controlled province that is not
+part of the enemies home country. </p>
+
+<p>To enter expenditure, click over province. </p>
+
+<p><a href="rulesofplay.htm#(D) Home Province to Rebel:"
+name="(D) Home Province To Rebel Expenditure"><strong>(D) Home
+Province To Rebel Expenditure</strong></a><strong> 15d</strong></p>
+
+<p>Start a rebellion in an enemy controlled province that is part
+of the enemies home country. </p>
+
+<p>To enter expenditure, click over province. </p>
+
+<p><a href="rulesofplay.htm#(E) Assassination Attempt:"
+name="(E) Assassination Attempt Expenditure"><strong>(E)
+Assassination Attempt Expenditure</strong></a><strong> 12+d</strong></p>
+
+<p>Attempt to assassinate a power. You must have an assassination
+unit for this power. You gain one for each power at the beginning
+of the game, and can gain more by other players transferring them
+to you, probably as part of a deal. The assassination unit is
+used up in the attempt, whether it is successful or not. </p>
+
+<p>There is only a 1 in 6 chance of the attempt being successful.
+For an extra 12 ducats an additional 1 in 6 chance of the attempt
+being successful is. </p>
+
+<p>To enter expenditure, click over assassination unit for power.
+</p>
+
+<p><a href="rulesofplay.htm#(F) Counter-Bribe:"
+name="(F) Counter-Bribe Expenditure"><strong>(F) Counter-Bribe
+Expenditure</strong></a><strong> 3+d</strong></p>
+
+<p>The expenditures following this one are considered bribes. It
+is possible to negate their effects by applying a counter-bribe
+to the unit. If the cost of the counter-bribe reduces the bribe
+to below its minimum cost, the bribe fails. </p>
+
+<p>To enter expenditure, click over the units counter which may
+be bribed. </p>
+
+<p><a href="rulesofplay.htm#(G) Disband Autonomous Garrison:"
+name="(G) Disband Autonomous Garrison"><strong>(G) Disband
+Autonomous Garrison</strong></a><strong> Expenditure 6+d</strong></p>
+
+<p>Remove a Garrison controlled by the Autonomous power from the
+board. </p>
+
+<p>To enter expenditure, click over the Garrisons counter. </p>
+
+<p><a href="rulesofplay.htm#(H) Buy Autonomous Garrison:"
+name="(H) Buy Autonomous Garrison Expenditure"><strong>(H) Buy
+Autonomous Garrison Expenditure</strong></a><strong> 9+d</strong></p>
+
+<p>Convert a Garrison controlled by the Autonomous power to be
+one of your own. You can give orders for the garrison to
+accomplish this turn. </p>
+
+<p>To enter expenditure, click over the Garrisons counter. </p>
+
+<p><a href="rulesofplay.htm#(I) Convert Garrison Unit:"
+name="(I) Convert Garrison Unit Expenditure"><strong>(I) Convert
+Garrison Unit Expenditure</strong></a><strong> 9+d</strong></p>
+
+<p>Convert a Garrison unit controlled by another power into an
+Autonomous Garrison. </p>
+
+<p>To enter expenditure, click over the Garrisons counter. </p>
+
+<p><a href="rulesofplay.htm#(J) Disband Enemy Unit:"
+name="(J) Disband Enemy Unit Expenditure"><strong>(J) Disband
+Enemy Unit Expenditure</strong></a><strong> 12+d</strong></p>
+
+<p>Remove the unit controlled by another power from the board. </p>
+
+<p>To enter expenditure, click over the units counter. </p>
+
+<p><a href="rulesofplay.htm#(K) Buy Enemy Unit:"
+name="(K) Buy Enemy Unit Expenditure"><strong>(K) Buy Enemy Unit
+Expenditure</strong></a><strong> 18+d</strong></p>
+
+<p>Convert a Army, Fleet or Garrison controlled by another power
+to be one of your own. You can give orders for the unit to
+accomplish this turn. </p>
+
+<p>To enter expenditure, click over the units counter. </p>
+
+<hr>
+
+<h2><a name="7. Ducat Expenditure Phase">7. Ducat Expenditure
+Phase</a></h2>
+
+<p>If the <a href="#Advanced Rules">Advanced Rules</a> option was
+checked during game creation this phase will be seen. </p>
+
+<p>Expenditures from all the powers are displayed along the right
+edge of the screen, split by the power which controlled them. </p>
+
+<p>Expenditures of the current power effected are listed along
+the left edge of the screen. </p>
+
+<p>If an expenditure was not successful, the description is
+crossed through with a red line. An expenditure can be
+unsuccessful if either the power does not having sufficient funds
+or the actions of another power make the expenditure invalid. </p>
+
+<p>Assassination attempts are not resolved until the following <a
+href="#8. Assassination Phase">Assassination Phase</a>, and are
+marked with red ?? mark.</p>
+
+<p>Then in turn from the top of the board you will see the
+outcome of each of the successful Expenditures. Counters may be
+removed, added or mutated. </p>
+
+<p>If no expenditures were entered,the phase will automatically
+advance to the next after a short pause.</p>
+
+<hr>
+
+<h2><a name="8. Assassination Phase">8. Assassination Phase</a></h2>
+
+<p>If the <a href="#Advanced Rules">Advanced Rules</a> option was
+checked during game creation this phase will be seen. </p>
+
+<p>If no assassinations were attempted,the phase will
+automatically advance to the next after a short pause. </p>
+
+<h3><a name="Assassination Attempts panel">Assassination Attempts
+panel</a></h3>
+
+<p>For each of the powers that an assassination attempt was
+directed at list all the attempts by the powers which directed
+it. For every 12d spent, there is a 1 in 6 chance of a successful
+attempt. A die is shown for each attempt, and a 6 indicates a
+successful. </p>
+
+<p>The result of the attempts is shown on the right hand side of
+the panel, either Failed or Succeeded. </p>
+
+
+<img src="assassinationattempts.jpg" width="400" height="300">
+
+<h3><a name="Assassination Effects">Assassination Effects</a></h3>
+
+<p>If any assassination attempts were successful, the map is
+updated to show the effects. </p>
+
+<p>The disbanded units and rebellions for all assassinated powers
+are listed along the right edge of the screen, split by power. </p>
+
+<p>Disbanded units and rebellions effecting the current power are
+listed along the left edge of the screen. </p>
+
+<p>Each effect in turn will then be indicated on the map board. </p>
+
+<hr>
+
+<h2><a name="9. Movement and Conflict Phase">9. Movement and
+Conflict Phase</a></h2>
+
+<p>Orders from all the powers are collected and resolved to find
+out which succeeded, and which failed. </p>
+
+<p>All the orders are displayed along the right edge of the
+screen, split by the power which controlled them. </p>
+
+<p>Any units that have been forced to retreat, or in the case of
+Garrisons, disbanded, are listed lower on the right edge of the
+screen. </p>
+
+<p>Orders from the current power are listed along the left edge
+of the screen. </p>
+
+<p>An unsuccessful order is indicated by crossing the order
+description through with a red line. </p>
+
+<p>On the map board arrows for successful orders are drawn with a
+solid tail. Unsuccessful orders are drawn with medium length
+dashed segments. During the Order Writing phase, all order arrows
+were drawn with short dashed segments, to show they are
+prospective. </p>
+
+<p>Then in turn from the top of the board, each of the successful
+orders is carried out. For advances, besieges and conversions you
+will see the units counter following their arrows. </p>
+
+<p>If no orders were entered the phase will automatically advance
+to the next after a short pause. </p>
+
+<h3><a name="Retreats">Retreats</a></h3>
+
+<p>If any units were forced to retreat then the powers whose
+units that have to retreat have the opportunity to decide where
+to move them to. </p>
+
+<p>Counters of units that have been forced to retreat are
+highlighted with a red halo. </p>
+
+<p>All units that have been forced to retreat are displayed along
+the right edge of the screen, split by the powers which control
+them. </p>
+
+<p>Retreating units of the current power are displayed along the
+left edge of the screen. The order is shown rather than the unit.
+</p>
+
+<p>For each of the current powers retreating units you will be
+presented with a circular chooser. The choice always includes the
+Disband order. If province has an unoccupied city, you will be
+able to retreat into the city. Additionally all adjacent
+provinces which the unit could move to are included. </p>
+
+<p>Choosing one of the options will move the circular chooser
+onto the next unit of the current power which is retreating. </p>
+
+<p>Click Finish once you have completed your units retreat
+orders. </p>
+
+<h3><a name="Retreat Effects">Retreat Effects</a></h3>
+
+<p>The retreat orders from all the players are now shown. </p>
+
+<p>If two units retreat into the same area then they are both
+disbanded.</p>
+
+<hr>
+
+<h2><a name="10. Strategic Movement Phase">10. Strategic Movement
+Phase</a></h2>
+
+<p>Each power in turn has a chance to move up to two of their units as far as they like as long as they only pass through empty provinces. Units may enter other powers provinces as long as their owner agrees.</p>
+
+<p>As you drag a unit the trail which the unit will take is shown as a dotted line. If the unit must pass through another powers province, then that province will be highlighted.</p>
+
+<hr>
+
+<h2><a name="11. Famine Effects Phase">11. Famine Effects Phase</a></h2>
+
+<p>The Famine Effects Phase only occurs during the Spring turn,
+and if you checked the <a href="#Natural Disasters">Natural
+Disaster</a> when creating the game. </p>
+
+<p>Any military units in provinces with Famine Marker counters
+are removed from the board. </p>
+
+<p>All the effected military units are displayed along the right
+edge of the screen, split by the power which controlled them. </p>
+
+<p>Military units of the current power effected are listed along
+the left edge of the screen. </p>
+
+<p>Then in turn from the top of the board you will see each of
+the effected military units are removed from the board. Once
+complete all the Famine Marker counters are also removed from the
+board. </p>
+
+<p>If no provinces were effected by famine the phase will
+automatically advance to the next after a short pause. </p>
+
+<hr>
+
+<h2><a name="End of Turn Phase">End of Turn Phase</a></h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="Remove Rebellions">Remove Rebellions</a></h3>
+
+<p>A rebellion counter can be removed if the power controller of
+the province has a military unit <a href="#Hold Order">Hold</a>
+for one turn, or any other power successfully <a
+href="#Advance Order">Advances</a> into tho area. </p>
+
+<p>All removed rebellion counters are displayed along the right
+edge of the screen, split by the power that controlled the
+province. </p>
+
+<p>Rebellion counters in the current powers controlled area are
+displayed along the left edge of the screen. </p>
+
+<p>Then in turn from the top of the board, each rebellion counter
+is removed from the board.</p>
+
+<hr>
+
+<h2><a name="Power Properties">Power Properties</a></h2>
+
+<p>Properties for the current power are available by clicking the
+&quot;Open properties for power&quot; icon. <br>
+Accelerator key: R </p>
+
+<p>The first page of the notebook contains a standard summary of
+the powers current state; controlled cites, treasury, debt, total
+armies, total fleets and total garrisons. </p>
+
+
+<img src="powerproperties.jpg" width="400" height="300">
+<img src="powerprovinces.jpg" width="400" height="300">
+<img src="powerloans.jpg" width="400" height="300">
+
+<hr>
+
+<h2><a name="Transfer to Power">Transfer to Power</a></h2>
+
+<p>Ducats from the powers treasury and its assassination units
+may be transferred to other powers. </p>
+
+<p>The panel can be opened by clicking the &quot;Open Transfer to
+Power&quot; icon. <br>
+Accelerator Key: T </p>
+
+<p>The amount of ducats to transfer are changed with the up/down
+controls.<br>
+Select one or more assassination units.<br>
+Then choose one of the other powers, and finally transfer to the
+power by clicking the Transfer button. </p>
+
+<img src="transfertopower.jpg" width="400" height="240">
+
+<p>All players can be informed of the details of the transfer.</p>
+
+<img src="resourcestransferred.jpg" width="300" height="150">
+
+<hr>
+
+<h2><a name="Help">Help</a></h2>
+
+<p>Multi-page panel containing the program About Box, this manual
+and the <a href="rulesofplay.htm">Rules of Play</a> from the
+original board game. </p>
+
+<p>The panel can be opened by clicking the &quot;Open Help&quot;
+icon. <br>
+Accelerator Key: F1 </p>
+
+<img src="aboutMachiavelli.jpg" width="400" height="316">
+<img src="manual.jpg" width="400" height="316">
+
+<hr>
+
+<h2><a name="User Interface Options">User Interface Options</a></h2>
+
+<p>Access to the UI options which can modify the appearance and
+interface of the game. This only effects the game on this
+machine. Other players in a network game see no effect from you
+changing the UI options. </p>
+
+<p>The panel can be opened by clicking the &quot;Open UI
+options&quot; icon. <br>
+Accelerator Key: U </p>
+
+<p>You may change between all the supported screen resolutions of
+your graphics card.<br>
+<font color="#FF0000">*** Pre-release also supports Window mode -
+only runs in 16bit color modes *** </font></p>
+
+<p>Checking <strong>Order Descriptions</strong> will include a
+textual description of orders and expenditures in their tool tip
+text. This may be quite a lot of text, but will help if you are
+unused to the abbreviated form. </p>
+
+<p>Checking <strong>Debug Readout</strong> displays the current
+and recent Frames Per Seconds in a small bar at the top left of
+the screen. </p>
+
+<p>Checking <strong>Write Orders during Diplomacy</strong> allows
+orders and expenditures to be entered during the <a
+href="#4. Diplomacy Phase">Diplomacy Phase</a>, as well as the
+usual <a href="#6. Order Writing Phase">Order Writing Phase</a>. </p>
+
+<img src="uioptions.jpg" width="400" height="300">
+
+<hr>
+
+<h2><a name="Start a New Game">Start a New Game</a></h2>
+
+<p>This wizard allows you to create a new game, or join an
+existing Network game waiting for players. </p>
+
+<p>It can be opened from the Entrance Screen, or from the
+&quot;New Game&quot; icon found on the main map board. <br>
+Accelerator Key: N </p>
+
+<h3><a name="Choose Game Type">Choose Game Type</a></h3>
+
+<p>The first step is to choose the type of game. </p>
+
+<p>A <a name="Hotseat game"><strong>Hotseat</strong> game</a> is
+where all the players share the same computer. They take turns
+entering their actions. You can change the current power by
+clicking on the current powers coat of arms towards the top left
+of the map board once play starts. </p>
+
+<p>The <a href="#6. Order Writing Phase">Order Writing Phase</a>
+really requires players to be able to secretly enter their
+orders, this may effect how/where you set up your computer, and
+if you engage in any procedures to make access to the computer
+private for this period. </p>
+
+<p>In a <a name="Network game"><strong>Network</strong> game</a>
+each player has their own computer which they have exclusive
+access to. Computers can be connected by modem, serial port, IPX
+or TCP/IP local network or through the internet. </p>
+
+<p>For each Network game, one player will Start a New Game and
+specify the scenario, number of players, rules, etc. Once
+complete all the other players Join the Game until the full
+compliment of players is reached, and the game can start. </p>
+
+
+<img src="choosegametype.jpg" width="400" height="300">
+
+<h3><a name="Choose Scenario">Choose Scenario</a></h3>
+
+<p>A number of different scenarios are supplied with Machiavelli,
+and it is possible to add your using the Scenario Builder. </p>
+
+<p>A scenario is played on a map board, and specifies which
+powers are available, and their initial home areas and military
+units. </p>
+
+<p>Checking the title of a scenario will display its description
+on the right hand side of the panel. </p>
+
+<img src="choosescenario.jpg" width="400" height="300">
+
+<h3><a name="Choose Player Variant">Choose Player Variant</a></h3>
+
+<p>For each scenario there are a number of different allocations
+of powers. This is usually split by the number of human players. </p>
+
+<p>Checking a player variant on the left hand side of the panel
+will display its details on the right. </p>
+
+<p>For each player, the number of random powers and specific
+powers are listed. On starting the game, all but one of the
+powers will be aligned with the other, and you will control them
+all as a single power. </p>
+
+<p>Some variants will also have neutral powers. The areas
+controlled by these powers are considered off limits for the
+game. </p>
+
+<p>An autonomous power is one whose military units are replaced
+with autonomous garrisons, but they can be attacked and control
+gained of their provinces. </p>
+
+<img src="chooseplayervariant.jpg" width="400" height="300">
+
+<h3><a name="New Game Options">New Game Options</a></h3>
+
+<p>The game may be customised by a number of options. These may
+not be changed once the game has started. </p>
+
+
+<img src="newgameoptions.jpg" width="400" height="300">
+
+<p>The Rules section allows you to choose which, if any, of the
+advanced and optional rules you wish to use. These enhance the
+realism of Machiavelli at the cost of added complexity, and
+longer games. </p>
+
+<p>Checking <a name="Advanced Rules"><strong>Advanced Rules</strong></a>
+adds finance, expenditures, rebellions and assassinations. </p>
+
+<p>The finances of a power are measured in ducats. Income is
+generated from controlled provinces, sea areas, cities and
+variable power and city income, at the start of every Spring
+turn. Ducats may also be transferred to another power. </p>
+
+<p>Ducats can be used for bribing other powers, upkeep and new
+military units, and can be used to buy expenditures during the
+Order Writing phase. Expenditures allow you to remove famine
+markers, start rebellions, buy enemy units already on the board,
+etc. </p>
+
+<p>Assassination attempts may be made on other powers. If
+successful, the powers military units become temporarily
+paralysed, rebellions appear in their provinces. The original
+player continues playing as his own successor. An assassination
+attempt can only be attempted if you have an assassination unit
+matching the power you wish to assassinate. You start the game
+with such a unit for each of the other powers, and you may trade
+them with other powers during the game. </p>
+
+<p>Checking <a name="Excommunication"><strong>Excommunication</strong></a>
+allows the Papacy power, or which ever power has it as an aligned
+power, may excommunicate one power during the Diplomacy phase. No
+other power may communicate the excommunicated power, else they
+become excommunicated too. </p>
+
+<p>Checking <a name="Natural Disasters"><strong>Natural Disasters</strong></a>
+introduces the random effects of Plagues and Famines. These
+killed infinitely more people than war during the eras often
+depopulating provinces and destroying military units (those that
+did not die of the disease would often desert to escape it). </p>
+
+<p>Plagues can occur during the Summer turns, and all military
+units in the randomly chosen provinces are immediately removed
+from the map board. </p>
+
+<p>Famines can occur during the Spring turns. At the start of the
+turn Famine Markers are placed in randomly chosen provinces. No
+military units are effected until the end of the turn, when any
+units remaining in the provinces are removed from the map board. </p>
+
+<p>Checking <a name="Special Units"><strong>Special Units</strong></a>
+allows one of your military units to be considered a special unit
+with either improved military strength and/or improved resistance
+to bribery from other powers. Special units have greater upkeep
+costs than the standard Condottieri military units. </p>
+
+<p>There are three different types of special unit; citizen
+militia, elite mercenaries and elite professionals. Powers may
+have access to only a subset of the types. </p>
+
+<p>Checking <a name="Strategic Movement"><strong>Strategic
+Movement</strong></a> allows each power to move any two of their
+military units at the end of the turn as far as they like through
+friendly provinces. </p>
+
+<p>Checking <a name="Money Lenders"><strong>Money Lenders</strong></a>
+allows powers to borrow up to 25 ducats. Failure to repay the
+loan in one or two years with interest will stop the availability
+of loans to the power, and they suffer the same effects as if
+they had been assassinated. </p>
+
+<p>Checking <a name="Conquering"><strong>Conquering</strong></a>
+results in the home areas of a power being added to your own if
+you control all of the provinces making up their home area. You
+may only add new military units in a home province.</p>
+
+<p><a name="Victory Condition"><strong>Victory Condition</strong></a>
+defines the criteria of choosing which power has won the game.
+This may occur at the start of each Spring turn.</p>
+
+<p>Some phases are time limited. Normally once all powers have
+indicated that they have entered all their actions for a phase,
+the game moves to the next phase. For a time limited phase this
+still holds true, but if all the players haven't finished after a
+set duration the game moves to the next phase anyway. </p>
+
+<h3><a name="Choose Connection">Choose Connection</a></h3>
+
+<p>In Network games you have to choose which type of network
+connection will be used to synchronise the players machines.
+Machiavelli uses DirectPlay and by default supports modems,
+serial cables, IPX and TCP/IP which is used by the internet. </p>
+
+<p>The list of available connections is shown on the left,
+checking one of these will allow you to enter additional criteria
+for the selected connection on the right hand side of the panel. </p>
+
+<p>IPX networks do not require any additional information as they
+automatically search for games on the local network. </p>
+
+<p>TCP/IP provides a number of options. You may search for games
+on the local network, though this isn't very useful for the
+internet. If you know the address, eg 127.0.0.1, or name of a
+machine, eg scooby.net, of the server machine you wish to connect
+to you may enter that. The past server addresses you have
+connected to are also available if you often connect to the same
+server. </p>
+
+<p>Note that for some internet dial up accounts your internet
+machine address may change each time you connect to the internet.
+If this is the case either start new games from a machine with a
+fixed address, or you may find out your machines current address
+by using the &quot;winipcfg&quot; Windows command from the Run
+entry of the Windows Start menu before running Machiavelli. You
+will need some means of communicating this to the players who
+wish to join the new game. </p>
+
+
+<img src="chooseconnection.jpg" width="400" height="300">
+
+<h3><a name="Choose Sessions">Choose Sessions</a></h3>
+
+<p>Finally when joining a network game you will be shown a list
+of games found using the selected connection. Select one of these
+and click Finish to start playing. </p>
+
+<p>For each available game you will be shown the title of the
+game and the number of players currently joined.</p>
+
+<hr>
+
+<h2><a name="Save Game">Save Game</a></h2>
+
+<p>Save the current game to a file local to this machine.</p>
+
+<p>The panel can be opened by clicking the &quot;Save Game&quot;
+icon. <br>
+Accelerator Key: S </p>
+
+<p>Enter the name of the file to be saved, and click OK. </p>
+
+
+<img src="savegame.jpg" width="400" height="300">
+
+<hr>
+
+<h2><a name="Open Game">Open Game</a></h2>
+
+<p>Open a saved game local to this machine.<br>
+<font color="#FF0000">*** Newer versions of pre-release
+Machiavelli may not be able to load saved games from previous
+versions due to the file format changing ***</font></p>
+
+<p>The panel can be opened by clicking the &quot;Open Game&quot;
+icon. <br>
+Accelerator Key: O </p>
+
+<p>Select one of the saved games, and click OK. </p>
+
+<p>The state of the powers and mapboard of the game at the point
+of saving are shown on the right hand side of the panel for the
+selected saved game.</p>
+
+
+<img src="loadgame.jpg" width="400" height="300">
+
+<hr>
+
+<h2><a name="Scenario Information">Scenario Information</a></h2>
+
+<p>Display information on the current and previous state of the
+game, summaries of power standings, scenario description and game
+options. </p>
+
+<p>The panel can be opened by clicking the &quot;Open Scenario
+Information&quot; icon. <br>
+Accelerator Key: G </p>
+
+<p>The summary and turn actions provide information for a specific turn
+which can be changed using the turn up/down arrows. Additionally the map
+of power units and information can be filtered by toggling the state of
+the powers coat of arms. All powers can be toggled on/off with the last icon.
+</p>
+
+<img src="scenariosummary.jpg" width="400" height="316">
+<img src="scenarioturnactions.jpg" width="400" height="316">
+<hr>
+
+<h2><a name="Chat">Chat</a></h2>
+
+<p>The chat panel is used to send and receive text to other
+players. </p>
+
+<p>The panel can be opened by clicking the &quot;Open Chat&quot;
+icon. <br>
+Accelerator Key: C </p>
+
+<p>Except for the Diplomacy phase, chat is sent and received by
+all the other players. During the Diplomacy phase, you can
+restrict the chat to only include a number of players, to help
+broker deals and alliances. </p>
+
+<p>Text you wish to send to other players is typed in the field
+at the bottom of the panel. Then send it by clicking the Send
+button, or pressing return. </p>
+
+<img src="chat.jpg" width="400" height="160">
+
+<p>The chat panel, like other modeless panels can be toggled to a transparent
+state so that you can see through, and interact with the game board below
+the panel. This is useful if you are running on a lower resolution screen.
+The contents of panels automatically updates to reflect the changing state
+of the game.</p>
+
+<img src="chattransparent.jpg" width="421" height="194">
+
+<hr>
+
+<h2><a name="Quit Scenario">Quit Scenario</a></h2>
+
+<p>Quit the game you are currently playing, and return to the <a
+href="#Entrance Screen">Entrance screen</a>. </p>
+
+<p>The panel can be opened by clicking the &quot;Quit
+Scenario&quot; icon. <br>
+Accelerator Key: Q </p>
+
+<hr>
+
+<p><a
+href="http://www.dgjones.info/machinto/index.htm">Machiavelli
+2ed Adaption</a> Copyright © <a
+href="mailto:machiavelli@dgjones.info">David Jones</a> 1999<br>
+Original Machiavelli Board Game Copyright © Avalon Hill 1980,
+1995</p>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

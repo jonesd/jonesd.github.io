@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<title>Dolphin Profiling Support</title>
+</head>
+
+<body background="background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Dolphin Profiling Support</font>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD>
+<a href="Svengali.htm"><img src="MiniBlue.gif" alt="Svengali" border=0></a>
+<TD ALIGN=RIGHT>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<a href="ProfilerPackage.htm">
+<img src="link_ProfilerPackage.gif" alt="Profiler Package" border=0></a>
+<TR><TD>
+<img src="link_Blank.gif" border=0></a>
+<TR><TD>
+<img src="link_Blank2.gif" border=0></a>
+<TR><TD>
+<a href="mailto:svengali@dgjones.info">
+<img src="link_DavidJones.gif" alt="Contact David Jones" border=0></a>
+</TABLE>
+</TABLE>
+</TABLE>
+
+<p>There are a number of ways of measuring the performance and analysing the behaviour of code using existing facilities supplied with Dolphin. These techniques would be used separately to the profiling and tracing tools of Svengali.</p>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Time</font>
+</TABLE>
+
+<p>Measuring the time required to evaluate some code is important to know where you are, and also to gauge any improvements in performance after a modification. It is very easy to spend excessive amounts of time on improving the overall time by an insignificant amount. Optimisations often arise in conflict to the readability of your code, it is important to balance this out. It is wise to keep a record of what you have modified and its actual affect if you are involved in a serious stint of profiling work.</P>
+
+<p>The Time class contains two class methods for measuring the time required to evaluate a block, <I>#millisecondsToRun:</I> and <I>#microsecondsToRun:</I>. It is important to remember that Dolphin runs on top of a complicated multi tasking OS which has to respond to a large number of requests for the machines resources. To  improve the consistency of results Dolphin should be the only application open, and your machine should not be connected to a network. On the other hand a more practical approach is  to ensure that no other significant processing is occurring and average the results from a number of runs. One thing to watch for is that the millisecond clock appears to have a resolution of 10ms.</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Instances</font>
+</TABLE>
+
+<p>You can also keep track of the number of instances generated during an execution by using the <I>#allInstances</I> and <I>#allSubinstances</I> methods of Behavior. These will give results for the entire system, so you may wish to record the systems instance signature before you start an execution then report back the difference. Note that the current implementations of these methods perform a garbage collection before collecting the instances, this will consume time but may also modify the behaviour of your software, check out <I>MemoryManager>>garbageCollect.</I></P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Sound</font>
+</TABLE>
+
+<p>To get some more ad hoc feedback of what your software is actually doing during in its more self consuming moments there are the classic techniques of writing a suitable message to the Transcript indicating current location and action, counting iterations using a global or sounding the system bell (<CODE>Sound bell</CODE>).</P>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="mesh.gif" WIDTH=100%>
+<TR><TD>
+<font size=+2 color=#5A63AD>Feedback</font>
+</TABLE>
+
+<p>The Debugger can also be used to highlight execution paths on a micro scale by stepping through the code, or by using its <i>Animate</i> facility which will automatically step through the whole execution. The animation facility can often slap you in the face by allowing you into the 'secret' world and forcing you to become aware of the grand amount of unexpected code that gets executed.</p>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

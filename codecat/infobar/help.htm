@@ -1,0 +1,105 @@
+<HTML>
+
+<HEAD>
+<TITLE>Info Bar</TITLE>
+</HEAD>
+
+<BODY BACKGROUND="../background.gif">
+
+<TABLE BORDER=0 WIDTH=100% CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<font size=+4 color=#5A63AD>Info Bar</font>
+</TABLE>
+
+<P>0.05 (14-Oct-94)  David G Jones (Public Domain)</P>
+
+<P>This module will add a strip of simple readouts within the top left of the icon bar. Specifically:</P>
+
+<UL>
+<LI>Date
+<LI>Time
+<LI>Mode number
+<LI>Free memory
+</UL>
+
+<DIV ALIGN=CENTER>
+<IMG SRC="InfoBar.gif">
+</DIV>
+
+<P>The time section will only be updated once every minute so there is effectively no reduction in the desktop's speed. Redrawing should be pretty prompt as well.</P>
+
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Info Bar rationale</font></TABLE>
+
+<P>Ok so why bother with this module. I was using a collection of applications to provide the same functionality, which produced a clutter of icons. The one missing thing was a date readout which I was always running foul of. So I packaged them all up, and placed them off to one side.</P>
+
+<P>The only problem with this course of action was with the removal of Stuart Hickinbottom's cool little IconBar Clock whose second hand was a nice indicator of whether the desktop was still polling. As a result I souped up <a HREF="../iconz2/index.htm">Funky IconZ2</A> which produces a rotating Task Manager icon, and recently rereleased. As well as testing whether the desktop is polling, at high frame rates also a rough indication of the polling rate.</P>
+
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>RiscPCs</font></TABLE>
+
+<P>This hasn't been tested on a RiscPC but I suppose one area where you may run into problems is the mode number. I assume it is a one byte number.</P>
+
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Customization</font></TABLE>
+
+<P>There are a couple of problems you may run into, here are a few ways to get round them. Unfortunately they all involve playing around with the modules source code. To recompile after a modification just run it. Ensure that the Currently Selected Directory has been set to !InfoBar. If you do edit the source ensure that you have an unmodified copy in case disaster greets you.</P>
+
+<UL>
+<LI>One problem that you might find is that the infobar will impair the top of the ResourceFiler icon. A simple way out of this quandary is too ensure the ResourceFiler is dead before the Desktop is started:<BR>
+<CODE>	*unplug ResourceFiler</CODE><BR>
+Then set the ReplaceResource% variable to TRUE in the module source. Run this to compile the new module. Once this new version is loaded up there should be no conflict with the icon and InfoBar. The new icon only responds to Select and Adjust mouse clicks.
+
+<LI>You might not be too keen on the format of the Date/Time. The standard time format field names are used to generate the values, stored at TimeFormat & DateFormat. So it is easy to change these. Things can escalate at this stage, you may have to increase the buffer they are read into, Date & Time. Also check out readDateAndTime code. Also the positions of areas may have to be changed, TimeX0%/TimeX1%/DateX...
+</UL>
+
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Releases</font></TABLE>
+
+<TABLE>
+<TR><TD>0.01<TD>(28-Aug-94)<TD>
+<TR><TD>0.02<TD>(05-Sep-94)<TD>
+<TR><TD>0.03<TD>(18-Sep-94)<TD>
+<TR><TD>0.04<TD>(25-Sep-94)<TD>First release into the big world
+<TR><TD>0.05<TD>(14-Oct-94)<TD>Survive desktop restart<BR>
+                  Added !InfoBar application sprite
+</TABLE>
+
+<P>The customary set of ideas for future outlandish additions:</P>
+
+<UL>
+<LI>Allow info bar to be either on the left or right of the icon bar.
+<LI>Add Menu structure with at least Info & Quit entries.
+<LI>Easier customizing of Time/Date formats and repositioning their display.
+<LI>Use "Icon OverDrive" technology to improve replacement of ResourceFiler icon.
+<LI>Simple alarm, just the time.
+<LI>Alarm section utilizing Alarm modules set of stored alarms.
+</UL>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Public Domain</font></TABLE>
+
+<P>This software is in the Public Domain so you can do whatever you like with it. If you make any modifications that may be useful to others then send me a copy and I will include it in any further releases.</P>
+
+
+<P>Ok, if you have any comments then send them in. If you have any ideas for any further little desktop widgets then get in contact and perhaps we can have a bash at creating them.</P>
+
+<P>
+<TABLE BORDER=0 WIDTH=100% BACKGROUND="../../mesh.gif">
+<TR>
+<TD ALIGN=LEFT>
+<a href="http://www.dgjones.info/">http://www.dgjones.info/</a>
+<TD ALIGN=RIGHT>
+<a href="mailto:david_jones@dgjones.info">david_jones@dgjones.info</a>
+</TABLE>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5004449-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</HTML>
