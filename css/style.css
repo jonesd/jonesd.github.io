@@ -35,15 +35,14 @@ body {
     float: right;
 }
 
-/* Copyright */
-.copyright {
+/* Footer */
+.footer {
     clear: both;
     margin-top: 50px;
     padding-top: -5px;
     border-top: thin dotted lightgray;
 }
-.copyright p {
-    text-align: center;
+.footer p {
     color: lightgray;
     font-size: smaller;
 }

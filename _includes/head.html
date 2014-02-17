@@ -6,6 +6,8 @@
 <title>{{ page.title }}</title>
 <meta name="viewport" content="width=device-width">
 
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.url }}/feed.xml">
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 
@@ -15,7 +17,7 @@
 <body>
 <div class="main">
     <div class="titlebar"> 
-        <div class="titlebar-menu"><a class="{% if page.section == 'photos'%}highlight{%endif%}" href="/index.html">Photos</a> | <a class="{% if page.section == 'books'%}highlight{%endif%}" href="/books.html">Books</a> | <a class="{% if page.section == 'software'%}highlight{%endif%}" href="/software.html">Software</a>  | <a class="{% if page.section == 'posts'%}highlight{%endif%}" href="/posts.html">Blog</a> | <a class="{% if page.section == 'contact' %}highlight{%endif%}"  href="/contact.html">Contact</a></div>
-        <div class="titlebar-site"><a href="index.html">www.dgjones.info</a></div>
+        <div class="titlebar-menu"><a class="{% if page.section == 'photos'%}highlight{%endif%}" href="/index.html">Photos</a> | <a class="{% if page.section == 'books'%}highlight{%endif%}" href="/books.html">Books</a> | <a class="{% if page.section == 'software'%}highlight{%endif%}" href="/software.html">Software</a>  | <a class="{% if page.section == 'posts'%}highlight{%endif%}" href="/blog.html">Blog</a> | <a class="{% if page.section == 'contact' %}highlight{%endif%}"  href="/contact.html">Contact</a></div>
+        <div class="titlebar-site"><a href="/index.html">www.dgjones.info</a></div>
     </div>
 
