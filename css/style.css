@@ -72,6 +72,10 @@ a:hover {
     color: lightgray;
 }
 
+.titlebar-menu a.highlight {
+    color: black;
+}
+
 .titlebar-menu a:hover {
     color: dimgray;
 }
@@ -113,12 +117,11 @@ ul.pagination li.last {
 */
 
 .caption {
- /*   float: left;*/
+ float: left;
  /*margin-top: -1.33em;*/
 }
 .location {
-  /*  float: right;*/
-   margin-top: -1.1em;
+  float: right;
 }
 
 #slides .next, #slides .prev {
@@ -136,17 +139,3 @@ ul.pagination li.last {
 	left: 625px;
 }
 
-/*
-    FotoMoto
-*/
-
-
-.FotomotoSep2 { 
-            display:block !important; 
-} 
-.FotomotoECardButton { 
-        float:left !important; 
-} 
-.FotomotoBar { 
-        float:right !important; 
-}

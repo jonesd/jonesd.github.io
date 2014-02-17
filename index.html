@@ -1,13 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-    <title>David Jones homepage</title>
+---
+layout: default
+title: Home
+section: photos
+---
+<div style="min-height: 516px;">
+<div id="slides">
+    <div class="slides_container">
+    </div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-	
-	<link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/style.css">
+    <a href="#" class="prev"><i class="icon-chevron-left icon-large"></i></a>
+	<a href="#" class="next"><i class="icon-chevron-right icon-large"></i></a>
+
+    	<div style="text-align: center;">
+	      <ul style="text-align: center;" class="pagination sectionPagination">
+	      </ul>
+        </div>
+</div>
+</div>
+    
 	
 	<script src="js/slides.min.jquery.js"></script>
 	<script>
@@ -408,51 +418,8 @@
 				            $(id).removeClass("activeSection disabledSection").addClass("disabledSection");
 				        }
 				    }
-				    FOTOMOTO.runInit();
 				},
 			});
 		});
 
 	</script>
-</head>
-
-<body>
-
-<div class="main">
-    <div class="titlebar"> 
-        <div class="titlebar-menu">Photos | <a href="books.html">Books</a> | <a href="software.html">Software</a> | <a href="contact.html">Contact</a></div>
-        <div class="titlebar-site"><a href="index.htm">www.dgjones.info</a></div>
-    </div>
-
-<div style="min-height: 516px;">
-<div id="slides">
-    <div class="slides_container">
-    </div>
-
-    <a href="#" class="prev"><i class="icon-chevron-left icon-large"></i></a>
-	<a href="#" class="next"><i class="icon-chevron-right icon-large"></i></a>
-
-    	<div style="text-align: center;">
-	      <ul style="text-align: center;" class="pagination sectionPagination">
-	      </ul>
-        </div>
-</div>
-</div>
-    
-<div class="copyright">
-    <p>Copyright &copy; 2012 David G Jones</p>
-</div>
-</div>
-
-<script type="text/javascript" src="http://widget.fotomoto.com/stores/script/9b0128c616d3c5eadba7e70dc04fb0b459767380.js"></script><noscript>If Javascript is disabled browser, to place orders please visit the page where I <a href="http://my.fotomoto.com/store/9b0128c616d3c5eadba7e70dc04fb0b459767380" target="_blank">sell my photos</a>, powered by <a href="http://my.fotomoto.com/" target="_blank">Fotomoto</a>.</noscript>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-5004449-1");
-pageTracker._initData();
-pageTracker._trackPageview();
-</script>
-</body></html>
