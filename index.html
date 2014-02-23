@@ -3,23 +3,21 @@ layout: default
 title: Home
 section: photos
 ---
-<div style="min-height: 516px;">
-<div id="slides">
-    <div class="slides_container">
-    </div>
-
-    <a href="#" class="prev"><i class="icon-chevron-left icon-large"></i></a>
-	<a href="#" class="next"><i class="icon-chevron-right icon-large"></i></a>
-
-    	<div style="text-align: center;">
-	      <ul style="text-align: center;" class="pagination sectionPagination">
-	      </ul>
-        </div>
+<div class="center-block slides-container">
+		<div id="slides" class="carousel slide" data-ride="carousel" data-interval="false">
+		  <div class="carousel-inner">
+		  </div>
+		  <a class="left carousel-control" href="#slides" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left"></span>
+		  </a>
+	  <a class="right carousel-control" href="#slides" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+		</div>
+		
+	<ul class="pagination"></ul>
 </div>
-</div>
-    
 	
-	<script src="js/slides.min.jquery.js"></script>
 	<script>
 	var sectionStart = [];
 	
@@ -363,47 +361,79 @@ section: photos
        }
     ];
 
+    function createCategoryLink(i, category, lastcategory) {
+        var categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
+        if (category != lastcategory) {
+            $(".pagination").append(
+                "<li><a href='#' id='category-"+category+"' class='"+(lastcategory == null ? "activeSection" : "disabledSection")+"'>"+categoryTitle+"</a></li>"
+            );
+            $('#category-'+category).click(function() {
+            	jumpToSlide(i);
+            });
+           /*
+        } else {
+            $(".pagination").append(
+                "<li style='visibility: hidden;width: 0px'"+(i == catalogue.length-1 ? "class='last'" : "")+"><a href='#' style='width: 0px'></a></li>"
+            ).click(function() {
+            		console.log('pressed '+i);
+                	jumpToSlide(i);
+            });
+            */
+        }
+    }
+    
+    function jumpToSlide(i) {
+    	$('#slides').carousel(i);
+    }
+
     $(function() {
         var lastcategory = null;
         for (var i = 0; i < catalogue.length; i++) {
             category = catalogue[i].category;
             sectionStart[i] = category;
 
-            var categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
-            if (category != lastcategory) {
-                $(".pagination").append(
-                    "<li>"+((lastcategory != null) ? "&nbsp;|&nbsp;" : "")+"<a href='#' id='"+category+"' class='"+(lastcategory == null ? "activeSection" : "disabledSection")+"'>"+categoryTitle+"</a></li>"
-                );
-            } else {
-                $(".pagination").append(
-                    "<li style='visibility: hidden;width: 0px'"+(i == catalogue.length-1 ? "class='last'" : "")+"><a href='#' style='width: 0px'></a></li>"
-                );
-            }
-            lastcategory = category;
 
             var width = catalogue[i].width || 640;
             var height = catalogue[i].height || 418;
             var padding = (width < 640) ? ((640 - width) / 2) : 0;
-            $(".slides_container").append(
-            "<div><div>"
+            $('.carousel-inner').append(
+            '<div id="slide'+i+'" class="item '+(i === 0 ? "active":"")+'" index="'+i+'">'
                 +(catalogue[i].url ? "<a href='"+catalogue[i].url+"'>": "")
-                +"<img src='"+catalogue[i].src+"' height='"+height+"' width='"+width+"'/>"
+                +"<img style='text-align:center;' src='"+catalogue[i].src+"' height='"+height+"' width='"+width+"'/>"
                 +(catalogue[i].url ? "</a>": "")
-                +"</div>"
+                +'<div class="carousel-caption">'
                 +(catalogue[i].location?"<div class='location'>"+catalogue[i].location+", "+catalogue[i].date+"</div>":"<div>&nbsp;</div>") 
-                +(catalogue[i].caption?"<div class='caption'>"+catalogue[i].caption+"</div>":"<div>&nbsp;</div>")            
+                +(catalogue[i].caption?"<div class='caption'>"+catalogue[i].caption+"</div>":"<div>&nbsp;</div>")
+                +'</div>'
                            
             +"</div>");
+            
+            createCategoryLink(i, category, lastcategory);
+            
+            lastcategory = category;
         }
+                
+        $('#slides').on('slid.bs.carousel', function (e) {
+        	var current = $('#slides .carousel-inner .active').attr('index');
+        	console.log(current);
+        	/*
+		    var active = sectionStart[current - 1];
+		    for (var i = 0; i < sectionStart.length; i++) {
+		        var section = sectionStart[i];
+		        var id = '#'+section;
+		        if (section == active && (! $(id).hasClass("activeSection"))) {
+		                $(id).removeClass("activeSection disabledSection").addClass("activeSection");
+		        } else if (section != active && ($(id).hasClass("activeSection"))) {
+		            $(id).removeClass("activeSection disabledSection").addClass("disabledSection");
+		        }
+		    }
+        	*/
+        	})
 	});
-	
+
+    /*
 		$(function(){
 			$('#slides').slides({
-				//effect: 'slide, fade',
-				//crossfade: true,
-				//play: 6500,
-				//slideSpeed: 350,
-				//fadeSpeed: 500,
 				generateNextPrev: false,
 				generatePagination: false,
 				autoHeight:true,
@@ -421,5 +451,5 @@ section: photos
 				},
 			});
 		});
-
+*/
 	</script>
