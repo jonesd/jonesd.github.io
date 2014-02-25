@@ -90,4 +90,4 @@ The next step would be to try and include an awareness of the importance of not 
 
 Excuse me now, I must check back into my favourite cell, before the turtles start nipping too hard.
 
-Originally posted on: [i-proving.com](http://i-proving.com/2006/06/05/diagnosing-handle-leaks-in-swtrcp-windows-applications/)
+> Originally posted on: [i-proving.com](http://i-proving.com/2006/06/05/diagnosing-handle-leaks-in-swtrcp-windows-applications/)
