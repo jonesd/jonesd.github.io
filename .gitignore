@@ -2,4 +2,4 @@ _site
 .externalToolBuilders/
 .settings/
 .project
-
+.DS_Store
