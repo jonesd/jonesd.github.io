@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "AWS Elastic Load Balancer setup for VPC with Multi-Availability Zones"
+thumbnail: "/assets/2014-01-14-aws-elastic-load-balancer-setup-for-vpc-with-multi-availability-zones/aws2.png"
 date:   2014-01-14 11:33:42
 categories: technology amazon aws cloud network
 ---

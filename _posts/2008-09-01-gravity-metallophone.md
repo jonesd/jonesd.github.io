@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Gravity Metallophone"
+thumbnail: "/assets/2008-09-01-gravity-metallophone/close_up.gif"
 date:   2008-09-01 11:33:42
 categories: 
 ---

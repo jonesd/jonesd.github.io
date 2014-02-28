@@ -7,9 +7,12 @@ section: posts
 
 <ul class="list-unstyled">
   {% for post in site.posts %}
-    <li>
+    <li class="clearfix">
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
       
+    	{% if post.thumbnail %}
+    	<img class="pull-right" style="max-height: 100px;"src={{post.thumbnail}}></img>
+    	{% endif %}
       <p class="lead">{{ post.excerpt }}</p>
       
       <p class="text-muted">{{post.date}}
