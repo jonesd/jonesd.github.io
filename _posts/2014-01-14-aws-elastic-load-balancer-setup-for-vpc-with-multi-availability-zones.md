@@ -108,4 +108,4 @@ In our case we could then hit our website on port 80 of the ELB to see our test 
 - Adding HTTPS/SSL inbound for the ELB requires the adding of a SSL certificate
 - Save your NAT iptables configuration to a new AMI with the EC2 console's "Create Image"
 
-> Originally posted on: [i-proving.com](http://i-proving.com/2014/01/14/aws-elastic-load-balancer-setup-for-vpc-with-multi-availability-zones/)
+<p class="well">Originally posted on: [i-proving.com](http://i-proving.com/2014/01/14/aws-elastic-load-balancer-setup-for-vpc-with-multi-availability-zones/)</p>

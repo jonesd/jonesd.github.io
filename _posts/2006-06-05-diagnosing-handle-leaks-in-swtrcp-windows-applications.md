@@ -5,7 +5,11 @@ date:   2006-06-05 11:33:42
 categories: swt windows technology diagnosis
 ---
 
-Things were going along quite well in the project room until our PM, the resident stress tester of the group - he has that delicate 'bam-bam' touch that is so important for exploratory testing, managed to get our SWT/RCP client application to enter a weird mode. New editors wouldn't appear, but you could still move between existing ones. And where had the menus gone? After we found the application log, which we normally get to from the About Box off the Help menu though of course that didn't open anymore, our faces went white when the exception stack slithered onto the screen:
+Things were going along quite well in the project room until our PM, the resident stress tester of the group - 
+he has that delicate 'bam-bam' touch that is so important for exploratory testing, managed to get our SWT/RCP client application 
+enter a weird mode. New editors wouldn't appear, but you could still move between existing ones. And where had the menus gone? 
+After we found the application log, which we normally get to from the About Box off the Help menu though of course that didn't 
+open anymore, our faces went white when the exception stack slithered onto the screen:
 
 {% highlight java %}
 org.eclipse.swt.SWTError: No more handles
@@ -90,4 +94,4 @@ The next step would be to try and include an awareness of the importance of not 
 
 Excuse me now, I must check back into my favourite cell, before the turtles start nipping too hard.
 
-> Originally posted on: [i-proving.com](http://i-proving.com/2006/06/05/diagnosing-handle-leaks-in-swtrcp-windows-applications/)
+<p class="well">Originally posted on: [i-proving.com](http://i-proving.com/2006/06/05/diagnosing-handle-leaks-in-swtrcp-windows-applications/)</p>

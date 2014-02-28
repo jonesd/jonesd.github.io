@@ -5,11 +5,18 @@ section: posts
 ---
 <div id="main">
 
-<ul>
+<ul class="list-unstyled">
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <p>{{ post.excerpt }}</p>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      
+      <p class="lead">{{ post.excerpt }}</p>
+      
+      <p class="text-muted">{{post.date}}
+      {% for category in post.categories %}
+      <span class="label label-default">{{category}}</span> 
+      {% endfor %}
+      </p>
     </li>
   {% endfor %}
 </ul>
