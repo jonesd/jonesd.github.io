@@ -68,6 +68,14 @@ a:hover {
     color: dimgray;
 }
 
+/* Blog List */
+
+.blogs-short {
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
 
 /* Blurb */
 .blurb-tall-badge {

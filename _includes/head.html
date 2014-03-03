@@ -25,7 +25,14 @@
 <div>
     <div class="container">
     <div class="titlebar"> 
-        <div class="titlebar-menu"><a class="{% if page.section == 'photos'%}highlight{%endif%}" href="/index.html">Photos</a> | <a class="{% if page.section == 'books'%}highlight{%endif%}" href="/books.html">Books</a> | <a class="{% if page.section == 'software'%}highlight{%endif%}" href="/software.html">Software</a>  | <a class="{% if page.section == 'posts'%}highlight{%endif%}" href="/blog.html">Blog</a> | <a class="{% if page.section == 'contact' %}highlight{%endif%}"  href="/contact.html">Contact</a></div>
+        <div class="titlebar-menu">
+        	<a class="{% if page.section == 'home'%}highlight{%endif%}" href="/index.html">Home</a> 
+        	| <a class="{% if page.section == 'photos'%}highlight{%endif%}" href="/photos.html">Photos</a> 
+        	| <a class="{% if page.section == 'books'%}highlight{%endif%}" href="/books.html">Books</a> 
+        	| <a class="{% if page.section == 'software'%}highlight{%endif%}" href="/software.html">Software</a>  
+        	| <a class="{% if page.section == 'posts'%}highlight{%endif%}" href="/blog.html">Blog</a> |
+        	 <a class="{% if page.section == 'contact' %}highlight{%endif%}"  href="/contact.html">Contact</a>
+       	</div>
         <div class="titlebar-site"><a href="/index.html">www.dgjones.info</a></div>
     </div>
 
