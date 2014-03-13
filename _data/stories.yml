@@ -1,9 +1,9 @@
-- title: Machiavelli Adaptation
+- title: Machiavelli Game
   image: /assets/stories/machiavelli.jpg
-  description: Windows adaptation of the board game.
+  description: Windows adaptation of the Machiavelli 2ed board game.
   url: /machintro/index.html
   
-- title: Candid Photos
+- title: Candids
   image: /photos/humanist/2010-07-18_21-52-25_frame-37.jpg
   url: /photos.html?group=candid
   
@@ -11,11 +11,11 @@
   image: /assets/stories/portrait.jpg
   url: /photos.html?group=portrait
   
-- title: Landscape Photos
+- title: Landscapes
   image: /photos/landscape/2011-11-30_08-32-20_frame-09.jpg
   url: /photos.html?group=landscape
   
-- title: Abstract Photos
+- title: Abstracts
   image: /assets/stories/abstract.jpg
   url: /photos.html?group=follies
   
