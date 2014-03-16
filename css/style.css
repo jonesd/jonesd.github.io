@@ -1,3 +1,9 @@
+/* Basic */
+
+hr {
+	border-top: thin dotted;
+}
+
 /* BLog */
 .lead-in {
 	height: 3.75em;
