@@ -3,6 +3,8 @@ layout: default
 title: Photos
 section: photos
 ---
+<div class="row">
+<div class="col-xs-6 col-xs-offset-3">
 <div class="center-block slides-container">
 		<div id="slides" class="carousel slide" data-ride="carousel" data-interval="false">
 		  <div class="carousel-inner">
@@ -16,6 +18,8 @@ section: photos
 		</div>
 		
 	<ul class="pagination"></ul>
+</div>
+</div>
 </div>
 	
 	<script>
@@ -424,12 +428,12 @@ section: photos
             $('.carousel-inner').append(
             '<div id="slide'+i+'" class="item '+(isActive ? "active":"")+'" index="'+i+'">'
                 +(catalogue[i].url ? "<a href='"+catalogue[i].url+"'>": "")
-                +"<img style='text-align:center;' src='"+catalogue[i].src+"' height='"+height+"' width='"+width+"'/>"
-                +(catalogue[i].url ? "</a>": "")
                 +'<div class="carousel-caption">'
                 +(catalogue[i].location?"<div class='location'>"+catalogue[i].location+", "+catalogue[i].date+"</div>":"<div>&nbsp;</div>") 
                 +(catalogue[i].caption?"<div class='caption'>"+catalogue[i].caption+"</div>":"<div>&nbsp;</div>")
                 +'</div>'
+                +"<img style='text-align:center;' src='"+catalogue[i].src+"' height='"+height+"' width='"+width+"'/>"
+                +(catalogue[i].url ? "</a>": "")
                            
             +"</div>");
             

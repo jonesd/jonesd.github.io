@@ -3,6 +3,35 @@ layout: default
 title: Machiavelli 2ed Adaptation
 section: software
 ---
+<style>
+.slides-container {
+	width: 100%;
+}
+#slides {
+	width: 100%;
+}
+#slides img {
+	display: inline;
+}
+#slides .carousel-caption {
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+#slides .carousel-control {
+	width: 50%;
+	z-index: 20;
+	color: lightgray;
+}
+.carousel-control .glyphicon-chevron-left {
+	left: 20px;
+}
+.carousel-control .glyphicon-chevron-right {
+	right: 20px;
+}
+#slides .carousel-control .glyphicon-chevron-left, #slides .carousel-control .glyphicon-chevron-right {
+	top: 10px;
+}
+</style>
 
 <h1>Machiavelli 2ed Adaptation</h1>
 
@@ -13,16 +42,75 @@ section: software
 
 <div class="row">
 
-<div class="col-xs-4">
-<img  style="width: 100%" src="/assets/stories/machiavelli.jpg"></img>
+<div class="col-xs-8">
+<div class="center-block slides-container">
+		<div id="slides" class="carousel slide" data-ride="carousel" data-interval="false">
+		  <div class="carousel-inner">
+            <div class="active item center-block">
+                <div class="carousel-caption">Austria player's view of the board</div>
+                <img src="/machintro/conflict.jpg"></img>
+            </div>
+            <div class="item center-block">
+                <div class="carousel-caption">Turn actions for all players</div>
+                <img src="/machintro/scenarioturnactions.jpg"></img>
+            </div>
+            <div class="item center-block">
+                <img src="/machintro/aboutMachiavelli.jpg"></img>
+                <div class="carousel-caption"></div>
+            </div>
+            <div class="item">
+                <img src="/machintro/entrance.jpg"></img>
+                <div class="carousel-caption"></div>
+            </div>
+            <div class="item">
+                <div class="carousel-caption">Tutorial stepping through UI and game rules</div>
+                <img src="/machintro/tutorial.jpg"></img>
+            </div>
+            <div class="item">
+                <img src="/machintro/victory.jpg"></img>
+                <div class="carousel-caption"></div>
+            </div>
+            <div class="item">
+                <img src="/machintro/startofturn.jpg"></img>
+                <div class="carousel-caption"></div>
+            </div>
+            <div class="item">
+                <img src="/machintro/income.jpg"></img>
+                <div class="carousel-caption"></div>
+            </div>
+            <div class="item">
+                <div class="carousel-caption">Papal excommunication of a power</div>
+                <img src="/machintro/excommunicate.jpg"></img>
+                <img src="/machintro/excommunicated.jpg"></img>
+            </div>
+            <div class="item center-block">
+                <div class="carousel-caption">Loans between powers</div>
+                <img src="/machintro/ducatborrowing.jpg"></img>
+                <img class="control-group" src="/machintro/loansdue.jpg"></img>
+            </div>
+            <div class="item center-block">
+                <div class="carousel-caption">Specify orders</div>
+                <img src="/machintro/orderrestrictions.jpg"></img>
+                <img class="control-group" src="/machintro/orderchoice.jpg"></img>
+            </div>
+		  </div>
+		  <a class="left carousel-control" href="#slides" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left"></span>
+		  </a>
+	  <a class="right carousel-control" href="#slides" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+		</div>
+</div>
+<!-- <img  style="width: 100%" src="/assets/stories/machiavelli.jpg"></img> -->
 
-<img  style="width: 100%; margin-top: 20px;" src="/machintro/scenarioturnactions.jpg"></img>
+<!-- <img  style="width: 100%; margin-top: 20px;" src="/machintro/scenarioturnactions.jpg"></img> -->
 
 </div>
 
-<div class="col-xs-8">
+<div class="col-xs-4">
 <p>Windows 95/98/NT adaptation	of	the Avalon Hill Machiavelli 2nd edition board game. Developed using Dolphin Smalltalk,	
-Visual C++ and	DirectX 6.0	over a period of 3 months during 1999.</p>
+Visual C++ and	DirectX 6.0	over a period of 3 months during early 1999.</p>
 
 <p align="center">
 <ul class="pagination">

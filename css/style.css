@@ -92,36 +92,51 @@ a:hover {
 /* Photo carousel */
 
 .slides-container {
-	width: 640px;
+	width: 100%;
 }
 #slides {
-	min-height: 516px; 
-	width: 640px;
+	width: 100%;
+}
+#slides img {
+	display: inline;
 }
 #slides .carousel-caption {
+	padding-top: 10px;
+	padding-bottom: 5px;
 	position: relative;
-	color: black;
-	margin-top: 10px;
-	left: 0px;
+    color: black;
+    margin-top: 10px;
+    left: 0px;	
 	text-shadow: none;
 }
-.carousel-control.left, .carousel-control.right {
-    background-image: none;
-    width: 60px;
+#slides .carousel-control {
+	width: 50%;
+	z-index: 20;
+	color: lightgray;
 }
-.carousel-navigation.left {  
-    margin-left: -45px;
+#slides .carousel-control.right, #slides .carousel-control.left {
+	background-image: none;
 }
-
-.carousel-navigation.right {
-    margin-right: -45px;
+.carousel-control .glyphicon-chevron-left {
+	left: 20px;
+}
+.carousel-control .glyphicon-chevron-right {
+	right: 20px;
+}
+#slides .carousel-control .glyphicon-chevron-left, #slides .carousel-control .glyphicon-chevron-right {
+	top: 10px;
 }
 #slides .location {
 	float: right;
+	padding-right: 60px;
 }
 #slides .caption {
+	padding-left: 60px;
 	text-align: left;
 }
+
+/ * Sections */
+
 .activeSection {
     color: black;
 }
