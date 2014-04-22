@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>{{ page.title }}</title>
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.url }}/feed.xml">
 
@@ -23,17 +23,17 @@
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div>
-    <div class="container">
-    <div class="titlebar"> 
-        <div class="titlebar-menu">
-        	<a class="{% if page.section == 'home'%}highlight{%endif%}" href="/index.html">Home</a> 
-        	| <a class="{% if page.section == 'photos'%}highlight{%endif%}" href="/photos.html">Photos</a> 
-        	| <a class="{% if page.section == 'books'%}highlight{%endif%}" href="/books.html">Books</a> 
-        	| <a class="{% if page.section == 'software'%}highlight{%endif%}" href="/software.html">Software</a>  
-        	| <a class="{% if page.section == 'posts'%}highlight{%endif%}" href="/blog.html">Blog</a> |
-        	 <a class="{% if page.section == 'contact' %}highlight{%endif%}"  href="/contact.html">Contact</a>
-       	</div>
-        <div class="titlebar-site"><span class="hidden-xs"><a href="/index.html">www.dgjones.info</a></span>&nbsp;</div>
-    </div>
+    <header class="titlebar">
+    	<div class="container"> 
+	        <div class="titlebar-menu">
+	        	<a class="{% if page.section == 'home'%}highlight{%endif%}" href="/index.html">Home</a> 
+	        	| <a class="{% if page.section == 'photos'%}highlight{%endif%}" href="/photos.html">Photos</a> 
+	        	| <a class="{% if page.section == 'books'%}highlight{%endif%}" href="/books.html">Books</a> 
+	        	| <a class="{% if page.section == 'software'%}highlight{%endif%}" href="/software.html">Software</a>  
+	        	| <a class="{% if page.section == 'posts'%}highlight{%endif%}" href="/blog.html">Blog</a> |
+	        	 <a class="{% if page.section == 'contact' %}highlight{%endif%}"  href="/contact.html">Contact</a>
+	       	</div>
+	        <div class="titlebar-site"><span class="hidden-xs"><a href="/index.html">www.dgjones.info</a></span>&nbsp;</div>
+	    </div>
+    </header>
 

@@ -24,6 +24,11 @@
   url: /photos.html?group=follies
   dates: 2009-2014
   
+- title: Abora Hypertext
+  image: /assets/stories/abora.png
+  url: /abora_hypertext/index.html
+  dates:  2004
+  
 - title: Svengali Profiler
   image: /assets/stories/svengali.png
   url: /svengali/index.html
