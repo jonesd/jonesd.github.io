@@ -83,3 +83,36 @@ attached to a wall for strength.
 <audio controls="controls">  
    <source src="/assets/2008-09-01-gravity-metallophone/falling.mp3" />  
 </audio> 
+
+### Construction Photos
+
+<div class="col-sm-12">
+<div class="center-block slides-container">
+		<div id="slides" class="carousel slide" data-ride="carousel" data-interval="false">
+		  <div class="carousel-inner">
+            <div class="active item center-block">
+                <div class="carousel-caption">One of the xylophone toys from which the metal tubes were extracted from.</div>
+                <img src="/assets/2008-09-01-gravity-metallophone/2008-05-17_12-55-14_IMG_3861.JPG.jpg"></img>
+            </div>
+            <div class="item center-block">
+                <div class="carousel-caption">Cutting out one side of the frame.</div>
+                <img src="/assets/2008-09-01-gravity-metallophone/2008-05-19_11-22-31_IMG_3880.JPG.jpg"></img>
+            </div>
+            <div class="item">
+                <div class="carousel-caption">Foot of the tower that collects the marbles once they have passed through the instrument.</div>
+                <img src="/assets/2008-09-01-gravity-metallophone/2008-08-30_13-36-05_IMG_5282.JPG.jpg"></img>
+            </div>
+            <div class="item">
+                <div class="carousel-caption">Marble's view of the starting point of its roll through the instrument.</div>
+                <img src="/assets/2008-09-01-gravity-metallophone/2008-05-19_21-26-38_IMG_3898.JPG.jpg"></img>
+            </div>
+          </div>
+		  <a class="left carousel-control" href="#slides" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left"></span>
+		  </a>
+		  <a class="right carousel-control" href="#slides" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right"></span>
+		  </a>
+		</div>
+</div>
+</div>
