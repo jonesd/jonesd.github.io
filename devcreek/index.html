@@ -1,0 +1,128 @@
+---
+layout: default
+title: DevCreek
+section: software
+---
+
+<h1>DevCreek <span class="pull-right text-muted">2006 - 2007</span></h1>
+
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">DevCreek</li>
+</ol>
+
+<div class="row">
+
+    <div class="col-sm-12 col-md-7">
+        <div class="center-block slides-container">
+            <div id="slides" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner">
+                    <div class="active item center-block">
+                        <div class="carousel-caption">Testing activity by a developer</div>
+                        <img src="400px-weekly_activity.png">
+                    </div>
+                    <div class="item center-block">
+                        <div class="carousel-caption">Build summary report</div>
+                        <img src="recent_builds.png">
+                        <img src="600px-time_of_builds.png">
+                    </div>
+                    <div class="item">
+                        <div class="carousel-caption">Deployment Summary Report</div>
+                        <img src="current_deployments.png">
+                        <img src="600px-deployments_to_server.png">
+                    </div>
+                    <div class="item">
+                        <div class="carousel-caption">Performance - HTTP Sessions</div>
+                        <img src="sessions_summary.png">
+                        <img src="600px-sessions_ratings.png">
+                        <img src="600px-session_sample.png">
+                    </div>
+                    <div class="item">
+                        <div class="carousel-caption">System - Historical activity</div>
+                        <img src="600px-system_history.png">
+                    </div>
+                    <div class="item center-block">
+                        <div class="carousel-caption">Issue/Bugzilla activity</div>
+                        <img src="600px-time_to_resolve.png">
+                    </div>
+                    <div class="item center-block">
+                        <div class="carousel-caption">Code duplication</div>
+                        <img src="600px-duplication_trends.png">
+                        <img src="600px-duplicated_class.png">
+                    </div>
+                    <div class="item center-block">
+                        <div class="carousel-caption">Performance diagnosis</div>
+                        <img src="performance_hierarchy.png">
+                        <img src="performance_scatter.png">
+                        <img src="performance_histogram.png">
+                        <img src="performance_trends.png">
+                    </div>
+                    <div class="item center-block">
+                        <div class="carousel-caption">Code coverage</div>
+                        <img src="coverage_bar.png">
+                    </div>
+                    <div class="item center-block">
+                        <div class="carousel-caption">Code dependency</div>
+                        <img src="dependency_popup.png">
+                    </div>
+                    <div class="item center-block">
+                        <div class="carousel-caption">Code complexity</div>
+                        <img src="code_class.png">
+                        <img src="code_method.png">
+                    </div>
+                    <div class="item center-block">
+                        <div class="carousel-caption">Names</div>
+                        <img src="name_length.png">
+                        <img src="name_map.png">
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#slides" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#slides" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-5">
+        <p>DevCreek was a metrics gathering, analytics, and sharing platform that I worked on at Intelliware for a few years starting in 2006.</p>
+
+        <p>It all started with a sketch from Kent Beck for real-time feedback during a test-driven development session for developers. As an instrument it would reveal their development patterns and provide feedback to guide their personal development process. To this end we first created a simple Eclipse plugin to show test executions and whether the test passed or failed. This stream of testing data could then by sent to a server as XML to provide a longer term perspective on an individuals testing and to share that amongst all the members of a team.</p>
+
+        <p>Over time this grew into TestCreek and then DevCreek. The server supported an extensible XML representation of events, and this grew to support more types of events over time, such as deployments and builds, and so on. The number of clients, or agents, increased from Eclipse to collecting test executions from maven and and other Java sources, to tests written in ruby, to other software analytics libraries.</p>
+
+        <table class="table table-striped">
+            <thead>
+            <tr><th>API</th> 	<th>Agent</th> 	<th>Notes</th></tr>
+            </thead>
+            <tbody>
+        <tr><td>Bugzilla</td> <td>Issue Tracking</td> 	<td>Bugzilla</td></tr>
+        <tr><td>Code Coverage</td> 	<td>DevCreek Eclipse plug-in</td> 	<td>Java/JUnit, Ruby</td></tr>
+        <tr><td>Code Metrics</td> 	<td>Eclipse Code Metrics</td> 	<td>Eclipse based Java code metrics</td></tr>
+        <tr><td>Code Metrics</td> 	<td>Maven</td> 	<td>Maven based Java code metrics</td></tr>
+        <tr><td>Community</td> 	<td>DevCreek Eclipse plug-in</td><td></td></tr>
+        <tr><td>Dependency</td> 	<td>Maven</td> 	<td>Maven component and Java dependencies</td></tr>
+        <tr><td>Performance</td> 	<td>Performance</td> 	<td>Java and Spring based framework for collecting runtime performance data</td>
+        <tr><td>Unit Test</td> 	<td>DevCreek Eclipse plug-in</td> 	<td>Java/JUnit with EclEmma</td></tr>
+        <tr><td>Unit Test</td> 	<td>Maven</td> 	<td>Java build tests</td></tr>
+        <tr><td>Unit Test</td> 	<td>Ruby</td> 	<td>Native Ruby</td></tr>
+            </tbody>
+            </table>
+
+        <p>The system was implemented from a basic record that could be extended by any agent without needing to update the server code. Here is an example sharing the current task with a team.
+
+        </p>
+
+<pre>&lt;record&gt;
+    &lt;community.message&gt;Working on Documentation&lt;/community.message&gt;
+    &lt;core.principal&gt;DGJ&lt;/core.principal&gt;
+    &lt;core.project&gt;Example&lt;/core.project&gt;
+    &lt;core.sessionId&gt;75bb3da-72cd13e1-6045e566-60f4f98b-d0ecebdc&lt;/core.sessionId&gt;
+    &lt;core.timeStamp&gt;1173661254518&lt;/core.timeStamp&gt;
+    &lt;core.timeZoneOffset&gt;-14400000&lt;/core.timeZoneOffset&gt;
+    &lt;core.type&gt;community.SendMessage&lt;/core.type&gt;
+&lt;/record&gt;</pre>
+    </div>
+</div>
