@@ -8,11 +8,9 @@ section: resume
 
 [http://www.dgjones.info](http://www.dgjones.info)  [david@dgjones.info](mailto:david@dgjones.info)
 
-Software developer with 20 years of commercial experience working on products and custom development projects. Advocate for agile development approaches, and have worked using variations of XP since 2000. I have been in team lead, technical lead, architect, and coaching roles, in addition to daily coding.
+Software developer with 20 years of commercial experience working on products and custom development projects. I have been in team lead, technical lead, architect, and coaching roles, in addition to daily coding.
 
-I want to work on things that matter to people and are created by people who care.
-
-My preference is to be a member of a small development team, who are collectively responsible for all phases of development and delivery. I like the greater involvement of users found in product development. Where possible I aim for automating as much as possible, including testing and delivery. Good software is difficult, so I'm always trying to improve and learning from others.
+My preference is to be a member of a small development team, who are collectively responsible for all phases of development and delivery. I like the greater involvement of users found in product development. Where possible I aim for automating as much as possible, including testing and delivery. Advocate for agile development approaches, and have worked using variations of XP since 2000.
 
 Recently used technologies: Java, JavaScript, NodeJS, Heroku, AngularJS, AWS, MongoDB, Docker.
 
