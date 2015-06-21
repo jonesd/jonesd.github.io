@@ -1,0 +1,49 @@
+---
+layout: default
+title: Hello Receipts
+section: software
+---
+
+<h1>Hello Receipts <span class="pull-right text-muted">2013</span></h1>
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li class="active">Hello Receipts</li>
+</ol>
+
+<div class="row">
+
+<div class="col-sm-12 col-md-7">
+<div class="center-block slides-container">
+		<div id="slides" class="carousel slide" data-ride="carousel" data-interval="false">
+		  <div class="carousel-inner">
+            <div class="active item center-block">
+                <div class="carousel-caption">HelloReceipts public marketing page</div>
+                <img src="front-page.png">
+            </div>
+
+          </div>
+		  <a class="left carousel-control" href="#slides" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left"></span>
+		  </a>
+		  <a class="right carousel-control" href="#slides" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right"></span>
+		  </a>
+		</div>
+</div>
+</div>
+
+<div class="col-sm-12 col-md-5">
+
+<p>Hello Receipts is a receipt storage and processing service for web, iOS, and Android, with a published Rest API.
+Implemented in NodeJS and Java, running on Heroku and AWS, and making extensive use of external services.</p>
+
+    <p>This concept behind the product was quite straightforward, a way to easily take a photo of a receipt, submit it to the service, and receive back a version of the image as data suitable for submitting as an expense or business cost. The main ways to interact with the service are through iOS and Android apps. An alternative approach is to forward in receipt images or documents as email, whereupon the sender would receive the a response email together with weekly or monthly summary reports.</p>
+
+    <p>Product development was guided by talking to users and making of extensive data collection with the apps and servers. One significant discovery moved the implementation away from a lower accurate OCR implementation to one that incorporated human judgement to reach a higher accuracy rate. Another area was optimizing the adoption funnel from download, signup, to submitting a first receipt to the system, that resulted in streamlining account creation and guiding users through the features of the apps.</p>
+
+    <p>The production and test environments were hosted on the Heroku and AWS platforms together with many external services as an approach to accelerate development and product exploration while pushing for quality and reliability.</p>
+
+</div>
+</div>
+		  
