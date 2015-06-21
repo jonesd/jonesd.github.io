@@ -1,13 +1,37 @@
-- title: Machiavelli Game
-  image: /assets/stories/machiavelli.jpg
-  description: Windows adaptation of the Machiavelli 2ed board game.
-  url: /machintro/index.html
-  dates: 1999
-  
+- title: Megatree
+  image: /assets/stories/megatree.png
+  url: /megatree/index.html
+  dates: 2015
+
 - title: Candids
   image: /photos/humanist/2010-07-18_21-52-25_frame-37.jpg
   url: /photos.html?group=candid
   dates: 2009-2014
+
+- title: Portraits
+  image: /assets/stories/portrait.jpg
+  url: /photos.html?group=portrait
+  dates: 2009-2014
+
+- title: Landscapes
+  image: /photos/landscape/2011-11-30_08-32-20_frame-09.jpg
+  url: /photos.html?group=landscape
+  dates: 2009-2014
+
+- title: Abstracts
+  image: /assets/stories/abstract.jpg
+  url: /photos.html?group=follies
+  dates: 2009-2014
+
+- title: Hello Receipts
+  image: /assets/stories/helloreceipts.jpg
+  url: /helloreceipts/index.html
+  dates: 2013
+
+- title: TripSnapz
+  image: /assets/stories/tripsnapz.jpg
+  url: /tripsnapz/index.html
+  dates: 2012
 
 - title: DevCreek
   image: /assets/stories/devcreek.png
@@ -15,36 +39,22 @@
   url: /devcreek/index.html
   dates: 2006
 
-- title: Portraits
-  image: /assets/stories/portrait.jpg
-  url: /photos.html?group=portrait
-  dates: 2009-2014
-  
-- title: Landscapes
-  image: /photos/landscape/2011-11-30_08-32-20_frame-09.jpg
-  url: /photos.html?group=landscape
-  dates: 2009-2014
-  
-- title: Abstracts
-  image: /assets/stories/abstract.jpg
-  url: /photos.html?group=follies
-  dates: 2009-2014
-  
 - title: Abora Hypertext
   image: /assets/stories/abora.png
   url: /abora_hypertext/index.html
   dates:  2004
-  
+
+- title: Machiavelli Game
+  image: /assets/stories/machiavelli.jpg
+  description: Windows adaptation of the Machiavelli 2ed board game.
+  url: /machintro/index.html
+  dates: 1999
+
 - title: Svengali Profiler
   image: /assets/stories/svengali.png
   url: /svengali/index.html
   dates: 1998
-  
-- title: TripSnapz
-  image: /assets/stories/tripsnapz.jpg
-  url: /tripsnapz/index.html
-  dates: 2012
-  
+
 - title: Trynth Space Game
   image: /assets/stories/trynth.png
   url: /trynth/index.html

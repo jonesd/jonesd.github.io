@@ -19,6 +19,9 @@ Recently used technologies: Java, JavaScript, NodeJS, Heroku, AngularJS, AWS, Mo
 
 Technical Architect, team lead, and programmer on more than twenty software projects across the fields of start-up, product development, financial, e-health, manufacturing, and developer tooling. Instrumental in the early adoption of XP and agile processes in the company from 2000. Started a weekly technical reading group that ran for more than hundred sessions, and other initiatives such as an employee picture gallery.
 
+#### ICT, _2015/02 - 2015/06_
+Technical lead for the Intelliware's portfolio of ICT projects. Development and maintenance on ten or so projects for half-a-dozen customers spread across a range of web, server, and mobile technologies. Focus on improving automation to ease the burden of supporting such a broad range of projects, such as the use of Docker for continuous delivery and improved resource utilization.
+
 #### IHTSDO, _2014/06 - 2014/12_
 Developer on the Member License Distribution Service website for IHTSDO, the developers of the SNOMED health terminology standard. Team was distributed across Canada and Europe. Technology: Java, AngularJS, Spring, PostgreSQL.
 
