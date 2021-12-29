@@ -1,6 +1,6 @@
 name: David Jones
 description: Website for David Jones
-markdown: redcarpet
+markdown: kramdown
 pygments: true
 url: http://www.dgjones.info
 
