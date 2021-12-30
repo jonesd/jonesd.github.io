@@ -54,7 +54,7 @@ concurrent marbles are flowing down the steps of the ladder.
   <a href="/assets/2008-09-01-gravity-metallophone/901_marbles.jpg"><img src="/assets/2008-09-01-gravity-metallophone/901_marbles.jpg" style="width: 7em" title="Marbles waiting for their next ride"/></a>
   <a href="/assets/2008-09-01-gravity-metallophone/901_up.jpg"><img src="/assets/2008-09-01-gravity-metallophone/901_up.jpg" style="width: 7em" title="Priming the pneumatics"/></a>
   <a href="/assets/2008-09-01-gravity-metallophone/901_down.jpg"><img src="/assets/2008-09-01-gravity-metallophone/901_down.jpg" style="width: 7em" title="Propelling marble to the summit"/></a>
-  <a href="/assets/2008-09-01-gravity-metallophone/901_tower.jpg"><img src="/assets/2008-09-01-gravity-metallophone/901_tower.jpg" style="width: 7em" title="Tuned metal floors of the tower""/></a>
+  <a href="/assets/2008-09-01-gravity-metallophone/901_tower.jpg"><img src="/assets/2008-09-01-gravity-metallophone/901_tower.jpg" style="width: 7em" title="Tuned metal floors of the tower"/></a>
   <a href="/assets/2008-09-01-gravity-metallophone/901_falling.jpg"><img src="/assets/2008-09-01-gravity-metallophone/901_falling.jpg" style="width: 7em" title="Falling marble" /></a>
 </p>
 

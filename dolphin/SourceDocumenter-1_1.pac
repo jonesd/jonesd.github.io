@@ -19,7 +19,7 @@ Versions:
 1.0 - Original release
 
 Freeware by David Jones 2001
-http://www.dgjones.info'.
+https://www.dgjones.info'.
 
 
 package classNames

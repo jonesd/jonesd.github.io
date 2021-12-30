@@ -6,7 +6,7 @@ section: resume
 
 # Resume - David Jones
 
-[http://www.dgjones.info](http://www.dgjones.info)  [david@dgjones.info](mailto:david@dgjones.info)
+[https://www.dgjones.info](https://www.dgjones.info)  [david@dgjones.info](mailto:david@dgjones.info)
 
 Software developer with 20 years of commercial experience working on products and custom development projects. I have been in team lead, technical lead, architect, and coaching roles, in addition to daily coding.
 

@@ -44,14 +44,14 @@
 <P>This shows that on my machine OverFiler will work with the SCSI and ADFS systems ok. If you wish the OverFiler spell to touch on a non-FileCore based filing system, then well you have the source code...</P>
 
 <TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Getting Started</font></TABLE>
-<P>If you start the application you will notice that nothing happens. OverFiler needs to be informed of your systems setup before it can work its charms.</P>
+<P>If you start the application you will notice that nothing happens. OverFiler needs to be informed of your systems' setup before it can work its charms.</P>
 
 <P>Why can't this be done automatically? Well it can be, but this is more flexible approach and should only be a one off excercise.</P>
 
 <P>You have to inform OverFiler of each drive which you wish it to take over and which filing system it belongs to. Also you will have to inform it of the corresponding filer icon on the icon bar. There are two ways of finding out the icon number.</P>
 
 <UL>
-<LI>Use an application which reports on the current pointer context. There are thousands of these about, they make a useful first application. They usually tell you the icon number under the pointer, so collect the icon numbers for all the drives which you wish to inform OverFiler of. I can whole heartedly recommend Gambara if you are looking for such an application.
+<LI>Use an application which reports on the current pointer context. There are thousands of these about, they make a useful first application. They usually tell you the icon number under the pointer, so collect the icon numbers for all the drives which you wish to inform OverFiler of. I can whole-heartedly recommend Gambara if you are looking for such an application.
 
 <LI>Secondly, guess it. Basically the Switcher icon is given the icon number 0. Then ADFS :0 gets icon 1, followed by any other ADFS drives. Thereafter the system will move onto the other filing systems, with the icon number increasing with each drive. Well I think so.
 </UL>
@@ -60,14 +60,14 @@
 
 <P>Adding a drive is accomplished by:</P>
 
-<PRE>        *OverFiler_Add <drive> <fsname> <icon> .....
-</PRE>
-<P>The drive is a number from 0 - 7. Anything below 4 is considered a floppy drive, the rest hard drives. The FS name is "ADFS", "SCSI", "Ram" etc. The icon number you should have.</P>
+<PRE>        *OverFiler_Add &lt;drive&gt; &lt;fsname&gt; &lt;icon&gt; .....</PRE>
+
+<P>The drive is a number from 0 to 7. Anything below 4 is considered a floppy drive, the rest hard drives. The FS name is "ADFS", "SCSI", "Ram" etc. The icon number you should have.</P>
 
 <P>On my system if I use:</P>
 
-<PRE>        *OverFiler_Add 0 ADFS 1
-</PRE>
+<PRE>        *OverFiler_Add 0 ADFS 1</PRE>
+
 <P>The ADFS :0 drive splutters into action. If there is a disc in the drive the n the icon name is replaced with the disc's name. The icon sprite can also reflect the drive state. Otherwise the icon should react normally to mouse clicks, help messages, etc.</P>
 
 <P>So the idea is that you use a series of OverFiler_Add commands for each drive you wish to be taken over. This is basically it though there are some refinements to the OverFiler_Add command which make life more interesting. Once you have this worked out then the commands can be put in your !Boot file or will be adopted in the next generated desktop boot file.</P>
@@ -77,14 +77,14 @@
 <P>As previously outlined this CLI command will allow OverFiler to take control over a FileCore filer icon.</P>
 
 <H4>Syntax</H4>
-<PRE>*OverFiler_Add <drive> <FSname> <iconnumber> [-Directory] [-Poll] [-priority <priority>] [-sprite <name>] [-Click]</PRE>
+<PRE>*OverFiler_Add &lt;drive> &lt;FSname&gt; &lt;iconnumber&gt; [-Directory] [-Poll] [-priority &lt;priority&gt;] [-sprite &lt;name&gt;] [-Click]</PRE>
 
 <H4>Required arguments</H4>
 <TABLE>
 <TR VALIGN=TOP ALIGN=LEFT>
 <TD><B>drive</B><TD>The number of the drive 0 - 7.
 <TR VALIGN=TOP ALIGN=LEFT>
-<TD><B>FSname</B><TD>Filing system name. Examples "ADFS", "SCSI", "Ram". Case sensitive.
+<TD><B>FSname</B><TD>Filing system name. Examples "ADFS", "SCSI", "Ram". Case-sensitive.
 <TR VALIGN=TOP ALIGN=LEFT>
 <TD><B>iconnumber</B><TD>Associated filer icon number on icon bar.
 </TABLE>
@@ -115,7 +115,7 @@ Supplied should be the two sprites 'adfs0o' and 'adfs0i'. The out format was tak
 </UL>
 <P>If there is an error in any of the above two ways then the system will default to showing 'floppydisc' and 'harddisc' icons depending on the drive type. These are built into RiscOS so should always be available.</P>
 
-<P>All sprites have to be within the Wimp Sprite pool. Use *IconSprites <filename> to load a sprite file into this memory.</P>
+	<P>All sprites have to be within the Wimp Sprite pool. Use <code>*IconSprites &lt;filename&gt;</code> to load a sprite file into this memory.</P>
 </TABLE>
 
 <H4>Additional switches</H4>
@@ -137,8 +137,8 @@ Supplied should be the two sprites 'adfs0o' and 'adfs0i'. The out format was tak
 
 <H4>Syntax</H4>
 <pre>
-*OverFiler_Remove <drive> <FSname>
-</PRE>
+*OverFiler_Remove &lt;drive&gt; &lt;FSname&gt;
+</pre>
 
 <H4>Required arguments</H4>
 <TABLE>
@@ -299,7 +299,7 @@ Supplied should be the two sprites 'adfs0o' and 'adfs0i'. The out format was tak
 <TABLE BORDER=0 WIDTH=100% BACKGROUND="../../mesh.gif">
 <TR>
 <TD ALIGN=LEFT>
-<a href="http://www.dgjones.info/">http://www.dgjones.info/</a>
+<a href="https://www.dgjones.info/">https://www.dgjones.info/</a>
 <TD ALIGN=RIGHT>
 <a href="mailto:david_jones@dgjones.info">david_jones@dgjones.info</a>
 </TABLE>

@@ -12,7 +12,7 @@
 <font size=+4 color=#5A63AD>Funky IconZ 2</font>
 </TABLE>
 
-<P>0.07 (14-Oct-94)  David G Jones (Public Domain)</P>
+<P>0.07 (14-Oct-94) David G Jones (Public Domain)</P>
 
 <P>This module allows the Task Manager icon to be animated.</P>
 
@@ -29,11 +29,11 @@
 <P>All of the frames should be in a single sprite file. An animation can be loaded into IconZ2 in one of three ways:</P>
 
 <UL>
-<LI>1) At the same time as IconZ2 is loaded by including the file name as the parameter of the command. For example "*RMRun <Obey$Dir>.IconZ2 balls", where balls is the animation.
+        <LI>1) At the same time as IconZ2 is loaded by including the file name as the parameter of the command. For example "<code>*RMRun &lt;Obey$Dir&gt;.IconZ2 balls</code>", where balls is the animation.
 
 <LI>2) Once IconZ2 has started if you drag the animation over to the Task Manager icon then the new animations will be loaded and used.
 
-<LI>3) From the command line "*IconZ2_Sprites balls" can be used, where balls is the name of the animation. As soon as the desktop is again operational the animation should start running.
+        <LI>3) From the command line "<code>*IconZ2_Sprites balls</code>" can be used, where balls is the name of the animation. As soon as the desktop is again operational the animation should start running.
 </UL>
 
 <P>If there is no animation loaded then the Task Manager icon will appear as normal.</P>
@@ -56,14 +56,14 @@
 
 <P>If you RMKill the IconZ2 module rather than Quitting, then the Task Manager icon will not reappear. Obviously this will impair access to the Task Manager facilitites, though it will still respond to F12 key presses. If the desktop is Shutdown/Exitted in this state then the Task Manager will barf before dropping out finally into the command line. This is because it expects its icon to be on the icon bar. If you reload IconZ2 though everything will return to normal.</P>
 
-<P>Basically IconZ2 should never destroy anything. If you wish to terminate it then use the wimp Quit facilitites and all will be fine.</P>
+<P>Basically IconZ2 should never destroy anything. If you wish to terminate it then use the wimp Quit facilities and all will be fine.</P>
 
 <TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Commands</font></TABLE>
 
 <P>IconZ2 supplies a number of commands:
 <pre>
 ==> Help on keyword IconZ2
-Module is: IconZ2          0.07 (14 Oct 1994) © David G Jones
+Module is: IconZ2          0.07 (14 Oct 1994) &copy; David G Jones
 
 Commands provided:
 IconZ2_Update   IconZ2_Sprites
@@ -74,26 +74,22 @@ IconZ2_Author
 ==> Help on keyword IconZ2_Update
 IconZ2_Update controls the delay between each frame in the animation. If no delay is given then the current value is shown. All delays are in
 centiseconds within the range 1 - 255.
-Syntax: *IconZ2_Update [<delay>]
+Syntax: *IconZ2_Update [&lt;delay&gt;]
 
 ==> Help on keyword IconZ2_Sprites
 IconZ2_Sprites will load the spritefile filename into IconZ. This contains a number of sprites which are the separate frames in the animation. These
 should have the same dimensions and be named 'swch1', 'swch2' ...
-Syntax: *IconZ2_Sprites <filename>
+Syntax: *IconZ2_Sprites &lt;filename&gt;
 
 ==> Help on keyword IconZ2_Author
         David G Jones
-        160 Hazelwood Drive
-        St. Albans
-        Herts. AL4 0UZ
-        0727 - 852548
-</PRE>
+</pre>
 
 <TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BACKGROUND="../../mesh.gif" WIDTH=100%><TR><TD><font size=+2 color=#5A63AD>Releases</font></TABLE>
 
 <TABLE>
 <TR><TD>0.06 (09-Sep-94)<TD>First release
-<TR><TD>0.07 (14-Oct-94)<TD>Couple of small bug fixes<BR
+<TR><TD>0.07 (14-Oct-94)<TD>Couple of small bug fixes<BR>
                   Help response does not flicker<BR>
                   Recreates Task Manager icon nearer to original
 </TABLE>
@@ -103,13 +99,13 @@ Syntax: *IconZ2_Sprites <filename>
 <P>The module is Public Domain. So do what you like with it. The set of animations are taken from the original Funky IconZ, which I think are PD. Note that animations from the original FunkyIconZ will need their sprites names changed to the "swch1" format.</P>
 
 <P>Any comments, etc please get in contact. If anyone creates a nice spinning
-Acorn, etc then please send me a copy.</P
+Acorn, etc then please send me a copy.</P>
 
 <P>
 <TABLE BORDER=0 WIDTH=100% BACKGROUND="../../mesh.gif">
 <TR>
 <TD ALIGN=LEFT>
-<a href="http://www.dgjones.info/">http://www.dgjones.info/</a>
+<a href="https://www.dgjones.info/">https://www.dgjones.info/</a>
 <TD ALIGN=RIGHT>
 <a href="mailto:david_jones@dgjones.info">david_jones@dgjones.info</a>
 </TABLE>

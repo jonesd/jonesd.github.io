@@ -5,3 +5,6 @@ _site
 .DS_Store
 *.iml
 .idea
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
