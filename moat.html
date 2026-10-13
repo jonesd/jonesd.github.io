@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Moat Was Never the Code</title>
+<meta name="description" content="Why the 1999 Udanax Gold release sat unread for 27 years — and what large language models changed about reading old code.">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2.5rem 1.25rem 4rem;
+    background: #fdfcf9; color: #1c1b18;
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, Cambria, "Times New Roman", serif;
+    font-size: 1.15rem; line-height: 1.68;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  main { max-width: 40rem; margin: 0 auto; }
+  .meta {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 0.82rem; letter-spacing: 0.04em; color: #8a857a;
+    text-transform: uppercase; margin-bottom: 2.5rem;
+  }
+  h1 {
+    font-size: 2.3rem; line-height: 1.15; font-weight: 700;
+    margin: 0 0 1.2rem; letter-spacing: -0.01em;
+  }
+  h2 {
+    font-size: 1.3rem; font-weight: 700; margin: 2.8rem 0 0.8rem;
+    letter-spacing: 0.01em;
+  }
+  p { margin: 0 0 1.15rem; }
+  a { color: #23527c; text-decoration: none; border-bottom: 1px solid #c8d3de; }
+  a:hover { color: #14507a; border-bottom-color: #14507a; }
+  code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.86em; background: #f0eee8; padding: 0.1em 0.35em;
+    border-radius: 3px;
+  }
+  ul { padding-left: 1.4rem; }
+  li { margin-bottom: 0.5rem; }
+  figure { margin: 2.2rem 0; }
+  figure pre {
+    margin: 0; padding: 1rem 1.2rem; background: #f4f1ea;
+    border: 1px solid #e4e0d6; border-radius: 6px; overflow-x: auto;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.82rem; line-height: 1.55; color: #33302a;
+  }
+  figcaption {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 0.8rem; color: #8a857a; margin-top: 0.55rem;
+  }
+  hr { border: 0; border-top: 1px solid #e4e0d6; margin: 3rem 0 1.8rem; }
+  .disclosure { font-size: 0.95rem; color: #55524a; }
+  footer {
+    margin-top: 3.5rem; padding-top: 1.2rem; border-top: 1px solid #e4e0d6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 0.85rem; color: #8a857a;
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="meta">David G Jones &middot; October 2026</div>
+  <h1>The Moat Was Never the Code</h1>
+
+  <p>In 1999, the Xanadu project released the source code to Udanax Gold — Ted Nelson's second hypertext engine, the system meant to give literature permanent, visible, two-way connections — under a permissive license. Free to read, free to use, free to build on. By then the Web was eight years old and had famously shipped a fraction of the vision: one-way links to whole pages, copies everywhere, nothing permanent. The deep version was in the box. Anyone could have it.</p>
+
+  <p>For twenty-seven years, almost nobody touched it.</p>
+
+  <p>That is the puzzle, and the easy explanation is wrong. The easy explanation says the code was broken — vaporware that deserved its reputation. This year I went to find out. The release, it turns out, contains the complete back end of the system — written in a custom Smalltalk dialect, with its cross-compiled C++ sitting alongside.</p>
+
+  <h2>What was actually in the box</h2>
+
+  <p>Udanax Gold was written once, in an unusual way. The source is Smalltalk — 732 classes filed out from Objectworks for Smalltalk-80, version 2.5 of July 1989, last touched in March 1995, organized under categories like <code>Xanadu-Be-Canopy</code>: the canopy trees, the tumblers, the crums, the link machinery, the space algebra the whole model runs on. But it is not quite the Smalltalk you know. The methods carry type annotations — a constrained dialect built for one purpose: the code could be developed in a live Smalltalk environment and then <strong>cross-compiled</strong>.</p>
+
+  <figure>
+<pre>{MuSet of: CanopyCrum} pathFor: canopyCrum {CanopyCrum}
+  &quot;Return the set of all crums from canopyCrum
+  (inclusive) to the top of canopyCrum's canopy.&quot;</pre>
+<figcaption>canopy.st, line 37 — typed Smalltalk, written for cross-compilation (fileOut dated March 1995)</figcaption>
+  </figure>
+
+  <p>The C++ in the release is that compilation's output. The headers still carry the translator's banner:</p>
+
+  <figure>
+<pre>***************************************************************************
+Output from Objectworks for Smalltalk-80(tm), Version 2.5 of 29 July 1989
+*/
+
+#ifndef CANOPYX_HXX
+#define CANOPYX_HXX</pre>
+<figcaption>canopyx.hxx, line 13 — the generated C++ opens by naming the tool that made it</figcaption>
+  </figure>
+
+  <p>The same class names (<code>Heaper</code>, <code>CanopyCrum</code>, <code>MuSet</code>) appear throughout both languages.</p>
+
+  <p>The release even ships the base Smalltalk class library alongside the application classes, so the source is loadable, not just readable — though good luck finding a 1989 Objectworks to load it into.</p>
+
+  <p>So what was missing? Not the model, and not the code — which exists twice over, as source and as generated C++. The team had dispersed when the money ended, mid-productization. There was no <em>public</em> documentation to speak of — the team's knowledge lived in heads and in internal recordings that never made it into any release — and no map. The path in ran through a custom dialect, a vanished cross-compiler, and generated C++ that no human ever wrote by hand. The system was orphaned, not broken.</p>
+
+  <h2>The real moat</h2>
+
+  <p>Here is the thing about open source: it drops the price of code to zero. It does nothing to the price of understanding.</p>
+
+  <p>To enter that codebase in, say, 2010, you needed to hold a sixty-year-old design in your head (Nelson's model, which the documentation mostly doesn't explain, because the authors assumed you already spoke Xanadu), plus thirty-year-old code in a dead dialect nobody speaks, plus generated C++ no human ever wrote by hand, plus the vanished cross-compiler that connected them. The literature consistently estimates onboarding costs of months for codebases far friendlier than this. Against that, the license being permissive was almost a joke. The moat was comprehension, and comprehension held the door for twenty-seven years. I know it held me off for years.</p>
+
+  <p>This is not a story about Xanadu specifically. It's a pattern: software dies not when it's broken but when the cost of understanding it exceeds anyone's reason to pay. Open source promised to fix this and mostly fixed the wrong half. The right to read is not the ability to read.</p>
+
+  <h2>The cost curve fell</h2>
+
+  <p>What changed in the last few years is not that large language models learned to write code. The interesting change is what they did to reading.</p>
+
+  <p>Large language models are, whatever else they are, comprehension accelerants for old code. They have ingested most of the world's programming languages, including dead ones, and they can do the three things an archaeologist actually needs — read an unfamiliar idiom, locate where a mechanism lives, explain what a module is doing — in seconds instead of days.</p>
+
+  <p>From a year of using them on exactly this codebase, my estimate of the speedup is a spectrum, not a number:</p>
+
+  <ul>
+    <li>Reading, locating, explaining: roughly <strong>100&times;</strong>.</li>
+    <li>Translation between languages: roughly <strong>50&times;</strong>.</li>
+    <li>Building a new system around an understood core: maybe <strong>5&ndash;10&times;</strong>.</li>
+    <li>Design judgment: <strong>1&times;</strong> — no change. The models are worse than useless at deciding what <em>should</em> exist, which turns out to be the job.</li>
+  </ul>
+
+  <p>The spectrum shape matters more than the values. The cheap end is exactly what held the door shut for twenty-seven years. The expensive end — judgment — is exactly what the original designers had and the moat was protecting.</p>
+
+  <h2>The measurement</h2>
+
+  <p>Evidence beats adjectives, so here is mine.</p>
+
+  <p><strong>Product scale.</strong> I started with the 1992 C++ engine and migrated it to Rust. With model assistance, that took weeks. Alone it would have taken years: the engine was full of algorithms I had never seen, and there was a lot of it. And translation, remember, was the middle of the spectrum — not the cheap end. Then I kept building, because the point was never the port. Five months after starting, there was a live, multi-user system implementing the full model — transclusion at character level, typed multi-ended links, deep versioning, per-passage provenance — built by one developer, carrying 3,800+ Rust tests on the engine and another 1,200 on the TypeScript client. I am not a team. I am not funded. I had the model doing the reading.</p>
+
+  <h2>Verification keeps the accelerant honest</h2>
+
+  <p>There is a trap in all this, and it's the interesting one. The build caught bugs that reading could not have found — latent, silent, wrapped in assumptions nobody thought to question. The splay machinery I had carried over — a design the original needed because every access descends the tree — held a content-loss bug in its terminal arms. No reader would ever have seen it, because reading checks what the code says, not what the model guarantees. Measuring the implementation against those guarantees surfaced it; it is fixed and regression-tested now — and the same measurement said the splay wasn't even needed for my access pattern. The same discipline — a dual-write shadow, running the new engine beside the old one on every operation — caught merge defects the primary implementation hid entirely.</p>
+
+  <p>That is the lesson, and it's backwards from how code review usually works. When reading is cheap, verification has to move from "check the lineage" to "check against the spec." Trust re-derivation, not ancestry — the ancestry is exactly what a fast translation contaminates.</p>
+
+  <h2>The claim is testable</h2>
+
+  <p>The thesis of all this is falsifiable: the Xanadu model was buildable all along, and the barrier was never the model's merits but the cost of comprehending the artifacts that carried it. The way you test such a claim is not to argue about it. You build the thing.</p>
+
+  <p>So, as evidence rather than advertisement: a complete, independent, open-source implementation of the Gold model exists and is running — with the parts the original never had the years for, like realtime collaborative editing on a CRDT engine and per-passage cryptographic attribution. You can try it at <a href="https://xudanu.com">xudanu.com</a>; the code is at <a href="https://github.com/jonesd/xudanu">github.com/jonesd/xudanu</a>. It is an independent re-implementation of the model from the 1999 release, not affiliated with Project Xanadu. The model is Nelson's and his team's. The reading is what got cheap.</p>
+
+  <h2>The general form</h2>
+
+  <p>Now ask the question this story is actually about. The Xanadu release sat open and comprehensible-to-no-one for 27 years. How much else is sitting in the literature the same way — designed, finished on paper, sometimes even implemented, and unreadable at a price anyone would pay? Bush's associative trails. Engelbart's view specs. Intermedia's linkbases. Half the good ideas in the 1980s and 1990s hypertext literature.</p>
+
+  <p>We tell ourselves the bottleneck was that these ideas were impractical. For some, maybe. But the Xanadu case says something less comfortable: at least sometimes, the ideas were practical and the entry cost was just mispriced — and nobody re-priced it for thirty years, because repackaging old code for new readers was a thing nobody could sell.</p>
+
+  <p>Some of those designs just became readable again. The question is no longer only "what should we build?" It's "what was already designed, and waiting on a cost curve?"</p>
+
+  <hr>
+
+  <p class="disclosure"><strong>Disclosure.</strong> This work — the migration, this essay's drafts — was done with LLM assistance throughout. The design decisions, the mistakes, and any remaining wrong ideas are mine.</p>
+
+  <footer><a href="/">dgjones.info</a></footer>
+</main>
+</body>
+</html>
